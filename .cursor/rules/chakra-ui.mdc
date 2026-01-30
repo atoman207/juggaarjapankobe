@@ -1,0 +1,12 @@
+---
+description: Use Chakra UI for all newly created UI code
+globs: **/*.{tsx,jsx}
+---
+
+# Chakra UI
+
+- Use **Chakra UI** (`@chakra-ui/react`) for all newly created components and pages.
+- Prefer Chakra primitives: `Box`, `Flex`, `Text`, `Heading`, `Link`, `Button`, `Image`, `List`, etc.
+- Use Chakra style props (`color`, `bg`, `p`, `m`, `fontSize`, `_hover`, etc.) instead of custom CSS or CSS modules when possible.
+- For layout: use `Box`, `Flex`, `Grid`; for typography: `Text`, `Heading`; for links: `Link` with `as={RouterLink}` for React Router.
+- Keep custom CSS only for complex cases (e.g. hero full-bleed breakout, keyframe animations) and use CSS modules only when Chakra cannot cover the need.

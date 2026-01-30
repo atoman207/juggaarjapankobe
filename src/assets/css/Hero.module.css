@@ -1,0 +1,87 @@
+/* Full-bleed hero: break out of main container, ~80vh, ~10vh below */
+.hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -2rem;
+  min-height: 80vh;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Text overlay: 60vh × 50vw, no left margin, light background 0.7 opacity, border-radius 0 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 50vw;
+  height: 60vh;
+  margin: 0;
+  padding: 2rem 1.5rem 2rem 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.overlayTitle {
+  margin: 0 0 0.5rem;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  font-family: 'Google Sans', Arial, sans-serif;
+}
+
+.overlaySubtitle {
+  margin: 0;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+@media (max-width: 600px) {
+  .overlay {
+    width: 85vw;
+    height: 50vh;
+    padding: 1.25rem 1.25rem;
+  }
+
+  .overlayTitle {
+    font-size: 1.4rem;
+  }
+
+  .overlaySubtitle {
+    font-size: 1rem;
+  }
+}
