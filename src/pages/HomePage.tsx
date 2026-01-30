@@ -21,7 +21,7 @@ export function HomePage(): React.ReactElement {
       <Box as="article" w="100%">
         <Heading
           as="h1"
-          fontSize="1.75rem"
+          fontSize="2.75rem"
           fontWeight={700}
           mb={6}
           color="gray.900"

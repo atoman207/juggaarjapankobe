@@ -53,8 +53,9 @@ export function Hero({
               className={styles.overlayTitle}
               m={0}
               mb={2}
+              paddingLeft="6rem"
               color="white"
-              fontSize="1.75rem"
+              fontSize="2.25rem"
               fontWeight={700}
               lineHeight={1.35}
               textAlign="left"
@@ -66,12 +67,13 @@ export function Hero({
             <Text
               as="p"
               className={styles.overlaySubtitle}
-              m={0}
-              color="white"
-              fontSize="1.125rem"
+              m={0}           
+              fontSize="1.3rem"
               fontWeight={400}
+              color="white"
               lineHeight={1.5}
               textAlign="left"
+              paddingLeft="6rem"
             >
               {overlaySubtitle}
             </Text>
