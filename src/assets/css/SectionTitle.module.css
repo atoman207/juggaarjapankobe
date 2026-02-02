@@ -1,0 +1,43 @@
+/* Shared section title: center-aligned, dark blue, stylish font, sky blue underline with hover */
+.root {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #87CEEB;
+  letter-spacing: 0.02em;
+}
+
+.underline {
+  display: block;
+  height: 2px;
+  background-color: #87CEEB;
+  width: 100%;
+  margin-left: 0;
+  transition: width 0.3s ease, margin-left 0.3s ease;
+}
+
+/* Light variant: white text and underline (e.g. on image background) */
+.titleLight {
+  color: #fff;
+}
+
+.underlineLight {
+  background-color: #fff;
+}
+
+.wrap:hover .underline {
+  width: 30%;
+  margin-left: 35%;
+}

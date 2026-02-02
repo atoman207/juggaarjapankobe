@@ -16,6 +16,7 @@ export function Layout(): JSX.Element {
         px={{ base: 4, md: 6 }}
         py={8}
         boxSizing="border-box"
+        overflowX="visible"
       >
         <Outlet />
       </Box>

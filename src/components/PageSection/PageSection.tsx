@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
+import { SectionTitle } from '@/components/SectionTitle'
 
 interface PageSectionProps {
   id?: string
@@ -15,22 +16,8 @@ export function PageSection({
 }: PageSectionProps): JSX.Element {
   return (
     <Box id={id} mb={12} as="section">
-      {title ? (
-        <Heading
-          as="h2"
-          size="md"
-          fontSize="1.5rem"
-          fontWeight={600}
-          mb={4}
-          pb={2}
-          borderBottom="2px solid"
-          borderColor="gray.300"
-          color="gray.900"
-        >
-          {title}
-        </Heading>
-      ) : null}
-      <Text as="div" lineHeight={1.7} color="gray.800">
+      {title ? <SectionTitle>{title}</SectionTitle> : null}
+      <Text as="div" lineHeight={1.7} color="#1a1a1a">
         {children}
       </Text>
     </Box>

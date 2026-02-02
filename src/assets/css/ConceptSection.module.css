@@ -1,0 +1,52 @@
+/* CONCEPT section: centered layout (title uses SectionTitle component) */
+.conceptSection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.conceptContent {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+  color: #1a1a1a;
+}
+
+.conceptList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+}
+
+.conceptList li {
+  margin: 0;
+}
+
+.conceptQuote {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+.conceptBody p {
+  margin: 0 0 1rem;
+}
+
+.conceptBody p:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.conceptLink {
+  color: #5BA3C6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.conceptLink:hover {
+  text-decoration: underline;
+}
