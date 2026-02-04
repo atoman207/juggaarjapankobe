@@ -1,273 +1,83 @@
 /* ========================================
-   Footer Styles - Matching Reference Site
+   Footer Styles - White/Light Theme
+   Matching Reference Site (light footer with cyan bar)
    ======================================== */
 
-.footer {
-  background: #1a1a2e;
-  color: #999;
-  padding: 70px 0 40px;
-}
-
-.footerInner {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Footer Top - Logo & Contact */
-.footerTop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@media (min-width: 769px) {
-  .footerTop {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-}
-
-.footerLogo {
-  margin-bottom: 20px;
-}
-
-@media (min-width: 769px) {
-  .footerLogo {
-    margin-bottom: 0;
-  }
-}
-
-.footerLogoImage {
-  height: 50px;
-  width: auto;
-}
-
-.footerContact {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-}
-
-@media (min-width: 769px) {
-  .footerContact {
-    align-items: flex-end;
-  }
-}
-
-.footerPhones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
-@media (min-width: 769px) {
-  .footerPhones {
-    justify-content: flex-end;
-  }
-}
-
-.footerPhoneItem {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footerPhoneLink {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.footerPhoneLink:hover {
-  color: var(--primary-blue-light);
-  text-decoration: none;
-}
-
-.footerHours {
-  color: #888;
-  font-size: 0.875rem;
-}
-
-/* Footer Navigation */
-.footerNav {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px 20px;
-  margin-bottom: 40px;
-}
-
-@media (min-width: 576px) {
-  .footerNav {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 769px) {
-  .footerNav {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-.footerNavColumn {
-  min-width: 140px;
-}
-
-.footerNavTitle {
-  color: #fff;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--primary-blue);
-  display: inline-block;
-}
-
-.footerNavList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footerNavItem {
-  margin-bottom: 8px;
-}
-
-.footerNavLink {
-  color: #999;
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-  display: inline-block;
-}
-
-.footerNavLink:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Footer Social */
-.footerSocial {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.socialLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  text-decoration: none;
-  transition: background var(--transition-fast), transform var(--transition-fast);
-}
-
-.socialLink:hover {
-  background: var(--primary-blue);
-  transform: translateY(-2px);
-}
-
-.socialIcon {
-  width: 20px;
-  height: 20px;
-}
-
-/* Footer Bottom */
-.footerBottom {
-  text-align: center;
-}
-
-.footerCompany {
-  color: #bbb;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.footerCopyright {
-  color: #666;
-  font-size: 0.8125rem;
-  margin: 0;
-}
-
-/* Footer CTA Banner */
+/* Footer CTA Banner - Cyan Blue Bar at Top */
 .footerCta {
   background: var(--primary-gradient);
-  padding: 50px 20px;
-  text-align: center;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .footerCtaInner {
-  max-width: 900px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-.footerCtaTitle {
+.footerCtaPhone {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   color: #fff;
-  font-size: 1.625rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  letter-spacing: 0.02em;
 }
 
-@media (min-width: 769px) {
-  .footerCtaTitle {
-    font-size: 1.875rem;
-  }
+.footerCtaPhoneLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footerCtaPhoneLink:hover {
+  opacity: 0.9;
+}
+
+.footerCtaHours {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
 }
 
 .footerCtaButtons {
   display: flex;
-  flex-direction: column;
   gap: 12px;
-  align-items: center;
-}
-
-@media (min-width: 576px) {
-  .footerCtaButtons {
-    flex-direction: row;
-    justify-content: center;
-  }
+  flex-wrap: wrap;
 }
 
 .footerCtaBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 32px;
-  font-size: 1rem;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: var(--radius-sm);
   transition: all var(--transition-normal);
-  min-width: 200px;
+  white-space: nowrap;
 }
 
-.footerCtaBtnWhite {
-  background: #fff;
-  color: var(--primary-blue);
+.footerCtaBtnGreen {
+  background: #4CAF50;
+  color: #fff;
 }
 
-.footerCtaBtnWhite:hover {
-  background: #f5f5f5;
-  text-decoration: none;
-  transform: translateY(-2px);
+.footerCtaBtnGreen:hover {
+  background: #45a049;
+  transform: translateY(-1px);
 }
 
 .footerCtaBtnOutline {
@@ -278,5 +88,149 @@
 
 .footerCtaBtnOutline:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* Collapse Arrow */
+.footerCollapseArrow {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+  background: #f5f5f5;
+}
+
+.footerCollapseArrow span {
+  display: block;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Main Footer - White Background */
+.footer {
+  background: #fff;
+  color: #333;
+  padding: 50px 0 30px;
+}
+
+.footerInner {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer Navigation Links - Horizontal List */
+.footerNav {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+.footerNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  line-height: 2;
+}
+
+.footerNavLink {
+  color: #555;
+  font-size: 0.8125rem;
   text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footerNavLink:hover {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+/* Footer Bottom - Logo Center */
+.footerBottom {
+  text-align: center;
+}
+
+.footerLogo {
+  margin-bottom: 24px;
+}
+
+.footerLogoImage {
+  height: 60px;
+  width: auto;
+}
+
+/* Social Links */
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  color: #333;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.socialLink:hover {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #fff;
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Copyright */
+.footerCopyright {
+  color: #888;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Hidden elements from old design */
+.footerNavColumn,
+.footerNavTitle,
+.footerNavItem,
+.footerTop,
+.footerContact,
+.footerPhones,
+.footerPhoneItem,
+.footerPhoneLink,
+.footerHours,
+.footerCompany,
+.footerCtaTitle,
+.footerCtaBtnWhite {
+  /* These are handled differently in new layout */
+}
+
+@media (max-width: 768px) {
+  .footerCtaInner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footerCtaPhone {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .footerCtaButtons {
+    justify-content: center;
+  }
 }

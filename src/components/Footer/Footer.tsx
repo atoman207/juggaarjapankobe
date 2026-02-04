@@ -5,150 +5,122 @@ import styles from './Footer.module.css'
 // Phone numbers
 const PHONE_MAIN = '078-987-0902'
 const PHONE_MOBILE = '080-7518-7910'
-const BUSINESS_HOURS = '営業時間: 10:00〜19:00 / 定休日: 日曜日'
 
-// Navigation structure
-const FOOTER_NAV = [
-  {
-    title: 'サービス',
-    items: [
-      { label: '貨物軽自動車運送', path: '/service' },
-      { label: 'チャーター便', path: '/service/charter' },
-      { label: 'スポット便', path: '/service/spot' },
-      { label: 'ポスティング', path: '/service/posting' },
-    ],
-  },
-  {
-    title: '採用情報',
-    items: [
-      { label: '採用トップ', path: '/recruit' },
-      { label: 'ドライバー募集', path: '/recruit/driver' },
-      { label: 'ポスティングスタッフ', path: '/recruit/posting-staff' },
-      { label: '営業スタッフ', path: '/recruit/sales' },
-    ],
-  },
-  {
-    title: '会社情報',
-    items: [
-      { label: 'コンセプト', path: '/concept' },
-      { label: '会社概要', path: '/company' },
-      { label: 'スタッフ紹介', path: '/staff' },
-      { label: 'よくある質問', path: '/faq' },
-    ],
-  },
-  {
-    title: 'お知らせ',
-    items: [
-      { label: 'ブログ', path: '/blog' },
-      { label: 'コラム', path: '/column' },
-      { label: 'メディア', path: '/media' },
-    ],
-  },
-  {
-    title: 'お問い合わせ',
-    items: [
-      { label: 'お問い合わせ', path: '/contact' },
-      { label: 'エントリー', path: '/entry' },
-      { label: 'プライバシーポリシー', path: '/privacy' },
-      { label: 'サイトマップ', path: '/sitemap' },
-    ],
-  },
+// Footer navigation links (flat list matching reference)
+const FOOTER_LINKS = [
+  { label: 'ホーム', path: '/' },
+  { label: 'コンセプト', path: '/concept' },
+  { label: '神戸市の配送・株式会社Juggaar Japanの口コミ情報', path: '/reviews' },
+  { label: '神戸市の配送・株式会社Juggaar Japanのお客様の声', path: '/testimonials' },
+  { label: '神戸市の配送・株式会社Juggaar Japanの評判', path: '/reputation' },
+  { label: 'サービス・料金表', path: '/service' },
+  { label: 'チャーター便（軽貨物貸切便）料金表', path: '/service/charter' },
+  { label: 'ポスティング サービス内容', path: '/service/posting' },
+  { label: 'ポスティング 料金表', path: '/service/posting-price' },
+  { label: '貸し看板 料金表', path: '/service/signboard' },
+  { label: '採用情報', path: '/recruit' },
+  { label: '3ヶ月ごとにボーナスが!? 神戸市北区 軽貨物 ドライバー', path: '/recruit/driver' },
+  { label: '週１のみでも！午前中のみでも！午後のみでも！ok！', path: '/recruit/part-time' },
+  { label: 'ポスティングスタッフ【兵庫県全域】', path: '/recruit/posting-all' },
+  { label: 'ポスティングスタッフ【神戸市北区】', path: '/recruit/posting-kita' },
+  { label: 'ポスティングスタッフ【神戸市須磨区】', path: '/recruit/posting-suma' },
+  { label: 'ポスティングスタッフ【神戸市垂水区】', path: '/recruit/posting-tarumi' },
+  { label: '営業 セールススタッフ', path: '/recruit/sales' },
+  { label: '継続確認 セールススタッフ', path: '/recruit/sales-support' },
+  { label: 'スタッフ', path: '/staff' },
+  { label: 'よくある質問', path: '/faq' },
+  { label: '会社概要', path: '/company' },
+  { label: '株式会社ジュガール ジャパン', path: '/company' },
+  { label: 'ブログ', path: '/blog' },
+  { label: 'コラム', path: '/column' },
+  { label: 'メディア', path: '/media' },
+  { label: 'お問い合わせ', path: '/contact' },
+  { label: 'エントリー', path: '/entry' },
+  { label: 'プライバシーポリシー', path: '/privacy' },
+  { label: 'サイトマップ', path: '/sitemap' },
 ]
 
 // Social links
 const SOCIAL_LINKS = [
-  { name: 'LINE', url: 'https://lin.ee/4K8fXOC8', icon: 'line' },
-  { name: 'Instagram', url: 'https://instagram.com/', icon: 'instagram' },
   { name: 'Facebook', url: 'https://facebook.com/', icon: 'facebook' },
   { name: 'Twitter', url: 'https://twitter.com/', icon: 'twitter' },
+  { name: 'LINE', url: 'https://lin.ee/4K8fXOC8', icon: 'line' },
+  { name: 'Instagram', url: 'https://instagram.com/', icon: 'instagram' },
 ]
 
 export function Footer(): JSX.Element {
   return (
     <>
-      {/* CTA Banner */}
+      {/* Top Cyan Bar with Phone and Buttons */}
       <div className={styles.footerCta}>
         <div className={styles.footerCtaInner}>
-          <h2 className={styles.footerCtaTitle}>
-            お気軽にお問い合わせください
-          </h2>
+          <div className={styles.footerCtaPhone}>
+            <a href={`tel:${PHONE_MAIN.replace(/-/g, '')}`} className={styles.footerCtaPhoneLink}>
+              <PhoneIcon />
+              {PHONE_MAIN}
+            </a>
+            <span className={styles.footerCtaHours}>
+              [営業時間] 10:00 〜 19:00 / [定休日] 日曜日
+            </span>
+          </div>
           <div className={styles.footerCtaButtons}>
-            <RouterLink to="/contact" className={`${styles.footerCtaBtn} ${styles.footerCtaBtnWhite}`}>
+            <RouterLink to="/contact" className={`${styles.footerCtaBtn} ${styles.footerCtaBtnGreen}`}>
               お問い合わせはこちら
             </RouterLink>
-            <RouterLink to="/entry" className={`${styles.footerCtaBtn} ${styles.footerCtaBtnOutline}`}>
-              エントリーフォーム
+            <RouterLink to="/" className={`${styles.footerCtaBtn} ${styles.footerCtaBtnOutline}`}>
+              オフィシャルサイトへ
             </RouterLink>
           </div>
         </div>
       </div>
 
-      {/* Main Footer */}
+      {/* Collapse Arrow */}
+      <div className={styles.footerCollapseArrow}>
+        <span>∧</span>
+      </div>
+
+      {/* Main Footer - White Background */}
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
-          {/* Footer Top */}
-          <div className={styles.footerTop}>
+          {/* Footer Navigation - Flat List */}
+          <nav className={styles.footerNav} aria-label="フッターメニュー">
+            <ul className={styles.footerNavList}>
+              {FOOTER_LINKS.map((link, index) => (
+                <li key={index}>
+                  <RouterLink to={link.path} className={styles.footerNavLink}>
+                    {link.label}
+                  </RouterLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Footer Bottom */}
+          <div className={styles.footerBottom}>
+            {/* Logo */}
             <div className={styles.footerLogo}>
               <RouterLink to="/">
                 <img src={logoImage} alt="Juggaar Japan" className={styles.footerLogoImage} />
               </RouterLink>
             </div>
-            <div className={styles.footerContact}>
-              <div className={styles.footerPhones}>
-                <div className={styles.footerPhoneItem}>
-                  <PhoneIcon />
-                  <a href={`tel:${PHONE_MAIN.replace(/-/g, '')}`} className={styles.footerPhoneLink}>
-                    {PHONE_MAIN}
-                  </a>
-                </div>
-                <div className={styles.footerPhoneItem}>
-                  <PhoneIcon />
-                  <a href={`tel:${PHONE_MOBILE.replace(/-/g, '')}`} className={styles.footerPhoneLink}>
-                    {PHONE_MOBILE}
-                  </a>
-                </div>
-              </div>
-              <p className={styles.footerHours}>{BUSINESS_HOURS}</p>
+
+            {/* Social Links */}
+            <div className={styles.footerSocial}>
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label={social.name}
+                >
+                  <SocialIcon name={social.icon} className={styles.socialIcon} />
+                </a>
+              ))}
             </div>
-          </div>
 
-          {/* Footer Navigation */}
-          <nav className={styles.footerNav} aria-label="フッターメニュー">
-            {FOOTER_NAV.map((column) => (
-              <div key={column.title} className={styles.footerNavColumn}>
-                <h3 className={styles.footerNavTitle}>{column.title}</h3>
-                <ul className={styles.footerNavList}>
-                  {column.items.map((item) => (
-                    <li key={item.path} className={styles.footerNavItem}>
-                      <RouterLink to={item.path} className={styles.footerNavLink}>
-                        {item.label}
-                      </RouterLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </nav>
-
-          {/* Social Links */}
-          <div className={styles.footerSocial}>
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-                aria-label={social.name}
-              >
-                <SocialIcon name={social.icon} className={styles.socialIcon} />
-              </a>
-            ))}
-          </div>
-
-          {/* Footer Bottom */}
-          <div className={styles.footerBottom}>
-            <p className={styles.footerCompany}>株式会社Juggaar Japan</p>
+            {/* Copyright */}
             <p className={styles.footerCopyright}>
               © {new Date().getFullYear()} 神戸市の配送は株式会社Juggaar Japan ALL RIGHTS RESERVED.
             </p>
@@ -162,7 +134,7 @@ export function Footer(): JSX.Element {
 // Phone Icon
 function PhoneIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style={{ color: 'var(--primary-blue)' }}>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
     </svg>
   )
