@@ -1,4 +1,3 @@
-import { Link as RouterLink } from 'react-router-dom'
 import styles from './LineBanner.module.css'
 
 interface LineBannerProps {
@@ -18,7 +17,7 @@ export function LineBanner({ lineUrl = DEFAULT_LINE_URL }: LineBannerProps): JSX
           <div className={styles.text}>
             <h2 className={styles.title}>公式LINEご登録のお願い</h2>
             <p className={styles.description}>
-              追加後、アナタのフルネームを送信 ⇒ 直接、当社Staffとやり取りStart！！
+              下記URLクリック ⇒ 追加後、アナタのフルネームを送信 ⇒ 直接、当社Staffとやり取りStart！！
             </p>
           </div>
         </div>

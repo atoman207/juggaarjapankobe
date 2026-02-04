@@ -4,15 +4,17 @@ import styles from './HeroCarousel.module.css'
 interface HeroCarouselProps {
   images: string[]
   intervalMs?: number
-  overlayTitle?: string
-  overlaySubtitle?: string
+  title?: string
+  subtitle?: string
+  scrollTarget?: string
 }
 
 export function HeroCarousel({
   images,
   intervalMs = 5000,
-  overlayTitle,
-  overlaySubtitle,
+  title,
+  subtitle,
+  scrollTarget = '#main',
 }: HeroCarouselProps): React.ReactElement {
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -53,8 +55,11 @@ export function HeroCarousel({
       {/* Overlay Content */}
       <div className={styles.overlay}>
         <div className={styles.overlayContent}>
-          {overlayTitle && <h1 className={styles.overlayTitle}>{overlayTitle}</h1>}
-          {overlaySubtitle && <p className={styles.overlaySubtitle}>{overlaySubtitle}</p>}
+          {title && <h1 className={styles.overlayTitle}>{title}</h1>}
+          {subtitle && <p className={styles.overlaySubtitle}>{subtitle}</p>}
+          <a href={scrollTarget} className={styles.scrollDown}>
+            SCROLL DOWN
+          </a>
         </div>
       </div>
 

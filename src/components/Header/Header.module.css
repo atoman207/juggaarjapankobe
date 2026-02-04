@@ -12,9 +12,10 @@
 
 .headerTop {
   display: none;
-  background: var(--bg-light-gray);
-  padding: 8px 0;
+  background: #f8f9fa;
+  padding: 10px 0;
   font-size: 0.875rem;
+  border-bottom: 1px solid #eee;
 }
 
 @media (min-width: 769px) {
@@ -29,8 +30,32 @@
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 24px;
+}
+
+/* Social Icons */
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.socialLink:hover {
+  color: var(--primary-blue);
+  transform: translateY(-1px);
 }
 
 .phoneNumbers {
@@ -72,7 +97,7 @@
 
 /* Header Main */
 .headerMain {
-  padding: 12px 0;
+  padding: 14px 0;
 }
 
 .headerMainInner {
@@ -82,7 +107,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
 
 /* Logo */
@@ -97,7 +122,7 @@
 }
 
 .logoImage {
-  height: 50px;
+  height: 55px;
   width: auto;
   object-fit: contain;
 }

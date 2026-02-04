@@ -1,7 +1,7 @@
 /* Contact Page Styles */
 
 .page {
-  /* Full page wrapper */
+  width: 100%;
 }
 
 /* Page Header */
@@ -147,7 +147,7 @@
 }
 
 .form {
-  /* Form styles */
+  width: 100%;
 }
 
 .formGroup {

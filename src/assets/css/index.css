@@ -1,4 +1,10 @@
 /* ========================================
+   Japanese Font Import (must be first)
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+
+/* ========================================
    CSS Custom Properties (Design Tokens)
    Exact match for juggaarjapankobe.com
    ======================================== */
@@ -27,6 +33,10 @@
   --text-white: #FFFFFF;
   --text-muted: #666666;
   --text-light: #999999;
+  --text-body: #333333;
+  
+  /* Border Colors */
+  --border-color: #eee;
   
   /* Spacing */
   --section-padding-y: 60px;
@@ -323,8 +333,4 @@ a:hover {
   h3 { font-size: 1.125rem; }
 }
 
-/* ========================================
-   Japanese Font Import
-   ======================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
+/* End of styles */

@@ -1,0 +1,217 @@
+/* Charter Price Page Styles */
+
+.page {
+    width: 100%;
+}
+
+/* Page Header */
+.pageHeader {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.pageHeaderOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--section-padding-x);
+    width: 100%;
+}
+
+.pageTitle {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+.pageSubtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 12px 0 0;
+    text-align: center;
+}
+
+/* Section */
+.section {
+    padding: var(--section-padding-y) 0;
+    background: var(--bg-white);
+}
+
+/* Intro Block */
+.introBlock {
+    margin-bottom: 40px;
+}
+
+.mainHeading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.introBlock p {
+    line-height: 1.9;
+    text-align: center;
+}
+
+/* Pricing Section */
+.pricingSection {
+    margin: 60px 0;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary-blue);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.priceTable {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.priceTable thead {
+    background: var(--primary-blue);
+    color: var(--bg-white);
+}
+
+.priceTable th,
+.priceTable td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.priceTable th {
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.priceTable td {
+    font-size: 1rem;
+}
+
+.priceTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.priceTable tbody tr:hover {
+    background: var(--bg-light-gray);
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Features Section */
+.featuresSection {
+    margin: 60px 0;
+}
+
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.featureList li {
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: var(--bg-light-gray);
+    border-left: 4px solid var(--primary-blue);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .pageTitle {
+        font-size: 1.75rem;
+    }
+
+    .mainHeading {
+        font-size: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.25rem;
+    }
+
+    .priceTable th,
+    .priceTable td {
+        padding: 12px 16px;
+    }
+}
+
+/* Reasons Grid */
+.reasonsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+@media (min-width: 769px) {
+    .reasonsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.reasonCard {
+    padding: 24px;
+    background: var(--bg-white);
+    border: 1px solid #eee;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.reasonCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.reasonCard h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin: 0 0 12px;
+}
+
+.reasonCard p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--text-muted);
+}

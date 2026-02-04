@@ -3,9 +3,9 @@
    ======================================== */
 
 .footer {
-  background: var(--bg-footer);
+  background: #1a1a2e;
   color: #999;
-  padding: 60px 0 30px;
+  padding: 70px 0 40px;
 }
 
 .footerInner {
@@ -119,7 +119,7 @@
 }
 
 .footerNavColumn {
-  /* Column styles */
+  min-width: 140px;
 }
 
 .footerNavTitle {
@@ -209,25 +209,26 @@
 /* Footer CTA Banner */
 .footerCta {
   background: var(--primary-gradient);
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
 .footerCtaInner {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .footerCtaTitle {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.625rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
 }
 
 @media (min-width: 769px) {
   .footerCtaTitle {
-    font-size: 1.75rem;
+    font-size: 1.875rem;
   }
 }
 
