@@ -1,0 +1,245 @@
+/* Services Page Styles */
+
+.page { }
+
+/* Page Header */
+.pageHeader {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.pageHeaderOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  width: 100%;
+}
+
+.pageTitle {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.pageSubtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+/* Section */
+.section {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-white);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+  margin: 16px 0 0;
+}
+
+/* Services Grid */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 769px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serviceCard {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.serviceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.serviceImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.serviceBody {
+  padding: 24px;
+}
+
+.serviceTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--text-dark);
+}
+
+.serviceDescription {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Pricing Section */
+.pricingSection {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-light-cyan);
+}
+
+.pricingTable {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  background: var(--primary-gradient);
+  color: #fff;
+  font-weight: 600;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: var(--bg-light-gray);
+}
+
+.price {
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-white);
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.ctaText {
+  color: var(--text-muted);
+  margin: 0 0 30px;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .ctaButtons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--primary-gradient);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.ctaButtonOutline {
+  display: inline-block;
+  padding: 16px 40px;
+  background: transparent;
+  color: var(--primary-blue);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--primary-blue);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+}
+
+.ctaButtonOutline:hover {
+  background: var(--primary-blue);
+  color: #fff;
+  text-decoration: none;
+}

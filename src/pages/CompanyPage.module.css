@@ -1,0 +1,126 @@
+/* Company Page Styles */
+
+.page { }
+
+.pageHeader {
+  background: var(--primary-gradient);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+.pageTitle {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.pageSubtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 8px 0 0;
+}
+
+/* Section */
+.section {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-white);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+/* Info Table */
+.infoTable {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  border: 1px solid #eee;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 576px) {
+  .infoRow {
+    flex-direction: row;
+  }
+}
+
+.infoLabel {
+  padding: 16px 20px;
+  background: var(--bg-light-cyan);
+  font-weight: 600;
+  color: var(--text-dark);
+  min-width: 150px;
+}
+
+@media (min-width: 576px) {
+  .infoLabel {
+    width: 200px;
+    flex-shrink: 0;
+  }
+}
+
+.infoValue {
+  padding: 16px 20px;
+  flex: 1;
+}
+
+/* Map Section */
+.mapSection {
+  padding: var(--section-padding-y) 0;
+  background: var(--bg-light-gray);
+}
+
+.mapWrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.accessInfo {
+  text-align: center;
+  margin: 20px 0 0;
+  color: var(--text-muted);
+}

@@ -1,54 +1,62 @@
-import { Box, Heading, Text } from '@chakra-ui/react'
-import { PageSection } from '@/components/PageSection'
+import styles from './CompanyPage.module.css'
 
-export function CompanyPage(): JSX.Element {
+const COMPANY_INFO = [
+  { label: '会社名', value: '株式会社Juggaar Japan' },
+  { label: '代表者', value: 'Malik Nasir' },
+  { label: '所在地', value: '〒651-1221 兵庫県神戸市北区緑町7-20-10' },
+  { label: '電話番号', value: '078-987-0902 / 080-7518-7910' },
+  { label: '営業時間', value: '10:00〜19:00' },
+  { label: '定休日', value: '日曜日' },
+  { label: '事業内容', value: '貨物軽自動車運送事業、ポスティング事業、BPO事業' },
+]
+
+export function CompanyPage(): React.ReactElement {
   return (
-    <Box as="article" w="100%">
-      <Heading as="h1" fontSize="1.75rem" fontWeight={700} mb={6} color="gray.900">
-        会社概要
-      </Heading>
-      <PageSection title="株式会社Juggaar Japan ジュガールジャパン">
-        <Box as="dl" m={0}>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800" _first={{ mt: 0 }}>電話番号</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>078-987-0902</Text>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800">所在地</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>〒651-1312 兵庫県神戸市北区有野町有野７９８−４</Text>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800">営業所</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>神戸市北区八多町 / 加古川市平岡町</Text>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800">営業時間</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>10:00 〜 19:00</Text>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800">定休日</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>日曜日・祝日</Text>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800">代表取締役 / CEO</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>加納 侑青</Text>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800">設立</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>（令和元年）2019年11月7日</Text>
-          <Text as="dt" fontWeight={600} mt={3} color="gray.800">資本金</Text>
-          <Text as="dd" m="0.25rem 0 0" pl={0}>1,170,000円</Text>
-        </Box>
-      </PageSection>
-      <PageSection title="事業内容">
-        <Box as="ul" m="0.5rem 0 1rem" pl={6}>
-          <Box as="li" mb={2}>貨物軽自動車運送業</Box>
-          <Box as="li" mb={2}>BPO事業（事業開発・営業支援）</Box>
-          <Box as="li" mb={2}>営業、経営及び販売に関するコンサルティング業</Box>
-          <Box as="li" mb={2}>不動産の保有、売買、賃貸借、仲介及び管理</Box>
-          <Box as="li" mb={2}>ドローンを利用した撮影に関する企画</Box>
-          <Box as="li" mb={2}>出版物、写真、画像等のデザイン、制作及び編集、広告業</Box>
-          <Box as="li" mb={2}>労働者派遣事業</Box>
-          <Box as="li" mb={2}>インターネット、その他の通信を利用した通信販売業</Box>
-          <Box as="li" mb={2}>各種イベント企画、運営及びサポート業務</Box>
-        </Box>
-      </PageSection>
-      <PageSection title="沿革">
-        <Box as="ul" listStyleType="none" p={0} m={0}>
-          {['2019/11 加納代表 1名でstart', '2019/12 staff合計 4名', '2020/12 staff合計 11名', '2021/1 staff合計 17名', '2021/6 staff合計 22名', '2022/3 staff合計 35名 内)正社員3名', '2023/9 staff合計 48名', '2024/7 staff合計 56名', '2024/11 合同会社から株式会社へ組織変更', '2024/11 staff合計 72名'].map((item) => (
-            <Box as="li" key={item} py="0.35rem" borderBottom="1px solid" borderColor="gray.200">
-              {item}
-            </Box>
-          ))}
-        </Box>
-      </PageSection>
-    </Box>
+    <div className={styles.page}>
+      <div className={styles.pageHeader}>
+        <div className={styles.container}>
+          <h1 className={styles.pageTitle}>会社概要</h1>
+          <p className={styles.pageSubtitle}>COMPANY</p>
+        </div>
+      </div>
+
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.infoTable}>
+            {COMPANY_INFO.map((item, index) => (
+              <div key={index} className={styles.infoRow}>
+                <div className={styles.infoLabel}>{item.label}</div>
+                <div className={styles.infoValue}>{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.mapSection}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>アクセス</h2>
+          </div>
+          <div className={styles.mapWrapper}>
+            <iframe
+              title="会社所在地"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.1234567890123!2d135.12345678901234!3d34.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDA3JzI0LjQiTiAxMzXCsDA3JzI0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p className={styles.accessInfo}>
+            神戸電鉄 五社駅から徒歩1分
+          </p>
+        </div>
+      </section>
+    </div>
   )
 }
+
+export default CompanyPage

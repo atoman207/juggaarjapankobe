@@ -1,0 +1,142 @@
+/* Column Page Styles */
+
+.page {
+    width: 100%;
+}
+
+/* Page Header */
+.pageHeader {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.pageHeaderOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--section-padding-x);
+    width: 100%;
+}
+
+.pageTitle {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+.pageSubtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 12px 0 0;
+    text-align: center;
+}
+
+/* Section */
+.section {
+    padding: var(--section-padding-y) 0;
+    background: var(--bg-white);
+}
+
+/* Articles Grid */
+.articlesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 769px) {
+    .articlesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .articlesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Article Card */
+.articleCard {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.articleCard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.articleImage {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.articleImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.articleCard:hover .articleImage img {
+    transform: scale(1.05);
+}
+
+.articleContent {
+    padding: 24px;
+}
+
+.articleDate {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.articleTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 12px;
+    line-height: 1.4;
+}
+
+.articleExcerpt {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .pageTitle {
+        font-size: 2rem;
+    }
+
+    .articleTitle {
+        font-size: 1.125rem;
+    }
+}
