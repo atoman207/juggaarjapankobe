@@ -1,103 +1,84 @@
-/* Contact Page Styles */
+/* ContactPage Styles */
 
 .page {
-  width: 100%;
-}
-
-/* Page Header */
-.pageHeader {
-  background: var(--primary-gradient);
-  padding: 60px 0;
-  text-align: center;
+  /* Full page wrapper */
 }
 
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--section-padding-x);
+  width: 100%;
 }
 
-.pageTitle {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
+/* Info Section */
+.infoSection {
+  padding: 80px 0;
+  background: var(--bg-white);
 }
 
-.pageSubtitle {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 8px 0 0;
-}
-
-/* Contact Info Cards */
-.contactInfo {
-  background: var(--bg-light-cyan);
-  padding: var(--section-padding-y) 0;
-}
-
-.contactCards {
+.infoGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@media (min-width: 769px) {
-  .contactCards {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .infoGrid {
+    grid-template-columns: 1fr;
   }
 }
 
-.contactCard {
-  background: var(--bg-white);
+.infoCard {
+  background: var(--bg-light-gray);
+  padding: 40px 32px;
   border-radius: var(--radius-md);
-  padding: 40px 30px;
   text-align: center;
-  box-shadow: var(--shadow-sm);
 }
 
-.contactCardIcon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-light-cyan);
-  border-radius: 50%;
-  color: var(--primary-blue);
+.infoIcon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
 }
 
-.contactCardTitle {
+.infoCard h3 {
   font-size: 1.125rem;
   font-weight: 700;
+  color: var(--text-dark);
   margin: 0 0 16px;
 }
 
-.contactCardPhone {
+.phoneNumber {
   display: block;
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--primary-blue);
   text-decoration: none;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-.contactCardPhone:hover {
+.phoneNumber:hover {
   text-decoration: underline;
 }
 
-.contactCardHours {
-  color: var(--text-muted);
+.infoNote {
   font-size: 0.875rem;
+  color: var(--text-muted);
   margin: 0;
+}
+
+.infoText {
+  font-size: 0.9375rem;
+  color: var(--text-body);
+  margin: 0 0 16px;
 }
 
 .lineButton {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 12px 32px;
   background: #06C755;
   color: #fff;
   font-size: 1rem;
@@ -108,46 +89,55 @@
 }
 
 .lineButton:hover {
-  background: #05b049;
+  background: #05B54C;
   transform: translateY(-2px);
-  text-decoration: none;
 }
 
 /* Form Section */
-.section {
-  padding: var(--section-padding-y) 0;
-  background: var(--bg-white);
-}
-
-.formWrapper {
-  max-width: 700px;
-  margin: 0 auto;
+.formSection {
+  padding: 80px 0;
+  background: var(--bg-light-gray);
 }
 
 .formTitle {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 0 32px;
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  padding-bottom: 12px;
+  color: var(--text-dark);
+  margin: 0 0 40px;
 }
 
-.formTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--primary-gradient);
+.privacyBox {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.privacyBox h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 16px;
+}
+
+.privacyContent {
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.privacyContent p {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin: 0 0 12px;
 }
 
 .form {
-  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .formGroup {
@@ -156,121 +146,126 @@
 
 .label {
   display: block;
+  font-size: 0.9375rem;
   font-weight: 600;
-  margin-bottom: 8px;
   color: var(--text-dark);
+  margin-bottom: 8px;
 }
 
 .required {
   display: inline-block;
-  background: #e74c3c;
-  color: #fff;
-  font-size: 0.75rem;
   padding: 2px 8px;
-  border-radius: var(--radius-sm);
+  background: #dc3545;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 600;
+  border-radius: 2px;
   margin-left: 8px;
+  vertical-align: middle;
 }
 
 .input,
+.select,
 .textarea {
   width: 100%;
   padding: 14px 16px;
   font-size: 1rem;
-  font-family: inherit;
-  border: 1px solid #ddd;
+  color: var(--text-body);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-normal);
 }
 
 .input:focus,
+.select:focus,
 .textarea:focus {
   outline: none;
   border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(0, 163, 219, 0.1);
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  padding-right: 40px;
 }
 
 .textarea {
   resize: vertical;
-  min-height: 150px;
-}
-
-.formGroupCheckbox {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 32px;
-}
-
-.checkbox {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
+  min-height: 120px;
 }
 
 .checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 0.9375rem;
+  color: var(--text-body);
+  cursor: pointer;
 }
 
-.checkboxLabel a {
-  color: var(--primary-blue);
-  text-decoration: underline;
-}
-
-.formActions {
-  text-align: center;
+.checkboxLabel input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary-blue);
 }
 
 .submitButton {
-  display: inline-block;
-  padding: 16px 60px;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 32px auto 0;
+  padding: 16px;
   background: var(--primary-gradient);
   color: #fff;
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 600;
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-normal);
 }
 
-.submitButton:hover:not(:disabled) {
+.submitButton:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.submitButton:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
 /* Success Message */
 .successMessage {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  padding: 60px 40px;
+  border-radius: var(--radius-md);
   text-align: center;
-  padding: 60px 20px;
 }
 
 .successIcon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 24px;
-  background: #27ae60;
-  color: #fff;
-  font-size: 40px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  background: #28a745;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
 }
 
-.successTitle {
-  font-size: 1.75rem;
+.successMessage h3 {
+  font-size: 1.5rem;
   font-weight: 700;
+  color: var(--text-dark);
   margin: 0 0 16px;
 }
 
-.successText {
-  color: var(--text-muted);
+.successMessage p {
   font-size: 1rem;
-  line-height: 1.8;
+  color: var(--text-muted);
   margin: 0;
 }

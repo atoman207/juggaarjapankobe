@@ -1,0 +1,83 @@
+/* PageHero Component Styles */
+
+.hero {
+  position: relative;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 200px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 163, 219, 0.7),
+    rgba(35, 200, 228, 0.6)
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.titleEn {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+.breadcrumbs {
+  font-size: 0.875rem;
+}
+
+.breadcrumbs a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.breadcrumbs a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 8px;
+  opacity: 0.7;
+}
+
+.breadcrumbs span:last-child > span:last-child {
+  opacity: 1;
+  font-weight: 500;
+}
