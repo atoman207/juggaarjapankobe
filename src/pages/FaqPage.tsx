@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
 import styles from './FaqPage.module.css'
 
-// Import images
-import heroImg from '@/assets/image/hero_faq.jpg'
+// Import images - using correct images from reference site
+import heroImg from '@/assets/image/hero_faq_ref.jpg'
 
 // FAQ data matching reference site
 const FAQ_ITEMS = [

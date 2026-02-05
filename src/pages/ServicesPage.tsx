@@ -2,9 +2,12 @@ import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
 import styles from './ServicesPage.module.css'
 
-// Import images
-import heroImg from '@/assets/image/hero_service.jpg'
-import serviceStaffImg from '@/assets/image/service_staff.jpg'
+// Import images - using correct images from reference site
+import heroImg from '@/assets/image/hero_service_ref.jpg'
+import serviceSection1Img from '@/assets/image/service_section1.jpg'
+import serviceSection2Img from '@/assets/image/service_section2.jpg'
+import serviceSection3Img from '@/assets/image/service_section3.jpg'
+import serviceSection4Img from '@/assets/image/service_section4.jpg'
 
 export function ServicesPage() {
   return (
@@ -53,7 +56,7 @@ export function ServicesPage() {
 
           <div className={styles.serviceContent}>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="集荷と配送" />
+              <img src={serviceSection1Img} alt="集荷と配送" />
             </div>
             <div className={styles.serviceText}>
               <h4>集荷と配送の両面から地元である神戸市の物流を支えております</h4>
@@ -95,13 +98,13 @@ export function ServicesPage() {
               </p>
             </div>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="配送サービス" />
+              <img src={serviceSection2Img} alt="配送サービス" />
             </div>
           </div>
 
           <div className={styles.serviceContent}>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="経験豊富なスタッフ" />
+              <img src={serviceSection3Img} alt="経験豊富なスタッフ" />
             </div>
             <div className={styles.serviceText}>
               <h4>経験豊富なスタッフが地元神戸市で集荷と配送を行っております</h4>
@@ -137,7 +140,7 @@ export function ServicesPage() {
           </p>
           <div className={styles.serviceContent}>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="BPO事業" />
+              <img src={serviceSection4Img} alt="BPO事業" />
             </div>
             <div className={styles.serviceText}>
               <h4>ノンコア業務に悩まされている企業様のお力になります</h4>
@@ -178,7 +181,7 @@ export function ServicesPage() {
               </p>
             </div>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="ポスティング" />
+              <img src={serviceSection1Img} alt="ポスティング" />
             </div>
           </div>
         </div>
@@ -196,7 +199,7 @@ export function ServicesPage() {
           </p>
           <div className={styles.serviceContent}>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="ドローン空撮" />
+              <img src={serviceSection2Img} alt="ドローン空撮" />
             </div>
             <div className={styles.serviceText}>
               <h4>家族写真・友達との集合写真などかけがえのない思い出を<br />ドローンならではの最高の演出で体験ください</h4>
@@ -227,7 +230,7 @@ export function ServicesPage() {
               </p>
             </div>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="デザイン" />
+              <img src={serviceSection3Img} alt="デザイン" />
             </div>
           </div>
         </div>
@@ -245,7 +248,7 @@ export function ServicesPage() {
           </p>
           <div className={styles.serviceContent}>
             <div className={styles.serviceImage}>
-              <img src={serviceStaffImg} alt="賃貸管理" />
+              <img src={serviceSection4Img} alt="賃貸管理" />
             </div>
             <div className={styles.serviceText}>
               <h4>神戸市・三田市をメインでマンションや戸建賃貸、看板、駐車場の紹介をさせていただきます</h4>

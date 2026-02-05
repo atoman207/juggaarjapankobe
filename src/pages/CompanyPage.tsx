@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
 import styles from './CompanyPage.module.css'
 
-// Import images
-import heroImg from '@/assets/image/hero_company.jpg'
+// Import images - using correct images from reference site
+import heroImg from '@/assets/image/hero_company_ref.jpg'
 import companyBuildingImg from '@/assets/image/company.jpg'
 
 export function CompanyPage() {
