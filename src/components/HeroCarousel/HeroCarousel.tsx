@@ -57,10 +57,10 @@ export function HeroCarousel({
         <div className={styles.overlayContent}>
           {title && <h1 className={styles.overlayTitle}>{title}</h1>}
           {subtitle && <p className={styles.overlaySubtitle}>{subtitle}</p>}
-          <a href={scrollTarget} className={styles.scrollDown}>
-            SCROLL DOWN
-          </a>
         </div>
+        <a href={scrollTarget} className={styles.scrollDown} aria-label="Scroll down">
+          {/* Arrow rendered via CSS */}
+        </a>
       </div>
 
       {/* Navigation Arrows */}
