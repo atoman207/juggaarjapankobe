@@ -2,16 +2,16 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 80vh;
-  min-height: 500px;
-  max-height: 800px;
+  height: 85vh;
+  min-height: 550px;
+  max-height: 850px;
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .hero {
-    height: 60vh;
-    min-height: 350px;
+    height: 65vh;
+    min-height: 400px;
   }
 }
 
@@ -54,11 +54,11 @@
 }
 
 .overlayContent {
-  max-width: 550px;
-  background: rgba(0, 163, 219, 0.9);
-  padding: 35px 45px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  background: rgba(0, 163, 219, 0.92);
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 768px) {
@@ -69,37 +69,37 @@
   }
 
   .overlayContent {
-    padding: 24px 28px;
+    padding: 28px 32px;
     max-width: 100%;
   }
 }
 
 .overlayTitle {
   color: #fff;
-  font-size: 2.25rem;
+  font-size: 2.375rem;
   font-weight: 700;
-  line-height: 1.5;
-  margin: 0 0 16px;
-  letter-spacing: 0.02em;
+  line-height: 1.55;
+  margin: 0 0 18px;
+  letter-spacing: 0.015em;
 }
 
 @media (max-width: 768px) {
   .overlayTitle {
-    font-size: 1.625rem;
+    font-size: 1.75rem;
   }
 }
 
 .overlaySubtitle {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.97);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin: 0 0 26px;
   font-weight: 400;
 }
 
 @media (max-width: 768px) {
   .overlaySubtitle {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
   }
 }
 

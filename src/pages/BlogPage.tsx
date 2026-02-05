@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
 import styles from './BlogPage.module.css'
 
-// Import images - using correct images from reference site
+// Import images
 import heroImg from '@/assets/image/hero_blog_ref.jpg'
 import serviceImg from '@/assets/image/service.jpg'
 import service01Img from '@/assets/image/service01.jpg'
 
-// Actual blog posts from reference site
+// Blog posts data from original site
 const BLOG_POSTS = [
   {
     id: '20250128181724',
@@ -43,7 +43,7 @@ const BLOG_POSTS = [
   },
 ]
 
-// Column posts from reference site
+// Column posts
 const COLUMN_POSTS = [
   {
     id: '22120804212552',
@@ -63,23 +63,49 @@ const COLUMN_POSTS = [
   },
 ]
 
-// Combined posts
 const ALL_POSTS = [...BLOG_POSTS, ...COLUMN_POSTS]
 
-// Categories
+// Categories sidebar
 const CATEGORIES = [
-  { name: 'すべて', count: 30 },
   { name: 'ブログ', count: 20 },
   { name: 'コラム', count: 10 },
 ]
 
-// Tags
-const TAGS = [
-  '神戸市', '配送', 'ポスティング', 'ドライバー', '求人',
-  '三田市', '神戸市北区', '軽貨物', 'チャーター便', '五社駅',
+// Monthly archive - extensive list matching the original site
+const MONTHLY_ARCHIVE = [
+  { label: '2025年01月', count: 4 },
+  { label: '2024年12月', count: 3 },
+  { label: '2024年11月', count: 2 },
+  { label: '2024年10月', count: 3 },
+  { label: '2024年09月', count: 2 },
+  { label: '2024年08月', count: 1 },
+  { label: '2024年07月', count: 2 },
+  { label: '2024年06月', count: 3 },
+  { label: '2024年05月', count: 2 },
+  { label: '2024年04月', count: 1 },
+  { label: '2024年03月', count: 2 },
+  { label: '2024年02月', count: 1 },
+  { label: '2024年01月', count: 2 },
+  { label: '2023年12月', count: 1 },
+  { label: '2023年11月', count: 2 },
+  { label: '2023年10月', count: 1 },
+  { label: '2023年09月', count: 2 },
+  { label: '2023年08月', count: 1 },
+  { label: '2023年07月', count: 3 },
+  { label: '2023年06月', count: 2 },
+  { label: '2023年05月', count: 1 },
+  { label: '2023年04月', count: 2 },
+  { label: '2023年03月', count: 1 },
+  { label: '2023年02月', count: 2 },
+  { label: '2023年01月', count: 1 },
+  { label: '2022年12月', count: 3 },
+  { label: '2022年11月', count: 2 },
+  { label: '2022年10月', count: 1 },
+  { label: '2022年09月', count: 2 },
+  { label: '2022年08月', count: 1 },
 ]
 
-export function BlogPage() {
+export function BlogPage(): React.ReactElement {
   return (
     <div className={styles.page}>
       <PageHero
@@ -89,40 +115,25 @@ export function BlogPage() {
         breadcrumbs={[{ label: 'ブログ' }]}
       />
 
-      {/* Main Intro Section */}
-      <section className={styles.introSection}>
-        <div className={styles.container}>
-          <span className={styles.sectionLabel}>BLOG</span>
-          <h2 className={styles.sectionTitle}>
-            耳寄りな最新情報を随時お届けいたします
-          </h2>
-          <p className={styles.introText}>
-            サービスの詳細や採用情報、地域の物流に関する情報など、様々なトピックをお届けします。
-          </p>
-        </div>
-      </section>
-
-      {/* Blog Content */}
+      {/* Blog Content - 2 column layout */}
       <section className={styles.blogSection}>
         <div className={styles.container}>
           <div className={styles.blogLayout}>
-            {/* Main Content */}
+            {/* Main Content - Left */}
             <div className={styles.blogMain}>
-              <div className={styles.blogGrid}>
-                {ALL_POSTS.map((post) => (
-                  <Link key={post.id} to={`/blog/${post.id}`} className={styles.blogCard}>
-                    <div className={styles.blogImage}>
-                      <img src={post.image} alt={post.title} />
-                      <span className={styles.blogCategory}>{post.category}</span>
-                    </div>
-                    <div className={styles.blogContent}>
-                      <span className={styles.blogDate}>{post.date}</span>
-                      <h3 className={styles.blogTitle}>{post.title}</h3>
-                      <p className={styles.blogExcerpt}>{post.excerpt}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              {ALL_POSTS.map((post) => (
+                <Link key={post.id} to={`/blog/${post.id}`} className={styles.blogCard}>
+                  <div className={styles.blogCardImage}>
+                    <img src={post.image} alt={post.title} />
+                  </div>
+                  <div className={styles.blogCardBody}>
+                    <span className={styles.blogDate}>{post.date}</span>
+                    <span className={styles.blogCategory}>{post.category}</span>
+                    <h3 className={styles.blogTitle}>{post.title}</h3>
+                    <p className={styles.blogExcerpt}>{post.excerpt}</p>
+                  </div>
+                </Link>
+              ))}
 
               {/* Pagination */}
               <div className={styles.pagination}>
@@ -133,8 +144,8 @@ export function BlogPage() {
               </div>
             </div>
 
-            {/* Sidebar */}
-            <aside className={styles.blogSidebar}>
+            {/* Sidebar - Right */}
+            <aside className={styles.sidebar}>
               {/* Categories */}
               <div className={styles.sidebarWidget}>
                 <h4 className={styles.widgetTitle}>カテゴリー</h4>
@@ -150,27 +161,15 @@ export function BlogPage() {
                 </ul>
               </div>
 
-              {/* Tags */}
+              {/* Monthly Archive */}
               <div className={styles.sidebarWidget}>
-                <h4 className={styles.widgetTitle}>タグ</h4>
-                <div className={styles.tagCloud}>
-                  {TAGS.map((tag, index) => (
-                    <Link key={index} to={`/blog/tag/${tag}`} className={styles.tag}>
-                      {tag}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Recent Posts */}
-              <div className={styles.sidebarWidget}>
-                <h4 className={styles.widgetTitle}>最新記事</h4>
-                <ul className={styles.recentList}>
-                  {ALL_POSTS.slice(0, 5).map((post) => (
-                    <li key={post.id}>
-                      <Link to={`/blog/${post.id}`}>
-                        <span className={styles.recentDate}>{post.date}</span>
-                        <span className={styles.recentTitle}>{post.title}</span>
+                <h4 className={styles.widgetTitle}>月別アーカイブ</h4>
+                <ul className={styles.archiveList}>
+                  {MONTHLY_ARCHIVE.map((month, index) => (
+                    <li key={index}>
+                      <Link to={`/blog/archive/${month.label}`}>
+                        {month.label}
+                        <span>({month.count})</span>
                       </Link>
                     </li>
                   ))}
@@ -182,26 +181,26 @@ export function BlogPage() {
       </section>
 
       {/* Related Posts Section */}
-      <section className={styles.relatedPostsSection}>
+      <section className={styles.relatedSection}>
         <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED POSTS</span>
+          <h3 className={styles.relatedTitle}>
+            <span className={styles.relatedLabel}>RELATED POSTS</span>
             関連ページ
           </h3>
-          <div className={styles.relatedPostsGrid}>
-            <Link to="/service" className={styles.relatedPostCard}>
+          <div className={styles.relatedGrid}>
+            <Link to="/service" className={styles.relatedCard}>
               <h4>サービス・料金表</h4>
               <p>各種サービスの詳細と料金表をご確認いただけます。</p>
             </Link>
-            <Link to="/recruit" className={styles.relatedPostCard}>
+            <Link to="/recruit" className={styles.relatedCard}>
               <h4>採用情報</h4>
               <p>新しいスタッフを募集しております。</p>
             </Link>
-            <Link to="/company" className={styles.relatedPostCard}>
+            <Link to="/company" className={styles.relatedCard}>
               <h4>会社概要</h4>
               <p>株式会社Juggaar Japanについてご紹介。</p>
             </Link>
-            <Link to="/contact" className={styles.relatedPostCard}>
+            <Link to="/contact" className={styles.relatedCard}>
               <h4>お問い合わせ</h4>
               <p>ご質問・ご相談はこちらから。</p>
             </Link>

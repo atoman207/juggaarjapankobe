@@ -201,49 +201,38 @@ export function HomePage(): React.ReactElement {
       </section>
 
       {/* ============================================ */}
-      {/* POSTING Section - 2 Column Layout */}
+      {/* POSTING Section - Single Column Stacked */}
       {/* ============================================ */}
       <section className={styles.postingSection}>
         <div className={styles.container}>
-          <div className={styles.postingGrid}>
-            {/* Left Column - Text */}
-            <div className={styles.postingText}>
-              <h2 className={styles.postingTitle}>
-                誠実なポスティングサービスが地元KOBEで好評です
-              </h2>
-              <div className={styles.postingBadge}>
-                <span className={styles.badgeLabel}>顧客様リピート率</span>
-                <span className={styles.badgeValue}>95<small>％</small></span>
-              </div>
-              <p className={styles.postingDescription}>
-                弊社の理念でもある誠実さをいかなる場合も貫き<br />
-                1枚1枚を誠実に・丁寧に・確実に配布いたします。
-              </p>
-              <p className={styles.postingDescription}>
-                配布の際は取引先様の社員になった気持ちで<br />
-                反響のでるポスティングを徹底致します。
-              </p>
-              <p className={styles.postingTagline}>
-                神戸市　ポスティング　業者　なら迷わず<br />
-                ジュガールジャパンまで
-              </p>
+          {/* Text Content */}
+          <div className={styles.postingText}>
+            <h2 className={styles.postingTitle}>
+              誠実なポスティングサービスが地元KOBEで好評です
+            </h2>
+            <div className={styles.postingBadge}>
+              <span className={styles.badgeLabel}>顧客様リピート率</span>
+              <span className={styles.badgeValue}>95<small>％</small></span>
             </div>
-
-            {/* Right Column - Image */}
-            <div className={styles.postingImage}>
-              <img src={posting02} alt="ポスティングサービス" />
-            </div>
+            <p className={styles.postingDescription}>
+              弊社の理念でもある誠実さをいかなる場合も貫き<br />
+              1枚1枚を誠実に・丁寧に・確実に配布いたします。
+            </p>
+            <p className={styles.postingDescription}>
+              配布の際は取引先様の社員になった気持ちで<br />
+              反響のでるポスティングを徹底致します。
+            </p>
+            <p className={styles.postingTagline}>
+              神戸市　ポスティング　業者　なら迷わず<br />
+              ジュガールジャパンまで
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* ============================================ */}
-      {/* BPO Large Banner Graphics - Full Width */}
-      {/* ============================================ */}
-      <section className={styles.bpoSection}>
-        <div className={styles.bpoBanners}>
-          <img src={posting01} alt="ポスティング案内チラシ1" className={styles.bpoBanner} />
-          <img src={posting02} alt="ポスティング案内チラシ2" className={styles.bpoBanner} />
+          {/* Flyer Images - Stacked Below Text */}
+          <div className={styles.postingFlyers}>
+            <img src={posting01} alt="ポスティング案内チラシ" className={styles.postingFlyerImg} />
+            <img src={posting02} alt="ポスティング実績・反響" className={styles.postingFlyerImg} />
+          </div>
         </div>
       </section>
 
