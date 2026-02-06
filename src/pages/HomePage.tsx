@@ -16,72 +16,9 @@ import recruit01 from '@/assets/image/recruit01.jpg'
 import recruit02 from '@/assets/image/recruit02.jpg'
 import companyImg from '@/assets/image/company.jpg'
 import parallax1 from '@/assets/image/parallax1.jpg'
-import parallax2 from '@/assets/image/parallax2.jpg'
 import serviceImg from '@/assets/image/service.jpg'
 
 const HERO_IMAGES = [mv1, mv2, mv3]
-
-// Blog posts data
-const BLOG_POSTS = [
-  {
-    id: 1,
-    date: '2025/01/28',
-    title: '神戸電鉄五社駅から徒歩1分！新しいスタイルのテレマーケティングスペース',
-    link: '/blog/detail/20250128181724',
-  },
-  {
-    id: 2,
-    date: '2025/01/27',
-    title: '新たに話題のキッチンカースペースをご用意しました！',
-    link: '/blog/detail/20250128181229',
-  },
-  {
-    id: 3,
-    date: '2025/01/27',
-    title: '軽貨物の仕事をお探しの方に朗報です！',
-    link: '/blog/detail/3',
-  },
-  {
-    id: 4,
-    date: '2025/01/24',
-    title: '新しいスタートを切る絶好のチャンスです！',
-    link: '/blog/detail/4',
-  },
-]
-
-// Media posts data
-const MEDIA_POSTS = [
-  {
-    id: 1,
-    date: '2025/12/30',
-    title: '神戸市兵庫区で軽貨物の求人を探す方必見！未経験から高収入も可能な仕事と応募ポイント徹底解説',
-    link: '/media/detail/koubeshihyougoku',
-  },
-  {
-    id: 2,
-    date: '2025/12/24',
-    title: '神戸市灘区で軽貨物求人！未経験から始めるドライバーの仕事探し',
-    link: '/media/detail/koubeshinadaku',
-  },
-  {
-    id: 3,
-    date: '2025/12/18',
-    title: '軽貨物求人おすすめの会社比較と選び方最新ガイド｜仕事内容や収入相場・口コミも解説',
-    link: '/media/detail/20251218',
-  },
-  {
-    id: 4,
-    date: '2025/12/12',
-    title: '軽貨物引越し求人の仕事内容と収入相場！未経験から始めるドライバー仕事の探し方と応募ポイント',
-    link: '/media/detail/20251212',
-  },
-  {
-    id: 5,
-    date: '2025/12/06',
-    title: '軽貨物の求人で日払いの仕事で稼ぐ！未経験OKのドライバー募集と収入・応募条件を解説',
-    link: '/media/detail/20251206',
-  },
-]
 
 export function HomePage(): React.ReactElement {
   return (
@@ -101,16 +38,10 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.conceptSection}>
         <div className={styles.container}>
-          <div className={styles.conceptHeader}>
-            <span className={styles.conceptLabel}>CONCEPT</span>
-            <div className={styles.conceptServices}>
-              <span>貨物軽自動車運送事業</span>
-              <span>ポスティング事業</span>
-              <span>BPO事業（事業開発・営業支援）</span>
-              <span>ドローン空撮</span>
-              <span>グラフィックデザイン・WEBデザイン制作事業</span>
-            </div>
+          <div className={styles.conceptBusinessTypes}>
+            貨物軽自動車運送事業　ポスティング事業　BPO事業（事業開発・営業支援）　ドローン空撮　グラフィックデザイン・WEBデザイン制作事業
           </div>
+          <span className={styles.sectionLabel}>CONCEPT</span>
           <h2 className={styles.conceptTitle}>
             弊社のサービスを通じて人々の<br />
             幸福と生活の向上に関われる企業でありたい
@@ -143,7 +74,7 @@ export function HomePage(): React.ReactElement {
           </div>
         </div>
       </section>
-    
+
 
       {/* ============================================ */}
       {/* SERVICE Detail Cards with Images */}
@@ -153,10 +84,10 @@ export function HomePage(): React.ReactElement {
           <div className={styles.serviceCards}>
             {/* Service Card 01 */}
             <div className={styles.serviceCard}>
-              <div className={styles.serviceCardImage}>
+              <div className={styles.serviceCardImageTop}>
                 <img src={service01} alt="地道な努力で信頼を積み重ねております" />
               </div>
-              <div className={styles.serviceCardContent}>
+              <div className={styles.serviceCardBody}>
                 <span className={styles.serviceCardNumber}>SERVICE 01</span>
                 <h3 className={styles.serviceCardTitle}>地道な努力で信頼を積み重ねております</h3>
                 <p className={styles.serviceCardText}>
@@ -168,10 +99,10 @@ export function HomePage(): React.ReactElement {
 
             {/* Service Card 02 */}
             <div className={styles.serviceCard}>
-              <div className={styles.serviceCardImage}>
+              <div className={styles.serviceCardImageTop}>
                 <img src={service02} alt="お客様が求めるサービスを形にしております" />
               </div>
-              <div className={styles.serviceCardContent}>
+              <div className={styles.serviceCardBody}>
                 <span className={styles.serviceCardNumber}>SERVICE 02</span>
                 <h3 className={styles.serviceCardTitle}>お客様が求めるサービスを形にしております</h3>
                 <p className={styles.serviceCardText}>
@@ -184,10 +115,10 @@ export function HomePage(): React.ReactElement {
 
             {/* Service Card 03 */}
             <div className={styles.serviceCard}>
-              <div className={styles.serviceCardImage}>
+              <div className={styles.serviceCardImageTop}>
                 <img src={service03} alt="依頼して良かったと喜ばれるように尽力" />
               </div>
-              <div className={styles.serviceCardContent}>
+              <div className={styles.serviceCardBody}>
                 <span className={styles.serviceCardNumber}>SERVICE 03</span>
                 <h3 className={styles.serviceCardTitle}>依頼して良かったと喜ばれるように尽力</h3>
                 <p className={styles.serviceCardText}>
@@ -277,6 +208,59 @@ export function HomePage(): React.ReactElement {
       </section>
 
       {/* ============================================ */}
+      {/* Info/Blog/QA Grid - 3 Column Section */}
+      {/* ============================================ */}
+      <section className={styles.infoGridSection}>
+        <div className={styles.container}>
+          <div className={styles.infoGrid}>
+            {/* Column 1: Q&A */}
+            <div className={styles.infoColumn}>
+              <h3 className={styles.infoColumnTitle}>よくある質問</h3>
+              <p className={styles.infoColumnLabel}>Q&A</p>
+              <ul className={styles.infoList}>
+                <li><RouterLink to="/faq">給料日・報酬日はいつですか？</RouterLink></li>
+                <li><RouterLink to="/faq">マイカー・バイク通勤は可能ですか？</RouterLink></li>
+                <li><RouterLink to="/faq">未経験ですが大丈夫ですか？</RouterLink></li>
+                <li><RouterLink to="/faq">雇用形態は選べますか？</RouterLink></li>
+              </ul>
+              <RouterLink to="/faq" className={styles.infoViewMore}>
+                VIEW MORE
+              </RouterLink>
+            </div>
+
+            {/* Column 2: News & Blog */}
+            <div className={styles.infoColumn}>
+              <h3 className={styles.infoColumnTitle}>新着情報・ブログ</h3>
+              <p className={styles.infoColumnLabel}>NEWS & BLOG</p>
+              <ul className={styles.infoList}>
+                <li><RouterLink to="/blog">神戸電鉄五社駅から徒歩1分！</RouterLink></li>
+                <li><RouterLink to="/blog">キッチンカースペースをご用意</RouterLink></li>
+                <li><RouterLink to="/blog">軽貨物の仕事をお探しの方に朗報</RouterLink></li>
+              </ul>
+              <RouterLink to="/blog" className={styles.infoViewMore}>
+                VIEW MORE
+              </RouterLink>
+            </div>
+
+            {/* Column 3: Logistics Service */}
+            <div className={styles.infoColumn}>
+              <h3 className={styles.infoColumnTitle}>物流サービス</h3>
+              <p className={styles.infoColumnLabel}>LOGISTICS SERVICE</p>
+              <ul className={styles.infoList}>
+                <li><RouterLink to="/service">軽貨物配送サービス</RouterLink></li>
+                <li><RouterLink to="/service">ポスティングサービス</RouterLink></li>
+                <li><RouterLink to="/service">チャーター便</RouterLink></li>
+                <li><RouterLink to="/service">BPO事業</RouterLink></li>
+              </ul>
+              <RouterLink to="/service" className={styles.infoViewMore}>
+                VIEW MORE
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* STAFF Section - with parallax background */}
       {/* ============================================ */}
       <section className={styles.staffSection} style={{ backgroundImage: `url(${parallax1})` }}>
@@ -292,79 +276,6 @@ export function HomePage(): React.ReactElement {
             </RouterLink>
           </div>
         </div>
-      </section>
-
-      {/* ============================================ */}
-      {/* Q&A Section with Actual Questions */}
-      {/* ============================================ */}
-      <section className={styles.qaSection}>
-        <div className={styles.container}>
-          <span className={styles.sectionLabel}>Q&A</span>
-          <h2 className={styles.sectionTitle}>サービスや求人に関する様々なご質問に回答しております</h2>
-
-          {/* Q&A Items shown on homepage */}
-          <div className={styles.qaItems}>
-            <div className={styles.qaItem}>
-              <div className={styles.qaQuestion}>
-                <span className={styles.qaIcon}>Q</span>
-                <p>給料日・報酬日はいつですか？</p>
-              </div>
-              <div className={styles.qaAnswer}>
-                <span className={styles.qaIcon}>A</span>
-                <div>
-                  <p>月末〆翌月25日ご入金</p>
-                  <p>＝正社員</p>
-                  <p>月末〆翌々月5日ご入金</p>
-                  <p>＝業務委託</p>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.qaItem}>
-              <div className={styles.qaQuestion}>
-                <span className={styles.qaIcon}>Q</span>
-                <p>マイカー・バイク通勤は可能ですか？</p>
-              </div>
-              <div className={styles.qaAnswer}>
-                <span className={styles.qaIcon}>A</span>
-                <p>はい、マイカー・バイクでの通勤も可能です。<br />駐車場完備。</p>
-              </div>
-            </div>
-
-            <div className={styles.qaItem}>
-              <div className={styles.qaQuestion}>
-                <span className={styles.qaIcon}>Q</span>
-                <p>未経験ですが大丈夫ですか？</p>
-              </div>
-              <div className={styles.qaAnswer}>
-                <span className={styles.qaIcon}>A</span>
-                <p>はい、大丈夫です。<br />ベテラン社員より<br />新人研修を行っておりますのでご安心ください！</p>
-              </div>
-            </div>
-
-            <div className={styles.qaItem}>
-              <div className={styles.qaQuestion}>
-                <span className={styles.qaIcon}>Q</span>
-                <p>雇用形態は選べますか？</p>
-              </div>
-              <div className={styles.qaAnswer}>
-                <span className={styles.qaIcon}>A</span>
-                <p>はい、<br />正社員・アルバイト・個人事業主から<br />ご自身のワークスタイルに合った形態をお選びください。<br />※正社員は枠数に限りあり</p>
-              </div>
-            </div>
-          </div>
-
-          <RouterLink to="/faq" className={styles.linkButton}>
-            よくある質問へ
-          </RouterLink>
-        </div>
-      </section>
-
-      {/* ============================================ */}
-      {/* Parallax 2 */}
-      {/* ============================================ */}
-      <section className={styles.parallaxSection} style={{ backgroundImage: `url(${parallax2})` }}>
-        <div className={styles.parallaxOverlay} />
       </section>
 
       {/* ============================================ */}
@@ -435,54 +346,6 @@ export function HomePage(): React.ReactElement {
       </section>
 
       {/* ============================================ */}
-      {/* BLOG Section */}
-      {/* ============================================ */}
-      <section className={styles.blogSection}>
-        <div className={styles.container}>
-          <span className={styles.sectionLabel}>BLOG</span>
-          <h2 className={styles.sectionTitle}>スタッフの声と共にサービスの詳細や耳寄りな情報を更新</h2>
-          <p className={styles.blogSubtitle}>企業としての様々な理念をお伝えしております</p>
-
-          <div className={styles.blogList}>
-            {BLOG_POSTS.map((post) => (
-              <RouterLink key={post.id} to={post.link} className={styles.blogItem}>
-                <span className={styles.blogDate}>{post.date}</span>
-                <span className={styles.blogTitle}>{post.title}</span>
-              </RouterLink>
-            ))}
-          </div>
-
-          <RouterLink to="/blog" className={styles.linkButton}>
-            ブログへ
-          </RouterLink>
-        </div>
-      </section>
-
-      {/* ============================================ */}
-      {/* MEDIA Section */}
-      {/* ============================================ */}
-      <section className={styles.mediaSection}>
-        <div className={styles.container}>
-          <span className={styles.sectionLabel}>MEDIA</span>
-          <h2 className={styles.sectionTitle}>配送のプロが語る生活に役立つ情報発信ページ</h2>
-          <p className={styles.mediaSubtitle}>日々の生活に役立つ配送のヒントや、物流業界の最新動向、地域密着型サービスの魅力をわかりやすくお伝えします。</p>
-
-          <div className={styles.mediaList}>
-            {MEDIA_POSTS.map((post) => (
-              <RouterLink key={post.id} to={post.link} className={styles.mediaItem}>
-                <span className={styles.mediaDate}>{post.date}</span>
-                <span className={styles.mediaTitle}>{post.title}</span>
-              </RouterLink>
-            ))}
-          </div>
-
-          <RouterLink to="/media" className={styles.linkButton}>
-            メディアへ
-          </RouterLink>
-        </div>
-      </section>
-
-      {/* ============================================ */}
       {/* Reviews / Testimonials Section */}
       {/* ============================================ */}
       <section className={styles.reviewsSection}>
@@ -516,6 +379,63 @@ export function HomePage(): React.ReactElement {
                 神戸市の配送･株式会社JuggaarJapanのお客様の声
               </h3>
               <span className={styles.reviewLink}>をもっと見る　＞</span>
+            </RouterLink>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* Professional Column Teasers - 3 Column */}
+      {/* ============================================ */}
+      <section className={styles.columnTeasersSection}>
+        <div className={styles.container}>
+          <span className={styles.sectionLabel}>COLUMN</span>
+          <h2 className={styles.sectionTitle}>配送のプロが語る生活に役立つ情報発信ページ</h2>
+          <p className={styles.columnSubtitle}>
+            日々の生活に役立つ配送のヒントや、物流業界の最新動向、地域密着型サービスの魅力をわかりやすくお伝えします。
+          </p>
+
+          <div className={styles.columnCards}>
+            <RouterLink to="/column/detail/1" className={styles.columnCard}>
+              <div className={styles.columnCardImage}>
+                <img src={service01} alt="コラム記事1" />
+              </div>
+              <div className={styles.columnCardBody}>
+                <span className={styles.columnDate}>2025.01.15</span>
+                <h3 className={styles.columnCardTitle}>軽貨物配送で成功するための秘訣</h3>
+                <p className={styles.columnCardExcerpt}>
+                  効率的な配送ルートの組み方や、お客様とのコミュニケーションのコツをご紹介...
+                </p>
+                <span className={styles.columnReadMore}>READ MORE →</span>
+              </div>
+            </RouterLink>
+
+            <RouterLink to="/column/detail/2" className={styles.columnCard}>
+              <div className={styles.columnCardImage}>
+                <img src={service02} alt="コラム記事2" />
+              </div>
+              <div className={styles.columnCardBody}>
+                <span className={styles.columnDate}>2025.01.10</span>
+                <h3 className={styles.columnCardTitle}>ポスティングの効果を最大化する方法</h3>
+                <p className={styles.columnCardExcerpt}>
+                  配布エリアの選定から、反響率を高めるタイミングまで詳しく解説...
+                </p>
+                <span className={styles.columnReadMore}>READ MORE →</span>
+              </div>
+            </RouterLink>
+
+            <RouterLink to="/column/detail/3" className={styles.columnCard}>
+              <div className={styles.columnCardImage}>
+                <img src={service03} alt="コラム記事3" />
+              </div>
+              <div className={styles.columnCardBody}>
+                <span className={styles.columnDate}>2025.01.05</span>
+                <h3 className={styles.columnCardTitle}>地域密着型サービスの価値とは</h3>
+                <p className={styles.columnCardExcerpt}>
+                  神戸市で長年培ってきた信頼関係と、地域に根差したサービスの強みについて...
+                </p>
+                <span className={styles.columnReadMore}>READ MORE →</span>
+              </div>
             </RouterLink>
           </div>
         </div>

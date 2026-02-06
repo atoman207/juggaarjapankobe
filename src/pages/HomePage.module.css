@@ -67,7 +67,6 @@
   text-decoration: none;
 }
 
-/* ============================================ */
 /* CONCEPT Section */
 /* ============================================ */
 
@@ -76,9 +75,12 @@
   background: #fff;
 }
 
-.conceptHeader {
+.conceptBusinessTypes {
   text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
   margin-bottom: 45px;
+  letter-spacing: 0.5px;
 }
 
 .conceptLabel {
@@ -106,6 +108,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   border-radius: 5px;
+  letter-spacing: 0.5px;
 }
 
 .conceptTitle {
@@ -234,7 +237,7 @@
 }
 
 /* ============================================ */
-/* SERVICE Detail Cards Section with Images */
+/* SERVICE Detail Cards Section - Vertical Layout */
 /* ============================================ */
 
 .serviceCardsSection {
@@ -256,26 +259,34 @@
 }
 
 .serviceCard {
-  position: relative;
   background: var(--bg-white);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  cursor: pointer;
+  transition: transform var(--transition-normal);
 }
 
-.serviceCardImage {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+.serviceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
-.serviceCardImage img {
+/* Image at Top */
+.serviceCardImageTop {
   width: 100%;
-  height: auto;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.serviceCardImageTop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform var(--transition-slow);
 }
 
-.serviceCard:hover .serviceCardImage img {
+.serviceCard:hover .serviceCardImageTop img {
   transform: scale(1.05);
 }
 
@@ -313,13 +324,106 @@
   color: rgba(255, 255, 255, 0.97);
   margin: 0;
   text-align: left;
-  display: none;
+}
+
+/* ============================================ */
+/* Secondary Contact Banner */
+/* ============================================ */
+
+.secondaryContactBanner {
+  padding: 50px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.contactBannerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 @media (min-width: 769px) {
-  .serviceCard:hover .serviceCardText {
-    display: block;
+  .contactBannerContent {
+    flex-direction: row;
+    justify-content: space-between;
   }
+}
+
+.contactBannerPhone {
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  .contactBannerPhone {
+    text-align: left;
+  }
+}
+
+.bannerPhoneNumber {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.bannerPhoneNumber:hover {
+  color: #38B6D3;
+}
+
+@media (max-width: 768px) {
+  .bannerPhoneNumber {
+    font-size: 2rem;
+  }
+}
+
+.bannerBusinessHours {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.contactBannerButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bannerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  background: #38B6D3;
+  color: var(--text-white);
+  border: 2px solid #38B6D3;
+}
+
+.bannerBtn:hover {
+  background: #2ca3bf;
+  border-color: #2ca3bf;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.bannerBtnOutline {
+  background: transparent;
+  color: #38B6D3;
+}
+
+.bannerBtnOutline:hover {
+  background: #38B6D3;
+  color: var(--text-white);
 }
 
 /* ============================================ */
@@ -468,6 +572,105 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================ */
+/* Info/Blog/QA Grid - 3 Column Section */
+/* ============================================ */
+
+.infoGridSection {
+  padding: 60px 0;
+  background: var(--bg-white);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 769px) {
+  .infoGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+.infoColumn {
+  text-align: center;
+  padding: 30px 20px;
+  background: #f8f9fa;
+  border-radius: var(--radius-md);
+}
+
+.infoColumnTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+
+.infoColumnLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38B6D3;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.infoList li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.infoList li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #38B6D3;
+  font-size: 0.875rem;
+}
+
+.infoList a {
+  color: var(--text-body);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  transition: color var(--transition-fast);
+}
+
+.infoList a:hover {
+  color: #38B6D3;
+  text-decoration: underline;
+}
+
+.infoViewMore {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: #38B6D3;
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+}
+
+.infoViewMore:hover {
+  background: #2ca3bf;
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 /* ============================================ */
@@ -925,6 +1128,105 @@
 
 .mediaItem:hover .mediaTitle {
   color: var(--primary-blue);
+}
+
+/* ============================================ */
+/* Professional Column Teasers - 3 Column */
+/* ============================================ */
+
+.columnTeasersSection {
+  padding: 60px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.columnSubtitle {
+  font-size: 1rem;
+  color: var(--text-body);
+  margin: 0 auto 40px;
+  max-width: 700px;
+  line-height: 1.8;
+}
+
+.columnCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 769px) {
+  .columnCards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.columnCard {
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  display: block;
+}
+
+.columnCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.columnCardImage {
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.columnCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.columnCard:hover .columnCardImage img {
+  transform: scale(1.05);
+}
+
+.columnCardBody {
+  padding: 24px;
+  text-align: left;
+}
+
+.columnDate {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.columnCardTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.columnCardExcerpt {
+  font-size: 0.9375rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+
+.columnReadMore {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #38B6D3;
+  letter-spacing: 1px;
 }
 
 /* ============================================ */
