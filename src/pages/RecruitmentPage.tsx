@@ -24,7 +24,7 @@ export function RecruitmentPage() {
     <div className={styles.page}>
       <PageHero
         title="採用情報"
-        titleEn="RECRUIT"
+        titleEn="採用情報"
         backgroundImage={heroImg}
         breadcrumbs={[{ label: '採用情報' }]}
       />

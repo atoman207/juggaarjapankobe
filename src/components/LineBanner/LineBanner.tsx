@@ -28,14 +28,14 @@ export function LineBanner({ lineUrl = DEFAULT_LINE_URL }: LineBannerProps): JSX
           >
             <span className={styles.linkUrl}>{lineUrl}</span>
             <span className={styles.linkDesc}>
-              株式会社 Juggaar Japan's LINE official account profile page. Add them as a friend for the latest news.
+              株式会社 Juggaar Japan の公式LINEアカウントプロフィールページ。最新情報を受け取るには友だち追加してください。
             </span>
           </a>
 
           <span className={styles.arrow}>⇩</span>
           <p className={styles.stepText}>追加後、アナタのフルネームを送信</p>
           <span className={styles.arrow}>⇩</span>
-          <p className={styles.stepText}>直接、当社Staffとやり取りStart！！</p>
+          <p className={styles.stepText}>直接、当社スタッフとやり取り開始！！</p>
         </div>
       </div>
     </section>

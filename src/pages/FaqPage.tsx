@@ -67,7 +67,7 @@ export function FaqPage() {
     <div className={styles.page}>
       <PageHero
         title="よくある質問"
-        titleEn="FAQ"
+        titleEn="よくある質問"
         backgroundImage={heroImg}
         breadcrumbs={[{ label: 'よくある質問' }]}
       />

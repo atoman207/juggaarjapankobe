@@ -41,7 +41,7 @@ export function HomePage(): React.ReactElement {
           <div className={styles.conceptBusinessTypes}>
             貨物軽自動車運送事業　ポスティング事業　BPO事業（事業開発・営業支援）　ドローン空撮　グラフィックデザイン・WEBデザイン制作事業
           </div>
-          <span className={styles.sectionLabel}>CONCEPT</span>
+          <span className={styles.sectionLabel}>コンセプト</span>
           <h2 className={styles.conceptTitle}>
             弊社のサービスを通じて人々の<br />
             幸福と生活の向上に関われる企業でありたい
@@ -69,7 +69,7 @@ export function HomePage(): React.ReactElement {
       <section className={styles.serviceParallaxSection}>
         <div className={styles.serviceParallaxOverlay}>
           <div className={styles.container}>
-            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>SERVICE</span>
+            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>サービス</span>
             <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>信頼できる集荷と配送のプロとして神戸市で高評価を獲得</h2>
           </div>
         </div>
@@ -88,7 +88,7 @@ export function HomePage(): React.ReactElement {
                 <img src={service01} alt="地道な努力で信頼を積み重ねております" />
               </div>
               <div className={styles.serviceCardBody}>
-                <span className={styles.serviceCardNumber}>SERVICE 01</span>
+                <span className={styles.serviceCardNumber}>サービス 01</span>
                 <h3 className={styles.serviceCardTitle}>地道な努力で信頼を積み重ねております</h3>
                 <p className={styles.serviceCardText}>
                   ドライバーをはじめ、スタッフ一人ひとりが自分に任された仕事に自覚と責任を持ち、創業以来長きに亘って、お客様からの信頼を積み重ねてまいりました。<br /><br />
@@ -103,7 +103,7 @@ export function HomePage(): React.ReactElement {
                 <img src={service02} alt="お客様が求めるサービスを形にしております" />
               </div>
               <div className={styles.serviceCardBody}>
-                <span className={styles.serviceCardNumber}>SERVICE 02</span>
+                <span className={styles.serviceCardNumber}>サービス 02</span>
                 <h3 className={styles.serviceCardTitle}>お客様が求めるサービスを形にしております</h3>
                 <p className={styles.serviceCardText}>
                   お客様のお声を真摯にお伺いし、画一的なご提案をするのではなく、お客様が求めるものをサービスとして形にしております。<br /><br />
@@ -119,7 +119,7 @@ export function HomePage(): React.ReactElement {
                 <img src={service03} alt="依頼して良かったと喜ばれるように尽力" />
               </div>
               <div className={styles.serviceCardBody}>
-                <span className={styles.serviceCardNumber}>SERVICE 03</span>
+                <span className={styles.serviceCardNumber}>サービス 03</span>
                 <h3 className={styles.serviceCardTitle}>依頼して良かったと喜ばれるように尽力</h3>
                 <p className={styles.serviceCardText}>
                   お客様から｢運びたい荷物・配ってほしいチラシがあった時に、地元で実績が豊富なプロが見つかって良かった｣というようなご納得のお言葉を多数いただいております。<br /><br />
@@ -179,7 +179,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.recruitSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>RECRUIT</span>
+          <span className={styles.sectionLabel}>採用情報</span>
           <h2 className={styles.sectionTitle}>
             誠実な方・やる気のある方を<br />
             業務委託パートナーとして歓迎しています
@@ -216,7 +216,7 @@ export function HomePage(): React.ReactElement {
             {/* Column 1: Q&A */}
             <div className={styles.infoColumn}>
               <h3 className={styles.infoColumnTitle}>よくある質問</h3>
-              <p className={styles.infoColumnLabel}>Q&A</p>
+              <p className={styles.infoColumnLabel}>よくある質問</p>
               <ul className={styles.infoList}>
                 <li><RouterLink to="/faq">給料日・報酬日はいつですか？</RouterLink></li>
                 <li><RouterLink to="/faq">マイカー・バイク通勤は可能ですか？</RouterLink></li>
@@ -224,28 +224,28 @@ export function HomePage(): React.ReactElement {
                 <li><RouterLink to="/faq">雇用形態は選べますか？</RouterLink></li>
               </ul>
               <RouterLink to="/faq" className={styles.infoViewMore}>
-                VIEW MORE
+                もっと見る
               </RouterLink>
             </div>
 
             {/* Column 2: News & Blog */}
             <div className={styles.infoColumn}>
               <h3 className={styles.infoColumnTitle}>新着情報・ブログ</h3>
-              <p className={styles.infoColumnLabel}>NEWS & BLOG</p>
+              <p className={styles.infoColumnLabel}>新着情報・ブログ</p>
               <ul className={styles.infoList}>
                 <li><RouterLink to="/blog">神戸電鉄五社駅から徒歩1分！</RouterLink></li>
                 <li><RouterLink to="/blog">キッチンカースペースをご用意</RouterLink></li>
                 <li><RouterLink to="/blog">軽貨物の仕事をお探しの方に朗報</RouterLink></li>
               </ul>
               <RouterLink to="/blog" className={styles.infoViewMore}>
-                VIEW MORE
+                もっと見る
               </RouterLink>
             </div>
 
             {/* Column 3: Logistics Service */}
             <div className={styles.infoColumn}>
               <h3 className={styles.infoColumnTitle}>物流サービス</h3>
-              <p className={styles.infoColumnLabel}>LOGISTICS SERVICE</p>
+              <p className={styles.infoColumnLabel}>物流サービス</p>
               <ul className={styles.infoList}>
                 <li><RouterLink to="/service">軽貨物配送サービス</RouterLink></li>
                 <li><RouterLink to="/service">ポスティングサービス</RouterLink></li>
@@ -253,7 +253,7 @@ export function HomePage(): React.ReactElement {
                 <li><RouterLink to="/service">BPO事業</RouterLink></li>
               </ul>
               <RouterLink to="/service" className={styles.infoViewMore}>
-                VIEW MORE
+                もっと見る
               </RouterLink>
             </div>
           </div>
@@ -266,7 +266,7 @@ export function HomePage(): React.ReactElement {
       <section className={styles.staffSection} style={{ backgroundImage: `url(${parallax1})` }}>
         <div className={styles.staffOverlay}>
           <div className={styles.container}>
-            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>STAFF</span>
+            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>スタッフ</span>
             <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>熱意あるスタッフが物流や営業の現場で活躍しております</h2>
             <p className={styles.staffDescription}>
               知識と経験の豊富なスタッフが地域密着型のスタッフがお客様のために尽力
@@ -283,7 +283,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.companySection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>COMPANY</span>
+          <span className={styles.sectionLabel}>会社概要</span>
           <h2 className={styles.sectionTitle}>地元に根差した丁寧な物流サービスに力を入れております</h2>
           <div className={styles.companyContent}>
             <div className={styles.companyText}>
@@ -310,7 +310,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.aboutSection} id="main">
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>ABOUT US</span>
+          <span className={styles.sectionLabel}>私たちについて</span>
           <h2 className={styles.sectionTitle}>幅広い配送サービスをメインに拠点を置く神戸市の方から好評です</h2>
 
           <div className={styles.aboutColumns}>
@@ -389,7 +389,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.columnTeasersSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>COLUMN</span>
+          <span className={styles.sectionLabel}>コラム</span>
           <h2 className={styles.sectionTitle}>配送のプロが語る生活に役立つ情報発信ページ</h2>
           <p className={styles.columnSubtitle}>
             日々の生活に役立つ配送のヒントや、物流業界の最新動向、地域密着型サービスの魅力をわかりやすくお伝えします。
@@ -406,7 +406,7 @@ export function HomePage(): React.ReactElement {
                 <p className={styles.columnCardExcerpt}>
                   効率的な配送ルートの組み方や、お客様とのコミュニケーションのコツをご紹介...
                 </p>
-                <span className={styles.columnReadMore}>READ MORE →</span>
+                <span className={styles.columnReadMore}>もっと読む →</span>
               </div>
             </RouterLink>
 
@@ -420,7 +420,7 @@ export function HomePage(): React.ReactElement {
                 <p className={styles.columnCardExcerpt}>
                   配布エリアの選定から、反響率を高めるタイミングまで詳しく解説...
                 </p>
-                <span className={styles.columnReadMore}>READ MORE →</span>
+                <span className={styles.columnReadMore}>もっと読む →</span>
               </div>
             </RouterLink>
 
@@ -434,7 +434,7 @@ export function HomePage(): React.ReactElement {
                 <p className={styles.columnCardExcerpt}>
                   神戸市で長年培ってきた信頼関係と、地域に根差したサービスの強みについて...
                 </p>
-                <span className={styles.columnReadMore}>READ MORE →</span>
+                <span className={styles.columnReadMore}>もっと読む →</span>
               </div>
             </RouterLink>
           </div>

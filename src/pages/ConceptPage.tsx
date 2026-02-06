@@ -14,7 +14,7 @@ export function ConceptPage() {
     <div className={styles.page}>
       <PageHero
         title="コンセプト"
-        titleEn="CONCEPT"
+        titleEn="コンセプト"
         backgroundImage={heroImg}
         breadcrumbs={[{ label: 'コンセプト' }]}
       />

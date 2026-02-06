@@ -11,7 +11,7 @@ export function CompanyPage() {
     <div className={styles.page}>
       <PageHero
         title="会社概要"
-        titleEn="COMPANY"
+        titleEn="会社概要"
         backgroundImage={heroImg}
         breadcrumbs={[{ label: '会社概要' }]}
       />

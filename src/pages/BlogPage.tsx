@@ -115,7 +115,7 @@ export function BlogPage(): React.ReactElement {
     <div className={styles.page}>
       <PageHero
         title="ブログ"
-        titleEn="BLOG"
+        titleEn="ブログ"
         backgroundImage={heroImg}
         breadcrumbs={[{ label: 'ブログ' }]}
       />

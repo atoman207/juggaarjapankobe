@@ -5,14 +5,14 @@ import styles from './Header.module.css'
 
 // Navigation items matching live site
 const NAV_ITEMS = [
-  { path: '/', label: 'TOP' },
-  { path: '/concept', label: 'CONCEPT' },
-  { path: '/service', label: 'SERVICE' },
-  { path: '/recruit', label: 'RECRUIT' },
-  { path: '/column', label: 'COLUMN' },
-  { path: '/faq', label: 'Q&A' },
-  { path: '/company', label: 'COMPANY' },
-  { path: '/contact', label: 'ACCESS' },
+  { path: '/', label: 'トップ' },
+  { path: '/concept', label: 'コンセプト' },
+  { path: '/service', label: 'サービス' },
+  { path: '/recruit', label: '採用情報' },
+  { path: '/column', label: 'コラム' },
+  { path: '/faq', label: 'よくある質問' },
+  { path: '/company', label: '会社概要' },
+  { path: '/contact', label: 'アクセス' },
 ]
 
 // Phone numbers

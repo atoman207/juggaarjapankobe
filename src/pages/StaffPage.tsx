@@ -12,7 +12,7 @@ export function StaffPage() {
     <div className={styles.page}>
       <PageHero
         title="スタッフ"
-        titleEn="STAFF"
+        titleEn="スタッフ"
         backgroundImage={heroImg}
         breadcrumbs={[{ label: 'スタッフ' }]}
       />
@@ -20,7 +20,7 @@ export function StaffPage() {
       {/* Main Intro Section */}
       <section className={styles.introSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>STAFF</span>
+          <span className={styles.sectionLabel}>スタッフ</span>
           <h2 className={styles.sectionTitle}>
             笑顔をお届け
           </h2>
@@ -39,7 +39,7 @@ export function StaffPage() {
             </div>
             <div className={styles.staffMemberInfo}>
               <div className={styles.staffMemberHeader}>
-                <span className={styles.staffRole}>代表取締役 / Representing Director</span>
+                <span className={styles.staffRole}>代表取締役</span>
                 <h3 className={styles.staffName}>kano yusei</h3>
                 <p className={styles.staffNameJa}>加納 侑青</p>
               </div>
@@ -69,7 +69,7 @@ export function StaffPage() {
             </div>
             <div className={styles.staffMemberInfo}>
               <div className={styles.staffMemberHeader}>
-                <span className={styles.staffRole}>デザイナー / Designer</span>
+                <span className={styles.staffRole}>デザイナー</span>
                 <h3 className={styles.staffName}>kajiyama</h3>
                 <p className={styles.staffNameJa}>30代女性スタッフ</p>
               </div>

@@ -14,7 +14,7 @@ export function ServicesPage() {
     <div className={styles.page}>
       <PageHero
         title="サービス・料金表"
-        titleEn="SERVICE"
+        titleEn="サービス"
         backgroundImage={heroImg}
         breadcrumbs={[{ label: 'サービス' }]}
       />
