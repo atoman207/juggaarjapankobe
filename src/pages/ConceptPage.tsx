@@ -24,7 +24,7 @@ export function ConceptPage() {
         <div className={styles.container}>
           <span className={styles.sectionLabel}>CONCEPT</span>
           <h2 className={styles.sectionTitle}>
-            経験に基づいた配送業務を<br />地元神戸市で展開しております
+            創業以来培ってきた信念からのスタイルを大切にします
           </h2>
         </div>
       </section>
@@ -48,6 +48,9 @@ export function ConceptPage() {
                 何か運びたい軽貨物・配りたいチラシがありましたら、難しくニッチなご要望にも可能な限り対応いたします。
               </p>
             </div>
+          </div>
+          <div className={styles.buttonRow}>
+            <Link to="/service" className={styles.serviceButton}>サービスへ</Link>
           </div>
         </div>
       </section>
@@ -73,8 +76,10 @@ export function ConceptPage() {
               <p>
                 拠点を置く地域に根差した、フレキシブルな物流サービスをご提案し、お客様からご納得のお言葉をいただいてまいりました。
               </p>
-              <Link to="/service" className={styles.featureLink}>サービスへ →</Link>
             </div>
+          </div>
+          <div className={styles.buttonRow}>
+            <Link to="/service" className={styles.serviceButton}>サービスへ</Link>
           </div>
         </div>
       </section>
@@ -97,8 +102,10 @@ export function ConceptPage() {
               <p>
                 地域に根差したサービスをご提案しているからこそ、フットワークの軽さを発揮できるという意味でも、お客様から厚い信頼をいただいております。
               </p>
-              <Link to="/company" className={styles.featureLink}>会社概要へ →</Link>
             </div>
+          </div>
+          <div className={styles.buttonRow}>
+            <Link to="/company" className={styles.serviceButton}>会社概要へ</Link>
           </div>
         </div>
       </section>
@@ -121,8 +128,10 @@ export function ConceptPage() {
               <p>
                 一人ひとりが自分のペースで無理なく、お仕事の現場で求められるノウハウを身に付けられる環境が整っております。
               </p>
-              <Link to="/recruit" className={styles.featureLink}>採用情報へ →</Link>
             </div>
+          </div>
+          <div className={styles.buttonRow}>
+            <Link to="/recruit" className={styles.serviceButton}>採用情報へ</Link>
           </div>
         </div>
       </section>

@@ -19,242 +19,102 @@ export function ServicesPage() {
         breadcrumbs={[{ label: 'サービス' }]}
       />
 
-      {/* Service Intro Section */}
-      <section className={styles.introSection}>
+      {/* Main Title Section */}
+      <section className={styles.mainTitleSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>SERVICE</span>
-          <h2 className={styles.sectionTitle}>
-            誠実な心構えでお仕事に臨むスタッフの<br />心意気をサービスに反映
+          <h2 className={styles.mainTitle}>
+            誠実できる集荷と配送のプロとして神戸市で高評価を獲得
           </h2>
-          <div className={styles.introText}>
-            <p>
-              地域社会に貢献し、お客様に笑顔をお届けすることを目指す企業として、地域密着型の配送サービスにも力を入れております。
+        </div>
+      </section>
+
+      {/* Service Cards Section - 3 columns matching original */}
+      <section className={styles.serviceCardsSection}>
+        <div className={styles.container}>
+          <div className={styles.serviceCardsGrid}>
+            {/* Service Card 1 */}
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceCardImage}>
+                <img src={serviceSection1Img} alt="集荷と配送" />
+                <div className={styles.serviceCardBadge}>SERVICE 01</div>
+              </div>
+              <div className={styles.serviceCardContent}>
+                <h3 className={styles.serviceCardTitle}>
+                  地域を拠点にして集荷と配送を行います
+                </h3>
+              </div>
+            </div>
+
+            {/* Service Card 2 */}
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceCardImage}>
+                <img src={serviceSection2Img} alt="お客様のニーズ" />
+                <div className={styles.serviceCardBadge}>SERVICE 02</div>
+              </div>
+              <div className={styles.serviceCardContent}>
+                <h3 className={styles.serviceCardTitle}>
+                  お客様の求めるサービスを形にしております
+                </h3>
+              </div>
+            </div>
+
+            {/* Service Card 3 */}
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceCardImage}>
+                <img src={serviceSection3Img} alt="スタッフ" />
+                <div className={styles.serviceCardBadge}>SERVICE 03</div>
+              </div>
+              <div className={styles.serviceCardContent}>
+                <h3 className={styles.serviceCardTitle}>
+                  経験して積み上げた大切な知識を身に尽力
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Posting Service Section with Stats */}
+      <section className={styles.postingSection}>
+        <div className={styles.container}>
+          <h2 className={styles.postingSectionTitle}>
+            誠実なポスティングサービスが地元KOBEで好評です
+          </h2>
+          <p className={styles.postingSectionSubtitle}>誠実がリピート率も高い</p>
+          
+          <div className={styles.statsBox}>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>95<span className={styles.statPercent}>%</span></div>
+            </div>
+          </div>
+
+          <p className={styles.statsDescription}>
+            弊社の提案できる体制改革をよりより明確化を目指させて只今！
+          </p>
+          <p className={styles.statsDescription}>
+            1配1枚を大切に・丁寧に・慎重に配らせていただきます。
+          </p>
+          <p className={styles.statsDescription}>
+            配布の折目は部位別の折目による正営なりて<br />
+            改善的でポスティングを徹底しております。
+          </p>
+
+          <div className={styles.postingServices}>
+            <p className={styles.postingServiceText}>
+              神戸市　ポスティング　業者　なにわおせび
             </p>
-            <p>
-              お客様からお預かりしたお荷物を単に目的地まで運ぶのではなく、輸送中の安全管理にもしっかり配慮し、拠点を置く神戸市にお住まいの方から、「何か運びたい物がある時にはとりあえず相談してみよう」とお問い合わせいただけるような、クオリティーの高いサービスを目指します。
-            </p>
-            <p>
-              現状に甘んじることなく、お客様のニーズも考慮したクオリティーの高いサービスを目指そうという姿勢が、高く評価されております。
+            <p className={styles.postingServiceText}>
+              ジュガールジャパンまで
             </p>
           </div>
         </div>
       </section>
 
-      {/* Service 1: 貨物軽自動車運送事業 */}
-      <section className={styles.serviceSection}>
+      {/* Large Promotional Banner */}
+      <section className={styles.promotionalBanner}>
         <div className={styles.container}>
-          <div className={styles.serviceHeader}>
-            <span className={styles.serviceNumber}>1</span>
-            <h3 className={styles.serviceTitle}>貨物軽自動車運送事業</h3>
-          </div>
-          <p className={styles.serviceSubtitle}>
-            拠点を置く各地域で、集荷から輸送まで、様々な軽貨物輸送を柔軟に行っております
-          </p>
-          <Link to="/service/charter" className={styles.priceLink}>
-            チャーター便（軽貨物貸切便）料金表
-          </Link>
-
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection1Img} alt="集荷と配送" />
-            </div>
-            <div className={styles.serviceText}>
-              <h4>集荷と配送の両面から地元である神戸市の物流を支えております</h4>
-              <p>
-                軽貨物を運ぶというサービスを通して、少しでも地域社会に貢献したいという熱い思いを胸に抱いたドライバーが、様々な現場で汗を流しております。
-              </p>
-              <p>
-                物流のプロフェッショナルとして豊富な知識と経験を身に付けた上で、転職を希望する方だけでなく、ドライバーとしてのノウハウを持たない状態で、求人にご応募いただく方も目立ちます。
-              </p>
-              <p>
-                新しいスタッフの求人に際しては、専門的なノウハウの有無と同様に、責任感の強さややる気、ドライバーとして着実に成長したいというような向上心の有無を考慮しております。
-              </p>
-              <p>
-                お仕事に必要な車両の手配を含めて、スタートアップの手間が掛からない点についても、皆様から喜ばれております。
-              </p>
-              <p>
-                未経験の状態から、少しずつ様々な知識や経験を身に付け、正社員へとステップアップできるシステムも整えております。
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceText}>
-              <h4>日常生活の品質向上に貢献する配送サービスを神戸市で展開中です</h4>
-              <p>
-                地域に根差した物流サービスをご提案し、日常生活のクオリティーアップに向けて様々な角度から貢献いたします。
-              </p>
-              <p>
-                お客様から「このようなサービスを探していた」というご納得のお言葉をいただけるように、これまで培ってきたノウハウを大切にしながらも、時代の変化やお客様一人ひとりによって異なるニーズを慎重に考慮し、スタッフ一同が尽力してまいります。
-              </p>
-              <p>
-                ご案内している軽貨物輸送のサービスについて、何かご不明な点がありましたら、些細なことでもお気軽にお問い合わせください。
-              </p>
-              <p>
-                専門的なノウハウを身に付けたスタッフが、難しい事柄についても可能な限り分かりやすくご説明しております。
-              </p>
-              <p>
-                単に軽貨物を運ぶことだけを考えるのではなく、お客様からお預かりした軽貨物と一緒に、送り主のハートまでお届けすることを目指して、尽力いたします。
-              </p>
-            </div>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection2Img} alt="配送サービス" />
-            </div>
-          </div>
-
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection3Img} alt="経験豊富なスタッフ" />
-            </div>
-            <div className={styles.serviceText}>
-              <h4>経験豊富なスタッフが地元神戸市で集荷と配送を行っております</h4>
-              <p>
-                拠点を置く地域で、集荷から輸送まで、様々な軽貨物輸送を行っております。
-              </p>
-              <p>
-                サービスのクオリティーについては、お客様から「サービスそのもののクオリティーに加え、丁寧な接客にも好感が持てる」というようなご納得のお言葉を多数いただいております。
-              </p>
-              <p>
-                創業以来、物流のプロフェッショナルとして培ってきたノウハウをサービスに反映しておりますが、入社時には未経験という方も多数いらっしゃいます。
-              </p>
-              <p>
-                知識や経験がゼロの状態からでも、物流のプロフェッショナルに求められる専門的なノウハウを基礎からしっかりと学んで、成長していきたいとお考えの方を歓迎いたします。
-              </p>
-              <p>
-                細かな所も手を抜かず、お客様一人ひとりのご要望にしっかりお答えできるよう、目立たない所も含めて尽力してきた結果は、報酬にしっかりと結び付きます。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service 2: BPO事業 */}
-      <section className={styles.serviceSection}>
-        <div className={styles.container}>
-          <div className={styles.serviceHeader}>
-            <span className={styles.serviceNumber}>2</span>
-            <h3 className={styles.serviceTitle}>BPO事業（事業開発・営業支援）</h3>
-          </div>
-          <p className={styles.serviceSubtitle}>
-            コストの削減・経営戦略の実現で業績向上や事業拡大をより高いスピード感で遂行します
-          </p>
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection4Img} alt="BPO事業" />
-            </div>
-            <div className={styles.serviceText}>
-              <h4>ノンコア業務に悩まされている企業様のお力になります</h4>
-              <p>もちろんコア業務のご相談も是非、ご要望ください</p>
-              <p>
-                to C to Bに関わらず、どんな細かな要望でもお聞かせください。
-                業務改善・提案・販売促進・経費削減など形にとらわれないご提案をさせていただきます。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service 3: ポスティング事業 */}
-      <section className={styles.serviceSection}>
-        <div className={styles.container}>
-          <div className={styles.serviceHeader}>
-            <span className={styles.serviceNumber}>3</span>
-            <h3 className={styles.serviceTitle}>ポスティング事業</h3>
-          </div>
-          <p className={styles.serviceSubtitle}>
-            同業他社様よりも低価格で県内の各地域に、エリアを熟知した配布スタッフが待機。宣伝を全力でお手伝いします
-          </p>
-          <Link to="/service/posting" className={styles.priceLink}>
-            ポスティングサービス内容
-          </Link>
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceText}>
-              <h4>経験豊富でエリアを熟知したスタッフが全力でお客様の広告をお手伝いします！</h4>
-              <p>
-                ポスティング事業の始まりは神戸市垂水区エリアがメインでした。
-              </p>
-              <p>
-                サービスのクオリティーや「スタッフさんも好感が持てる」というようなご納得のお言葉を多数いただき、神戸市須磨区、北区、灘区、東灘区とエリアを拡大中です。
-              </p>
-              <p>
-                知識や経験がゼロの状態の未経験者さんでも、当社のマニュアルを熟知してもらい、一枚一枚を大切な商品として扱い、誠実にポスティング致します。
-              </p>
-            </div>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection1Img} alt="ポスティング" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service 4: ドローン空撮事業 */}
-      <section className={styles.serviceSection}>
-        <div className={styles.container}>
-          <div className={styles.serviceHeader}>
-            <span className={styles.serviceNumber}>4</span>
-            <h3 className={styles.serviceTitle}>ドローン空撮事業</h3>
-          </div>
-          <p className={styles.serviceSubtitle}>
-            兵庫県内に派遣し空撮（グループ・集合写真の撮影・不動産・建築物の撮影・インフラ点検）を行っております
-          </p>
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection2Img} alt="ドローン空撮" />
-            </div>
-            <div className={styles.serviceText}>
-              <h4>家族写真・友達との集合写真などかけがえのない思い出を<br />ドローンならではの最高の演出で体験ください</h4>
-              <p>一般社団法人 ドローン操縦士協会 DPAディーパ所属</p>
-              <p>航空法第132条第2号</p>
-              <p>航空法第132条の2第3号</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service 5: グラフィックデザイン・WEBデザイン */}
-      <section className={styles.serviceSection}>
-        <div className={styles.container}>
-          <div className={styles.serviceHeader}>
-            <span className={styles.serviceNumber}>5</span>
-            <h3 className={styles.serviceTitle}>グラフィックデザイン・WEBデザイン制作事業</h3>
-          </div>
-          <p className={styles.serviceSubtitle}>
-            ホームページの制作からロゴデザイン・パンフレットや名刺・チラシのデザイン・動画作成・編集等、印刷物デザインも承っております
-          </p>
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceText}>
-              <h4>時間がかかっても良いモノを作ってほしい！<br />質よりもスピードで量産的に！</h4>
-              <p>
-                長年培ってきたノウハウや新しい発想でニュージャンルのデザインを形にします。
-                具体案が全くないお客様でも、何なりとご相談ください。
-              </p>
-            </div>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection3Img} alt="デザイン" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service 6: 賃貸、看板、駐車場 */}
-      <section className={styles.serviceSection}>
-        <div className={styles.container}>
-          <div className={styles.serviceHeader}>
-            <span className={styles.serviceNumber}>6</span>
-            <h3 className={styles.serviceTitle}>賃貸、看板、駐車場の経営及び管理</h3>
-          </div>
-          <p className={styles.serviceSubtitle}>
-            賃貸、看板、駐車場の管理運営を実施しております
-          </p>
-          <div className={styles.serviceContent}>
-            <div className={styles.serviceImage}>
-              <img src={serviceSection4Img} alt="賃貸管理" />
-            </div>
-            <div className={styles.serviceText}>
-              <h4>神戸市・三田市をメインでマンションや戸建賃貸、看板、駐車場の紹介をさせていただきます</h4>
-              <a href="#" className={styles.ctaButton}>物件情報はコチラ</a>
-              <p className={styles.note}>※ご契約の際は審査がございますので予めご了承ください</p>
-            </div>
+          <div className={styles.bannerContent}>
+            <img src={serviceSection4Img} alt="プロモーションバナー" className={styles.bannerImage} />
           </div>
         </div>
       </section>
