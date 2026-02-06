@@ -1,0 +1,37 @@
+.breadcrumb {
+  background: #f5f5f5;
+  padding: 12px 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.link {
+  color: #666;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.current {
+  color: #333;
+  font-weight: 500;
+}
+
+.separator {
+  color: #999;
+  margin: 0 4px;
+}

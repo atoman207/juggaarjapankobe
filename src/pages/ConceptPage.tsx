@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
 import styles from './ConceptPage.module.css'
 
-// Import images
-import heroImg from '@/assets/image/hero_concept.jpg'
-import conceptDriverImg from '@/assets/image/concept_driver.jpg'
-import conceptWarehouseImg from '@/assets/image/concept_warehouse.jpg'
-import serviceImg from '@/assets/image/service.jpg'
+// Import images - using correct images from reference site
+import heroImg from '@/assets/image/concept_hero_ref.jpg'
+import conceptSection1Img from '@/assets/image/concept_section1.jpg'
+import conceptSection2Img from '@/assets/image/concept_section2.jpg'
+import conceptSection3Img from '@/assets/image/concept_section3.jpg'
+import conceptSection4Img from '@/assets/image/concept_section4.jpg'
 
 export function ConceptPage() {
   return (
@@ -23,7 +24,7 @@ export function ConceptPage() {
         <div className={styles.container}>
           <span className={styles.sectionLabel}>CONCEPT</span>
           <h2 className={styles.sectionTitle}>
-            経験に基づいた配送業務を<br />地元神戸市で展開しております
+            創業以来培ってきた信念からのスタイルを大切にします
           </h2>
         </div>
       </section>
@@ -33,7 +34,7 @@ export function ConceptPage() {
         <div className={styles.container}>
           <div className={styles.featureRow}>
             <div className={styles.featureImage}>
-              <img src={conceptWarehouseImg} alt="創業以来培ってきたノウハウ" />
+              <img src={conceptSection1Img} alt="創業以来培ってきたノウハウ" />
             </div>
             <div className={styles.featureText}>
               <h3>創業以来培ってきた様々なノウハウをスタッフに伝えております</h3>
@@ -48,6 +49,9 @@ export function ConceptPage() {
               </p>
             </div>
           </div>
+          <div className={styles.buttonRow}>
+            <Link to="/service" className={styles.serviceButton}>サービスへ</Link>
+          </div>
         </div>
       </section>
 
@@ -56,7 +60,7 @@ export function ConceptPage() {
         <div className={styles.container}>
           <div className={`${styles.featureRow} ${styles.featureRowReverse}`}>
             <div className={styles.featureImage}>
-              <img src={conceptDriverImg} alt="地域密着型の配送サービス" />
+              <img src={conceptSection2Img} alt="地域密着型の配送サービス" />
             </div>
             <div className={styles.featureText}>
               <h3>地域密着型の配送サービスを行い拠点を置く神戸市で好評です</h3>
@@ -72,8 +76,10 @@ export function ConceptPage() {
               <p>
                 拠点を置く地域に根差した、フレキシブルな物流サービスをご提案し、お客様からご納得のお言葉をいただいてまいりました。
               </p>
-              <Link to="/service" className={styles.featureLink}>サービスへ →</Link>
             </div>
+          </div>
+          <div className={styles.buttonRow}>
+            <Link to="/service" className={styles.serviceButton}>サービスへ</Link>
           </div>
         </div>
       </section>
@@ -83,7 +89,7 @@ export function ConceptPage() {
         <div className={styles.container}>
           <div className={styles.featureRow}>
             <div className={styles.featureImage}>
-              <img src={serviceImg} alt="お客様のご期待にお応え" />
+              <img src={conceptSection3Img} alt="お客様のご期待にお応え" />
             </div>
             <div className={styles.featureText}>
               <h3>拠点の神戸市でお客様のご期待にお応えする配送サービスを展開</h3>
@@ -96,8 +102,10 @@ export function ConceptPage() {
               <p>
                 地域に根差したサービスをご提案しているからこそ、フットワークの軽さを発揮できるという意味でも、お客様から厚い信頼をいただいております。
               </p>
-              <Link to="/company" className={styles.featureLink}>会社概要へ →</Link>
             </div>
+          </div>
+          <div className={styles.buttonRow}>
+            <Link to="/company" className={styles.serviceButton}>会社概要へ</Link>
           </div>
         </div>
       </section>
@@ -107,7 +115,7 @@ export function ConceptPage() {
         <div className={styles.container}>
           <div className={`${styles.featureRow} ${styles.featureRowReverse}`}>
             <div className={styles.featureImage}>
-              <img src={conceptDriverImg} alt="配送ドライバー募集" />
+              <img src={conceptSection4Img} alt="配送ドライバー募集" />
             </div>
             <div className={styles.featureText}>
               <h3>地元神戸市で配送ドライバーとして働きたい方を募集しております</h3>
@@ -120,8 +128,10 @@ export function ConceptPage() {
               <p>
                 一人ひとりが自分のペースで無理なく、お仕事の現場で求められるノウハウを身に付けられる環境が整っております。
               </p>
-              <Link to="/recruit" className={styles.featureLink}>採用情報へ →</Link>
             </div>
+          </div>
+          <div className={styles.buttonRow}>
+            <Link to="/recruit" className={styles.serviceButton}>採用情報へ</Link>
           </div>
         </div>
       </section>

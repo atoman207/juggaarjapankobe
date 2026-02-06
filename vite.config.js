@@ -12,8 +12,8 @@ export default defineConfig({
     alias: { '@': path.resolve(__dirname, './src') },
   },
   server: {
-    // Bind to 127.0.0.1 so local dev works with VPN (avoids VPN routing localhost)
-    host: '127.0.0.1',
+    // Allow access from network (0.0.0.0 = all network interfaces)
+    host: '0.0.0.0',
     port: 5173,
     strictPort: true,
   },

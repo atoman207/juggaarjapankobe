@@ -5,13 +5,13 @@
 
 /* Footer CTA Banner - Cyan Blue Bar at Top */
 .footerCta {
-  background: var(--primary-gradient);
-  padding: 24px 20px;
+  background: linear-gradient(135deg, #00A3DB 0%, #23C8E4 50%, #00A3DB 100%);
+  padding: 26px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
 }
 
 .footerCtaInner {
@@ -94,21 +94,21 @@
 .footerCollapseArrow {
   display: flex;
   justify-content: center;
-  padding: 16px 0;
-  background: #f5f5f5;
+  padding: 18px 0;
+  background: #F7F8FA;
 }
 
 .footerCollapseArrow span {
   display: block;
-  font-size: 1.5rem;
-  color: #666;
+  font-size: 1.625rem;
+  color: #6B7280;
 }
 
 /* Main Footer - White Background */
 .footer {
   background: #fff;
   color: #333;
-  padding: 50px 0 30px;
+  padding: 55px 0 35px;
 }
 
 .footerInner {
@@ -120,9 +120,9 @@
 /* Footer Navigation Links - Horizontal List */
 .footerNav {
   text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #ddd;
+  margin-bottom: 45px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid #E5E7EB;
 }
 
 .footerNavList {
@@ -132,15 +132,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 20px;
-  line-height: 2;
+  gap: 10px 22px;
+  line-height: 2.1;
 }
 
 .footerNavLink {
-  color: #555;
+  color: #6B7280;
   font-size: 0.8125rem;
   text-decoration: none;
   transition: color var(--transition-fast);
+  font-weight: 500;
 }
 
 .footerNavLink:hover {
@@ -154,11 +155,11 @@
 }
 
 .footerLogo {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .footerLogoImage {
-  height: 60px;
+  height: 65px;
   width: auto;
 }
 

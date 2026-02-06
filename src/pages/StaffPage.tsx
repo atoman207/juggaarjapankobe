@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
 import styles from './StaffPage.module.css'
 
-// Import images
-import heroImg from '@/assets/image/hero_staff.jpg'
+// Import images - using correct images from reference site
+import heroImg from '@/assets/image/hero_staff_ref.jpg'
 import staff01Img from '@/assets/image/staff01.jpg'
 import staff02Img from '@/assets/image/staff02.jpg'
 
