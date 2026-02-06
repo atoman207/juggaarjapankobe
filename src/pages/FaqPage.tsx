@@ -6,95 +6,59 @@ import styles from './FaqPage.module.css'
 // Import images - using correct images from reference site
 import heroImg from '@/assets/image/hero_faq_ref.jpg'
 
-// FAQ data matching reference site
+// FAQ data matching original site exactly
 const FAQ_ITEMS = [
   {
-    category: '配送について',
-    questions: [
-      {
-        q: '配送エリアはどこまで対応していますか？',
-        a: '神戸市を中心に、兵庫県全域をカバーしております。神戸市北区、三田市、須磨区、垂水区、灘区、東灘区、西区、中央区、長田区の他、明石市、西宮市、宝塚市、伊丹市、川西市など幅広いエリアに対応しております。詳細はお問い合わせください。',
-      },
-      {
-        q: '当日配送は可能ですか？',
-        a: 'はい、当日配送も可能です。お急ぎの場合は、お電話にてご相談ください。状況によっては対応できない場合もございますが、可能な限りフレキシブルに対応いたします。',
-      },
-      {
-        q: '大きな荷物も配送してもらえますか？',
-        a: '軽貨物車両で運べるサイズ・重量のものであれば対応可能です。具体的なサイズや重量については、お問い合わせの際にお伝えください。',
-      },
-      {
-        q: '配送料金はどのように決まりますか？',
-        a: '配送料金は、距離・荷物のサイズ・時間帯などにより異なります。まずはお気軽にお見積りをご依頼ください。チャーター便の料金表もご用意しております。',
-      },
-    ],
+    q: '給料日・報酬日はいつですか？',
+    a: '月末〆翌月25日ご入金\n⇒正社員\n\n月末〆翌々月5日ご入金\n⇒業務委託',
   },
   {
-    category: 'ポスティングについて',
-    questions: [
-      {
-        q: 'ポスティングの対応エリアはどこですか？',
-        a: '神戸市垂水区、須磨区、北区、灘区、東灘区をはじめ、兵庫県内の多くのエリアに対応しております。エリアを熟知したスタッフが確実に配布いたします。',
-      },
-      {
-        q: 'チラシは何枚から依頼できますか？',
-        a: '最小ロットなど特に制限はございません。小ロットから大ロットまで、お客様のご予算やニーズに合わせて柔軟に対応いたします。',
-      },
-      {
-        q: '配布報告はもらえますか？',
-        a: 'はい、配布完了後に報告書をお送りしております。配布エリアや枚数など、詳細をご確認いただけます。',
-      },
-    ],
+    q: 'マイカー・バイク通勤は可能ですか？',
+    a: 'はい、マイカー・バイクでの通勤も可能です。\n駐車場完備。',
   },
   {
-    category: '求人について',
-    questions: [
-      {
-        q: '未経験でも応募できますか？',
-        a: 'はい、未経験者も大歓迎です。現在活躍しているスタッフの中にも、入社時は未経験だった方が多数いらっしゃいます。先輩スタッフによる丁寧な研修制度がございますので、安心してご応募ください。',
-      },
-      {
-        q: '車両を持っていないのですが、応募できますか？',
-        a: 'はい、車両レンタル制度がございますので、車両をお持ちでない方もお気軽にご応募いただけます。特別な審査も不要です。',
-      },
-      {
-        q: '副業として働くことはできますか？',
-        a: 'はい、副業としてお仕事を始めたい方も歓迎しております。シフト制を導入しておりますので、週1日から、午前のみ・午後のみなど、柔軟な働き方が可能です。',
-      },
-      {
-        q: '正社員登用はありますか？',
-        a: 'はい、正社員登用制度がございます。業務委託からスタートし、実績を積んでいただいた後、正社員への登用も可能です。',
-      },
-      {
-        q: '報酬体系を教えてください',
-        a: 'ドライバーは日当保証制度があり、安定した収入を得られます。また、3ヶ月ごとにボーナスも支給しております。詳細はお問い合わせください。',
-      },
-    ],
+    q: '未経験ですが大丈夫ですか？',
+    a: 'はい、大丈夫です。\nベテラン社員より\n新人研修を行っておりますのでご安心ください！',
   },
   {
-    category: '会社について',
-    questions: [
-      {
-        q: '営業時間を教えてください',
-        a: '営業時間は10:00〜19:00、定休日は日曜日です。お電話でのお問い合わせは、078-987-0902 または 080-7518-7910 までお願いいたします。',
-      },
-      {
-        q: '会社の所在地はどこですか？',
-        a: '〒651-1421 兵庫県神戸市北区有野中町2-12-13 にございます。神戸電鉄三田線 五社駅が最寄り駅です。',
-      },
-    ],
+    q: '雇用形態は選べますか？',
+    a: 'はい。\n正社員・アルバイト・個人事業主から\nご自身のワークスタイルに合った形態をお選びください。\n※正社員は枠数に限りあり',
+  },
+  {
+    q: '残業はありますか？',
+    a: '日により、現場により残業は異なります。',
+  },
+  {
+    q: '有給はありますか？',
+    a: '法定通り、入社してから半年経過後に10日間の有給がつきます。',
+  },
+  {
+    q: '何か資格は必要ですか？',
+    a: 'ドライバーを希望の方は運転免許が必須となります。\n営業職・ポスティングは運転免許は必須ではありません。',
+  },
+  {
+    q: '女性での応募は可能ですか？',
+    a: 'はい、特に求人で男女の区別はしていません。\nやる気と体力があれば女性の応募もお待ちしています。',
+  },
+  {
+    q: '配送ドライバーの事業用車両は自身で準備しないといけませんか？',
+    a: '事業用車両を当社が準備させて頂きます。\n業務委託希望のドライバー様はリースも可能です。\n勿論、ご自身での車両持ち込みも可能です。',
+  },
+  {
+    q: 'チラシは会社まで取りに行かなければなりませんか？',
+    a: '当社Staffがご自宅までお届けさせて頂いております。',
   },
 ]
 
 export function FaqPage() {
-  const [openItems, setOpenItems] = useState<Set<string>>(new Set())
+  const [openItems, setOpenItems] = useState<Set<number>>(new Set())
 
-  const toggleItem = (id: string) => {
+  const toggleItem = (index: number) => {
     const newOpenItems = new Set(openItems)
-    if (newOpenItems.has(id)) {
-      newOpenItems.delete(id)
+    if (newOpenItems.has(index)) {
+      newOpenItems.delete(index)
     } else {
-      newOpenItems.add(id)
+      newOpenItems.add(index)
     }
     setOpenItems(newOpenItems)
   }
@@ -108,67 +72,68 @@ export function FaqPage() {
         breadcrumbs={[{ label: 'よくある質問' }]}
       />
 
-      {/* Main Intro Section */}
-      <section className={styles.introSection}>
+      {/* Q&A Intro Section */}
+      <section className={styles.qaSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>FAQ</span>
+          <span className={styles.sectionLabel}>Q&A</span>
           <h2 className={styles.sectionTitle}>
-            お客様からよくいただくご質問をまとめました
+            仕事に関する疑問・質問になんでもお答えしています
           </h2>
-          <p className={styles.introText}>
-            ご不明な点がございましたら、お気軽にお問い合わせください。
-          </p>
+          <h3 className={styles.qaSubtitle}>
+            働きやすい職場で休みもしっかりあります
+          </h3>
+          <div className={styles.qaDescription}>
+            <p>
+              地域密着型の配送サービスで、拠点を置く神戸市にお住まいの方から、高い評価をいただいております。軽貨物輸送のプロフェッショナルとして、一緒に働く仲間を募集しております。
+            </p>
+            <p>
+              採用について何か疑問やご不明点がございましたら、まずはこちらをご覧いただき、少しでも不安を解消できればと考えています。その他にもドライバーに対する働き方や職場環境、プロドライバーとしての運転マナーや運転技術等、興味がございましたらお問い合わせください。
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* FAQ Sections */}
-      {FAQ_ITEMS.map((category, categoryIndex) => (
-        <section key={categoryIndex} className={styles.faqSection}>
-          <div className={styles.container}>
-            <h3 className={styles.categoryHeading}>{category.category}</h3>
-            <div className={styles.faqList}>
-              {category.questions.map((item, itemIndex) => {
-                const itemId = `${categoryIndex}-${itemIndex}`
-                const isOpen = openItems.has(itemId)
-                return (
-                  <div
-                    key={itemIndex}
-                    className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ''}`}
+      {/* FAQ Section */}
+      <section className={styles.faqSection}>
+        <div className={styles.container}>
+          <span className={styles.sectionLabel}>FAQ</span>
+          <h2 className={styles.faqSectionTitle}>よくある質問</h2>
+          
+          <div className={styles.faqList}>
+            {FAQ_ITEMS.map((item, index) => {
+              const isOpen = openItems.has(index)
+              return (
+                <div
+                  key={index}
+                  className={`${styles.faqItem} ${isOpen ? styles.faqItemOpen : ''}`}
+                >
+                  <button
+                    className={styles.faqQuestion}
+                    onClick={() => toggleItem(index)}
+                    aria-expanded={isOpen}
                   >
-                    <button
-                      className={styles.faqQuestion}
-                      onClick={() => toggleItem(itemId)}
-                      aria-expanded={isOpen}
-                    >
-                      <span className={styles.faqIcon}>Q</span>
-                      <span className={styles.faqText}>{item.q}</span>
-                      <span className={styles.faqArrow}>{isOpen ? '−' : '＋'}</span>
-                    </button>
+                    <span className={styles.faqIconQ}>Q</span>
+                    <span className={styles.faqText}>{item.q}</span>
+                  </button>
+                  {isOpen && (
                     <div className={styles.faqAnswer}>
-                      <span className={styles.faqIcon}>A</span>
+                      <span className={styles.faqIconA}>A</span>
                       <p>{item.a}</p>
                     </div>
-                  </div>
-                )
-              })}
-            </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
 
       {/* Contact CTA */}
       <section className={styles.ctaSection}>
         <div className={styles.container}>
-          <h3>上記以外のご質問はお気軽にお問い合わせください</h3>
-          <div className={styles.ctaButtons}>
-            <Link to="/contact" className={styles.ctaButton}>
-              お問い合わせはこちら
-            </Link>
-            <a href="tel:0789870902" className={styles.ctaButtonPhone}>
-              <span>📞</span>
-              078-987-0902
-            </a>
-          </div>
+          <p className={styles.ctaText}>
+            お客様に笑顔をお届けするべく、拠点を置く地域に根差した軽貨物輸送のサービスを展開しており、株式会社Juggaar Japanでは一緒に働く仲間を募集しております。単に物を運ぶのではなく、お客様からお預かりした大切なお荷物と一緒に、送り主の気持ちまで一緒に目的地まで運ぶのだという意識を持ち、物流のプロフェッショナルとして地域社会の発展にわずかでも貢献することを目指しております。スタッフ一人ひとりの熱意がお客様にも届き、｢何か運んで欲しい軽貨物がある場合には、ぜひお願いしたい｣というようなご納得のお言葉を多数いただいております。
+          </p>
         </div>
       </section>
 
@@ -180,22 +145,37 @@ export function FaqPage() {
             関連ページ
           </h3>
           <div className={styles.relatedPostsGrid}>
-            <Link to="/service" className={styles.relatedPostCard}>
-              <h4>サービス・料金表</h4>
-              <p>配送サービス、ポスティング、BPO事業など、各種サービスの詳細をご覧ください。</p>
+            <Link to="/reviews" className={styles.relatedPostCard}>
+              <h4>神戸市の配送･株式会社Juggaar Japanの評判</h4>
+              <p>兵庫県神戸市に拠点を置く配送会社として、県内全域を対象とした軽貨物宅配サービス…</p>
+            </Link>
+            <Link to="/voice" className={styles.relatedPostCard}>
+              <h4>神戸市の配送･株式会社Juggaar Japanのお客様の声</h4>
+              <p>高いプロ意識を持つ軽貨物ドライバーが、神戸市エリアを中心に配送業務を承ります。…</p>
             </Link>
             <Link to="/recruit" className={styles.relatedPostCard}>
               <h4>採用情報</h4>
-              <p>ドライバー、ポスティングスタッフなど、新しい仲間を募集しております。</p>
+              <p>まずは副業として、集荷や配送のお仕事を始めてみたいという方も歓迎しております。…</p>
             </Link>
-            <Link to="/company" className={styles.relatedPostCard}>
-              <h4>会社概要</h4>
-              <p>株式会社Juggaar Japanの会社情報をご紹介しております。</p>
+            <Link to="/reputation" className={styles.relatedPostCard}>
+              <h4>神戸市の配送･株式会社Juggaar Japanの口コミ情報</h4>
+              <p>｢安心・丁寧な宅配サービス｣や｢明るい接客｣が高い評価を得ている神戸市の配送会社と…</p>
             </Link>
-            <Link to="/contact" className={styles.relatedPostCard}>
-              <h4>お問い合わせ</h4>
-              <p>サービスに関するご質問やお見積りのご依頼はこちらから。</p>
-            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Tags Section */}
+      <section className={styles.tagsSection}>
+        <div className={styles.container}>
+          <h3 className={styles.categoryTitle}>
+            <span className={styles.categoryLabel}>RELATED TAGS</span>
+            関連タグ
+          </h3>
+          <div className={styles.tagsList}>
+            <span className={styles.tag}>神戸市</span>
+            <span className={styles.tag}>配送</span>
+            <span className={styles.tag}>よくある質問</span>
           </div>
         </div>
       </section>
