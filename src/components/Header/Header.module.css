@@ -1,0 +1,467 @@
+/* ========================================
+   Header Styles - Matching Reference Site
+   ======================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(0);
+  transition: transform var(--transition-normal);
+}
+
+.headerHidden {
+  transform: translateY(-100%);
+}
+
+.headerCompact .headerInner {
+  padding: 8px 0;
+}
+
+/* Single bar: no container, 100px left/right margins */
+.headerInner {
+  margin: 0 100px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .headerInner {
+    margin: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerInner {
+    margin: 0 20px;
+    padding: 10px 0;
+  }
+}
+
+/* Right block: three lines (desktop only) */
+.headerRight {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (min-width: 769px) {
+  .headerRight {
+    display: flex;
+  }
+}
+
+.headerLine1 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.headerLine2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.headerLine3 {
+  display: flex;
+  align-items: center;
+}
+
+.phoneNumbers {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.phoneItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.phoneIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-blue);
+}
+
+.phoneLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.phoneLink:hover {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.businessHours {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+/* Top Bar Buttons - gradient style matching reference image */
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topBarBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  transition: opacity var(--transition-fast);
+  white-space: nowrap;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.topBarBtn:hover {
+  opacity: 0.92;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.topBarBtn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+/* Contact button: light sky blue → deeper blue gradient */
+.topBarBtnPrimary {
+  background: linear-gradient(to right, #60CEF5, #34A9ED);
+}
+
+.topBarBtnPrimary:hover {
+  background: linear-gradient(to right, #5ac5eb, #2e9ad9);
+}
+
+/* Official site button: mid blue → deeper blue gradient + icon */
+.topBarBtnOutline {
+  background: linear-gradient(to right, #46B4F0, #1E8CC8);
+}
+
+.topBarBtnOutline:hover {
+  background: linear-gradient(to right, #3da8e6, #1a7db5);
+}
+
+.topBarBtnIcon {
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+  opacity: 0.95;
+}
+
+/* Legacy headerBtn classes (if used elsewhere) */
+.headerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  background: #36B5CB;
+  color: var(--text-white);
+  border: 2px solid #36B5CB;
+}
+
+.headerBtn:hover {
+  background: #2ca3bf;
+  border-color: #2ca3bf;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.headerBtnOutline {
+  background: #36B5CB;
+  color: var(--text-white);
+}
+
+.headerBtnOutline:hover {
+  background: #2ca3bf;
+  text-decoration: none;
+}
+
+/* Logo (left side) */
+.logo {
+  flex-shrink: 0;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logoImage {
+  height: 58px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .logoImage {
+    height: 42px;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+/* Add vertical separator between nav items (matching live site) */
+.navItem:not(:last-child)::after {
+  content: '|';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ddd;
+  font-size: 0.875rem;
+}
+
+.navLink {
+  display: block;
+  padding: 11px 15px;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.navLink:hover {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+/* Mobile Menu Button */
+.mobileMenuBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  .mobileMenuBtn {
+    display: none;
+  }
+}
+
+.mobileMenuBtn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.mobileMenuBtn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobileMenuBtn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuBtn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.mobileOverlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Drawer */
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  max-width: 85vw;
+  height: 100vh;
+  background: var(--bg-white);
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.mobileDrawer.open {
+  transform: translateX(0);
+}
+
+@media (min-width: 769px) {
+  .mobileDrawer {
+    display: none;
+  }
+}
+
+.mobileDrawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.mobileCloseBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileNavItem {
+  border-bottom: 1px solid #eee;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 16px 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mobileNavLink:hover {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.mobileButtons {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  border: none;
+  text-align: center;
+  color: #ffffff;
+}
+
+.mobileBtn:hover {
+  text-decoration: none;
+  color: #ffffff;
+  opacity: 0.92;
+}
+
+.mobileBtnPrimary {
+  background: linear-gradient(to right, #60CEF5, #34A9ED);
+}
+
+.mobileBtnOutline {
+  background: linear-gradient(to right, #46B4F0, #1E8CC8);
+}
+
+.mobilePhones {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+
+.mobilePhoneItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mobilePhoneLink {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mobileHours {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}

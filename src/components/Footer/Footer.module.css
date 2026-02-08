@@ -1,0 +1,237 @@
+/* ========================================
+   Footer Styles - White/Light Theme
+   Matching Reference Site (light footer with cyan bar)
+   ======================================== */
+
+/* Footer CTA Banner - Cyan Blue Bar at Top */
+.footerCta {
+  background: linear-gradient(135deg, #00A3DB 0%, #23C8E4 50%, #00A3DB 100%);
+  padding: 26px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footerCtaInner {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footerCtaPhone {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+}
+
+.footerCtaPhoneLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footerCtaPhoneLink:hover {
+  opacity: 0.9;
+}
+
+.footerCtaHours {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+}
+
+.footerCtaButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footerCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.footerCtaBtnGreen {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.footerCtaBtnGreen:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+}
+
+.footerCtaBtnOutline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.footerCtaBtnOutline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Collapse Arrow */
+.footerCollapseArrow {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0;
+  background: #F7F8FA;
+}
+
+.footerCollapseArrow span {
+  display: block;
+  font-size: 1.625rem;
+  color: #6B7280;
+}
+
+/* Main Footer - White Background */
+.footer {
+  background: #fff;
+  color: #333;
+  padding: 55px 0 35px;
+}
+
+.footerInner {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer Navigation Links - Horizontal List */
+.footerNav {
+  text-align: center;
+  margin-bottom: 45px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.footerNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  line-height: 2.1;
+}
+
+.footerNavLink {
+  color: #6B7280;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  font-weight: 500;
+}
+
+.footerNavLink:hover {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+/* Footer Bottom - Logo Center */
+.footerBottom {
+  text-align: center;
+}
+
+.footerLogo {
+  margin-bottom: 28px;
+}
+
+.footerLogoImage {
+  height: 65px;
+  width: auto;
+}
+
+/* Social Links */
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  color: #333;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.socialLink:hover {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #fff;
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Copyright */
+.footerCopyright {
+  color: #888;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Hidden elements from old design */
+.footerNavColumn,
+.footerNavTitle,
+.footerNavItem,
+.footerTop,
+.footerContact,
+.footerPhones,
+.footerPhoneItem,
+.footerPhoneLink,
+.footerHours,
+.footerCompany,
+.footerCtaTitle,
+.footerCtaBtnWhite {
+  /* These are handled differently in new layout */
+}
+
+@media (max-width: 768px) {
+  .footerCtaInner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footerCtaPhone {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .footerCtaButtons {
+    justify-content: center;
+  }
+}

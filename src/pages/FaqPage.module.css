@@ -1,0 +1,270 @@
+/* FaqPage Styles - Comprehensive */
+
+.page {
+  /* Full page wrapper */
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  width: 100%;
+}
+
+.sectionLabel {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #00AEC7;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Q&A Intro Section */
+.qaSection {
+  padding: 70px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+
+.qaSubtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+.qaDescription {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.qaDescription p {
+  font-size: 0.9375rem;
+  line-height: 2;
+  color: #4B5563;
+  margin: 0 0 20px;
+}
+
+/* FAQ Section */
+.faqSection {
+  padding: 70px 0;
+  background: #F9FAFB;
+  text-align: center;
+}
+
+.faqSectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 40px;
+}
+
+.faqList {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faqItem {
+  border-bottom: 1px solid #E5E7EB;
+  text-align: left;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faqIconQ,
+.faqIconA {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.faqIconQ {
+  background: #00AEC7;
+  color: #fff;
+}
+
+.faqIconA {
+  background: #FFA726;
+  color: #fff;
+}
+
+.faqText {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1F2937;
+  line-height: 1.7;
+}
+
+.faqAnswer {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0 0 24px 0;
+}
+
+.faqAnswer p {
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: #4B5563;
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 60px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.ctaText {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 0.9375rem;
+  line-height: 2;
+  color: #4B5563;
+  text-align: left;
+}
+
+/* Category Title */
+.categoryTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 32px;
+}
+
+.categoryLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: #00AEC7;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Related Posts Section */
+.relatedPostsSection {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.relatedPostsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .relatedPostsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .relatedPostsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.relatedPostCard {
+  background: #F3F4F6;
+  padding: 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+}
+
+.relatedPostCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.relatedPostCard h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.relatedPostCard p {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* Tags Section */
+.tagsSection {
+  padding: 60px 0;
+  background: #F9FAFB;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #fff;
+  color: #4B5563;
+  font-size: 0.8125rem;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.tag:hover {
+  background: #00AEC7;
+  color: #fff;
+  border-color: #00AEC7;
+}

@@ -1,0 +1,163 @@
+/* SERVICE section: full-width image background, overlay, white title + subtitle */
+/* Wrapper breaks out of any max-width container to span full viewport */
+.sectionWrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  margin-bottom: 2rem;
+  border-radius: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(91, 163, 198, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0.75rem 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 32rem;
+}
+
+@media (min-width: 600px) {
+  .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Full-width content area: no max-width container, only padding */
+.contentArea {
+  width: 100%;
+  padding: 1.5rem 1.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .contentArea {
+    padding: 2rem 2rem 2rem;
+  }
+}
+
+/* Section title below banner (誠実な配送・配布...) */
+.sectionHeading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #5BA3C6;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 600px) {
+  .sectionHeading {
+    font-size: 1.25rem;
+  }
+}
+
+/* Cards grid: stack on phone, row on larger screens */
+.cardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cardsGrid {
+    flex-direction: row;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+}
+
+.card {
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 1rem 1.25rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5BA3C6;
+  margin: 0 0 0.25rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 600px) {
+  .cardTitle {
+    font-size: 1.0625rem;
+  }
+}
+
+.cardSubtitle {
+  font-size: 0.8125rem;
+  color: #333;
+  margin: 0 0 0.75rem;
+  font-weight: 400;
+}
+
+.cardDescription {
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+@media (min-width: 600px) {
+  .cardDescription {
+    font-size: 0.9375rem;
+  }
+}
+
+.sectionLink {
+  display: inline-block;
+  margin-top: 0.25rem;
+}

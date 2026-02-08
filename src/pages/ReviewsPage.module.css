@@ -1,0 +1,176 @@
+/* Reviews Page Styles */
+
+.page {
+    width: 100%;
+}
+
+/* Page Header */
+.pageHeader {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.pageHeaderOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--section-padding-x);
+    width: 100%;
+}
+
+.pageTitle {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+.pageSubtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 12px 0 0;
+    text-align: center;
+}
+
+/* Section */
+.section {
+    padding: var(--section-padding-y) 0;
+    background: var(--bg-white);
+}
+
+/* Intro Block */
+.introBlock {
+    text-align: left;
+}
+
+.mainHeading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 12px;
+    text-align: center;
+}
+
+.leadText {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin: 0 0 24px;
+    text-align: center;
+}
+
+.introBlock p {
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 0 auto;
+    max-width: var(--container-max-width);
+}
+
+/* Image-Text Section */
+.imageTextSection {
+    padding: 60px 0;
+    background: var(--bg-white);
+}
+
+.imageTextSection:nth-child(odd) {
+    background: var(--bg-light-gray);
+}
+
+.imageTextBlock {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 769px) {
+    .imageTextBlock {
+        grid-template-columns: 40% 1fr;
+    }
+}
+
+.imageCol img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.textCol {
+    padding: 0;
+}
+
+.blockTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 20px;
+}
+
+.textCol p {
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+/* Review Callout */
+.reviewCallout {
+    padding: 60px 0;
+    background: var(--bg-light-cyan);
+}
+
+.reviewBlock {
+    text-align: center;
+    padding: 40px;
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.reviewTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 16px;
+}
+
+.reviewText {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .pageTitle {
+        font-size: 2rem;
+    }
+
+    .mainHeading {
+        font-size: 1.5rem;
+    }
+
+    .blockTitle {
+        font-size: 1.25rem;
+    }
+
+    .reviewTitle {
+        font-size: 1.25rem;
+    }
+}

@@ -1,0 +1,107 @@
+/* LINE Registration Section - Matching Original Site */
+
+.section {
+  width: 100%;
+}
+
+/* Cyan Header Bar */
+.header {
+  background: var(--bg-light-cyan);
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.headerTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+/* Body - White background with steps */
+.body {
+  background: #fff;
+  padding: 45px 20px 55px;
+}
+
+.steps {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stepText {
+  font-size: 1.0625rem;
+  color: var(--text-body);
+  margin: 0;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.arrow {
+  display: block;
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin: 4px 0;
+  user-select: none;
+}
+
+/* Link Preview Card */
+.linkPreview {
+  display: block;
+  background: var(--bg-light-cyan);
+  border-left: 4px solid var(--primary-blue);
+  padding: 16px 24px;
+  margin: 10px 0;
+  max-width: 700px;
+  width: 100%;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.linkPreview:hover {
+  background: #dceef4;
+  text-decoration: none;
+}
+
+.linkUrl {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--primary-blue);
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.linkDesc {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .headerTitle {
+    font-size: 1.125rem;
+  }
+
+  .body {
+    padding: 35px 16px 45px;
+  }
+
+  .stepText {
+    font-size: 0.9375rem;
+  }
+
+  .linkPreview {
+    padding: 14px 18px;
+  }
+
+  .linkUrl,
+  .linkDesc {
+    font-size: 0.875rem;
+  }
+}

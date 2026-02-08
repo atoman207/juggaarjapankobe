@@ -1,0 +1,384 @@
+/* CompanyPage Styles - Comprehensive */
+
+.page {
+  /* Full page wrapper */
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  width: 100%;
+}
+
+.sectionLabel {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Philosophy Section */
+.philosophySection {
+  padding: 80px 0;
+  background: var(--bg-white);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 32px;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.375rem;
+  }
+}
+
+.philosophyContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.philosophyContent p {
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--text-body);
+  margin: 0 0 16px;
+}
+
+/* Meaning Section */
+.meaningSection {
+  padding: 60px 0;
+  background: var(--bg-light-gray);
+}
+
+.meaningRow {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 769px) {
+  .meaningRow {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.meaningImage {
+  flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .meaningImage {
+    width: 40%;
+  }
+}
+
+.meaningImage img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.meaningText {
+  flex: 1;
+}
+
+.meaningText h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0 0 20px;
+}
+
+.meaningText p {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: var(--text-body);
+  margin: 0 0 16px;
+}
+
+/* Info Section */
+.infoSection {
+  padding: 60px 0;
+  background: var(--bg-white);
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.infoTable {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: var(--bg-white);
+}
+
+.infoTable th,
+.infoTable td {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: top;
+}
+
+.infoTable th {
+  width: 160px;
+  background: var(--bg-light-gray);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+@media (max-width: 576px) {
+  .infoTable th,
+  .infoTable td {
+    display: block;
+    width: 100%;
+  }
+  
+  .infoTable th {
+    padding-bottom: 8px;
+    border-bottom: none;
+  }
+  
+  .infoTable td {
+    padding-top: 0;
+  }
+}
+
+.infoTable td {
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+.infoTable a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.infoTable a:hover {
+  text-decoration: underline;
+}
+
+.infoTable ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.infoTable li {
+  margin-bottom: 4px;
+}
+
+/* History Section */
+.historySection {
+  padding: 60px 0;
+  background: var(--bg-light-gray);
+}
+
+.historyTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+.timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 100px;
+}
+
+@media (max-width: 576px) {
+  .timeline {
+    padding-left: 80px;
+  }
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 90px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary-blue);
+}
+
+@media (max-width: 576px) {
+  .timeline::before {
+    left: 70px;
+  }
+}
+
+.timelineItem {
+  position: relative;
+  padding: 0 0 40px 40px;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  border: 3px solid var(--bg-light-gray);
+}
+
+.timelineYear {
+  position: absolute;
+  left: -100px;
+  top: 0;
+  width: 80px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-align: right;
+}
+
+@media (max-width: 576px) {
+  .timelineYear {
+    left: -80px;
+    width: 60px;
+    font-size: 0.875rem;
+  }
+}
+
+.timelineContent {
+  background: var(--bg-white);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.timelineContent p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* Map Section */
+.mapSection {
+  padding: 60px 0;
+  background: var(--bg-white);
+}
+
+.mapTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.mapWrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+}
+
+.accessInfo {
+  text-align: center;
+}
+
+.accessInfo p {
+  font-size: 0.9375rem;
+  color: var(--text-body);
+  margin: 0 0 8px;
+}
+
+/* Category Title */
+.categoryTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 32px;
+}
+
+.categoryLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--primary-blue);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* Related Posts Section */
+.relatedPostsSection {
+  padding: 60px 0;
+  background: var(--bg-light-gray);
+}
+
+.relatedPostsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .relatedPostsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .relatedPostsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.relatedPostCard {
+  background: var(--bg-white);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.relatedPostCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.relatedPostCard h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.relatedPostCard p {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}

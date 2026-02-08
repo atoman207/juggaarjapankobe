@@ -1,0 +1,279 @@
+/* StaffPage Styles - Comprehensive */
+
+.page {
+  /* Full page wrapper */
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  width: 100%;
+}
+
+.sectionLabel {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Intro Section */
+.introSection {
+  padding: 80px 0;
+  background: var(--bg-white);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.introText {
+  font-size: 1rem;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* Staff Member Section */
+.staffMemberSection {
+  padding: 60px 0;
+  background: var(--bg-light-gray);
+}
+
+.staffMemberSection:nth-child(even) {
+  background: var(--bg-white);
+}
+
+.staffMemberCard {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .staffMemberCard {
+    flex-direction: column;
+  }
+}
+
+.staffMemberCardReverse {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .staffMemberCardReverse {
+    flex-direction: column;
+  }
+}
+
+.staffMemberImage {
+  flex-shrink: 0;
+  width: 320px;
+}
+
+@media (max-width: 768px) {
+  .staffMemberImage {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.staffMemberImage img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.staffMemberInfo {
+  flex: 1;
+}
+
+.staffMemberHeader {
+  margin-bottom: 24px;
+}
+
+.staffRole {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.staffName {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+
+.staffNameJa {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.staffDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.staffDetailItem {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--primary-blue);
+}
+
+.staffDetailItem h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin: 0 0 8px;
+}
+
+.staffDetailItem p {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* More Staff Section */
+.moreStaffSection {
+  padding: 60px 0;
+  background: var(--bg-white);
+}
+
+.moreStaffTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.moreStaffText {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: var(--text-body);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+.staffAreas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .staffAreas {
+    grid-template-columns: 1fr;
+  }
+}
+
+.staffAreaCard {
+  padding: 24px;
+  background: var(--bg-light-gray);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.staffAreaCard h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0 0 12px;
+}
+
+.staffAreaCard p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Category Title */
+.categoryTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 32px;
+}
+
+.categoryLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--primary-blue);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* Related Posts Section */
+.relatedPostsSection {
+  padding: 60px 0;
+  background: var(--bg-light-gray);
+}
+
+.relatedPostsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .relatedPostsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .relatedPostsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.relatedPostCard {
+  background: var(--bg-white);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.relatedPostCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.relatedPostCard h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.relatedPostCard p {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}

@@ -1,0 +1,364 @@
+/* ContactPage Styles - Matching Reference Site */
+
+.page {
+  /* Page wrapper - no specific styles needed */
+  display: block;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 60px 0 80px;
+  background: #fff;
+}
+
+/* Section Header - CONTACT title with underline */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitleEn {
+  font-family: 'Times New Roman', 'YuMincho', 'Yu Mincho', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00a3db;
+  letter-spacing: 4px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.sectionTitleEn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: #00a3db;
+}
+
+.sectionTitleJa {
+  font-size: 0.9375rem;
+  color: #333;
+  margin: 16px 0 0;
+  font-weight: 500;
+}
+
+/* Privacy Policy Box */
+.privacyBox {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.privacyBox h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px;
+}
+
+.privacyContent {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.privacyContent p {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0 0 8px;
+}
+
+.privacyContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Form Styles */
+.form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #e53935;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #00a3db;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Submit Button - Teal with arrow */
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  margin: 40px auto 0;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #00b8d4 0%, #00a3db 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #00a3db 0%, #0091c7 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 163, 219, 0.3);
+}
+
+.buttonArrow {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+/* Success Message */
+.successMessage {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 60px 40px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  background: #28a745;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+}
+
+.successMessage h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 16px;
+}
+
+.successMessage p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Related Posts Section */
+.relatedSection {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.relatedCard {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.relatedCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.relatedCardImage {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  background: #e0e0e0;
+}
+
+.relatedCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.relatedCardContent {
+  padding: 16px;
+}
+
+.relatedCardContent h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.relatedCardContent p {
+  font-size: 0.8125rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Related Tags Section */
+.tagsSection {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.tag {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f0f7fa;
+  color: #00a3db;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #d0e8f0;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: #00a3db;
+  color: #fff;
+  border-color: #00a3db;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 40px 0 60px;
+  }
+
+  .sectionTitleEn {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 30px;
+  }
+
+  .privacyBox {
+    margin-bottom: 30px;
+    padding: 16px;
+  }
+
+  .privacyContent {
+    max-height: 150px;
+  }
+
+  .submitButton {
+    max-width: 100%;
+  }
+
+  .relatedSection,
+  .tagsSection {
+    padding: 40px 0;
+  }
+
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .relatedCardImage {
+    height: 180px;
+  }
+
+  .tagsList {
+    gap: 8px;
+  }
+
+  .tag {
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+  }
+}
