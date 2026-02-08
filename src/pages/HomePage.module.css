@@ -16,19 +16,38 @@
 /* ============================================ */
 
 .sectionLabel {
-  display: block;
+  display: inline-block;
   text-align: center;
-  font-size: 1rem;
+  font-size: 2.1rem;
   font-weight: 700;
+  font-family: var(--font-family-jp-serif);
   color: var(--primary-blue);
   letter-spacing: 4.5px;
   text-transform: uppercase;
   margin-bottom: 22px;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.sectionLabel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--transition-normal), left var(--transition-normal);
+}
+
+.sectionLabel:hover::after {
+  width: 30%;
+  left: 35%;
 }
 
 .sectionTitle {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.1875rem;
   font-weight: 700;
   color: var(--text-dark);
   margin: 0 0 26px;
@@ -36,8 +55,12 @@
 }
 
 @media (max-width: 768px) {
+  .sectionLabel {
+    font-size: 2.25rem;
+  }
+
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.1875rem;
   }
 }
 
@@ -50,37 +73,34 @@
 
 .linkButton {
   display: inline-block;
-  padding: 15px 42px;
+  padding: 10px 42px;
   background: linear-gradient(135deg, #00A3DB 0%, #23C8E4 100%);
   color: #fff;
   font-size: 1.0625rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 0;
   transition: all var(--transition-normal);
   box-shadow: 0 4px 12px rgba(0, 163, 219, 0.25);
 }
 
 .linkButton:hover {
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 163, 219, 0.35);
   text-decoration: none;
 }
 
-/* CONCEPT Section */
+/* CONCEPT Section - centered in container, same style as image */
 /* ============================================ */
 
 .conceptSection {
-  padding: 100px 0;
+  padding: 40px 0 70px;
   background: #fff;
 }
 
-.conceptBusinessTypes {
+.conceptContainer {
   text-align: center;
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  margin-bottom: 45px;
-  letter-spacing: 0.5px;
 }
 
 .conceptLabel {
@@ -91,6 +111,23 @@
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 26px;
+}
+
+.conceptServicesList {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  text-align: center;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  font-family: var(--font-family-jp-serif);
+  color: var(--primary-blue);
+  line-height: 1.9;
+}
+
+.conceptServicesList li {
+  margin: 0;
+  padding: 0;
 }
 
 .conceptServices {
@@ -112,23 +149,32 @@
 }
 
 .conceptTitle {
+  display: inline-block;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.1875rem;
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.85;
   margin: 0 0 50px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  border-bottom: 2px solid var(--primary-blue);
 }
 
 @media (max-width: 768px) {
   .conceptTitle {
-    font-size: 1.375rem;
+    font-size: 1.1875rem;
   }
 }
 
 .conceptContent {
-  max-width: 950px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
+  text-align: left;
+  box-sizing: border-box;
 }
 
 .conceptContent p {
@@ -245,29 +291,51 @@
   background: var(--bg-white);
 }
 
+.serviceCardsSectionTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 40px;
+  line-height: 1.6;
+}
+
+.serviceCardsSection .container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
 .serviceCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 45px;
+  gap: 48px;
 }
 
 @media (max-width: 768px) {
+  .serviceCardsSectionTitle {
+    font-size: 1.25rem;
+    margin-bottom: 28px;
+  }
+
   .serviceCards {
     grid-template-columns: 1fr;
-    gap: 35px;
+    column-gap: 0;
+    row-gap: 35px;
   }
 }
 
 .serviceCard {
   background: var(--bg-white);
   box-shadow: var(--shadow-md);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   overflow: hidden;
-  transition: transform var(--transition-normal);
+  transition: box-shadow var(--transition-normal);
 }
 
 .serviceCard:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -276,6 +344,7 @@
   width: 100%;
   overflow: hidden;
   aspect-ratio: 4/3;
+  border-radius: 0;
 }
 
 .serviceCardImageTop img {
@@ -283,27 +352,44 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform var(--transition-slow);
+  transition: opacity var(--transition-normal);
+  border-radius: 0;
 }
 
 .serviceCard:hover .serviceCardImageTop img {
-  transform: scale(1.05);
+  opacity: 0.6;
 }
 
 .serviceCardBody {
   padding: 26px 24px;
-}
-
-.serviceCardBody .serviceCardNumber {
-  color: #000;
+  text-align: center;
 }
 
 .serviceCardBody .serviceCardTitle {
+  color: var(--primary-blue);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.serviceCardBody .serviceCardNumber {
+  display: block;
   color: #000;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .serviceCardBody .serviceCardText {
   color: #000;
+  text-align: left;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .serviceCardContent {
@@ -452,62 +538,71 @@
 }
 
 .postingText {
-  text-align: left;
+  text-align: center;
   max-width: 720px;
+  margin: 0 auto;
 }
 
 .postingTitle {
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-dark);
-  margin: 0 0 28px;
+  margin: 0 auto 12px;
   line-height: 1.6;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary-blue);
+  width: fit-content;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
   .postingTitle {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 }
 
-.postingBadge {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(135deg, #00A3DB 0%, #23C8E4 100%);
-  color: #fff;
-  padding: 18px 38px;
-  border-radius: 10px;
-  margin-bottom: 28px;
-  box-shadow: 0 6px 20px rgba(0, 163, 219, 0.3);
-}
-
-.badgeLabel {
+.postingStatLine {
   font-size: 0.9375rem;
-  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+  line-height: 1.6;
 }
 
-.badgeValue {
-  font-size: 3.25rem;
+.postingStatNumber {
   font-weight: 700;
-  line-height: 1.1;
+  margin: 0 2px;
 }
 
-.badgeValue small {
-  font-size: 1.625rem;
+.postingSeparator {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid #d1d5db;
+  margin: 20px auto 24px;
+  max-width: 100%;
 }
 
 .postingDescription {
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   line-height: 2.1;
   color: var(--text-body);
   margin: 0 0 18px;
 }
 
+.postingLine {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .postingLine {
+    white-space: normal;
+  }
+}
+
 .postingTagline {
-  font-size: 1.1875rem;
+  font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--text-body);
   margin: 28px 0 0;
   line-height: 1.9;
 }
@@ -516,16 +611,22 @@
 .postingFlyers {
   margin-top: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
 }
 
 .postingFlyerImg {
+  flex: 1 1 calc(50% - 12px);
+  min-width: 0;
+  max-width: calc(50% - 12px);
   width: 100%;
-  max-width: 700px;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
 /* ============================================ */
@@ -566,130 +667,6 @@
 }
 
 /* ============================================ */
-/* Parallax Section */
-/* ============================================ */
-
-.parallaxSection {
-  position: relative;
-  height: 320px;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-@media (max-width: 768px) {
-  .parallaxSection {
-    height: 220px;
-    background-attachment: scroll;
-  }
-}
-
-.parallaxOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
-/* ============================================ */
-/* Info/Blog/QA Grid - 3 Column Section */
-/* ============================================ */
-
-.infoGridSection {
-  padding: 60px 0;
-  background: var(--bg-white);
-}
-
-.infoGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-
-@media (min-width: 769px) {
-  .infoGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-}
-
-.infoColumn {
-  text-align: center;
-  padding: 30px 20px;
-  background: #f8f9fa;
-  border-radius: var(--radius-md);
-}
-
-.infoColumnTitle {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin: 0 0 8px;
-}
-
-.infoColumnLabel {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #38B6D3;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0 0 20px;
-}
-
-.infoList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  text-align: left;
-}
-
-.infoList li {
-  margin-bottom: 12px;
-  padding-left: 20px;
-  position: relative;
-}
-
-.infoList li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: #38B6D3;
-  font-size: 0.875rem;
-}
-
-.infoList a {
-  color: var(--text-body);
-  text-decoration: none;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  transition: color var(--transition-fast);
-}
-
-.infoList a:hover {
-  color: #38B6D3;
-  text-decoration: underline;
-}
-
-.infoViewMore {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 24px;
-  background: #38B6D3;
-  color: var(--text-white);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-normal);
-}
-
-.infoViewMore:hover {
-  background: #2ca3bf;
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
-/* ============================================ */
 /* RECRUIT Section */
 /* ============================================ */
 
@@ -716,9 +693,6 @@
 
 .recruitCard {
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   max-width: 520px;
   margin: 0 auto;
 }
@@ -730,22 +704,36 @@
   }
 }
 
-.recruitCard img {
+.recruitCardImageWrap {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.recruitCardImageWrap img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 0;
+  transition: opacity 0.2s ease;
+}
+
+.recruitCardImageWrap:hover img {
+  opacity: 0.6;
 }
 
 .recruitCardCaption {
-  background: #F9FAFB;
-  padding: 18px 22px;
+  padding: 18px 0 0;
   text-align: left;
 }
 
 .recruitCardCaption h3 {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #87CEEB;
   margin: 0 0 6px;
 }
 
@@ -755,19 +743,90 @@
   margin: 0;
 }
 
+/* Recruit image modal */
+.recruitModalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.recruitModalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.recruitModalClose {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 0;
+  z-index: 2;
+}
+
+.recruitModalClose:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.recruitModalArrowLeft,
+.recruitModalArrowRight {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.recruitModalArrowLeft:hover,
+.recruitModalArrowRight:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.recruitModalImage {
+  max-width: calc(90vw - 120px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
 .recruitLink {
   display: inline-block;
-  padding: 14px 40px;
+  padding: 10px 40px;
   background: var(--primary-gradient);
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   transition: all var(--transition-normal);
 }
 
 .recruitLink:hover {
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   text-decoration: none;

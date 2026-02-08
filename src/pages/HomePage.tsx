@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { HeroCarousel } from '@/components/HeroCarousel'
 import { LineBanner } from '@/components/LineBanner'
@@ -19,14 +20,60 @@ import parallax1 from '@/assets/image/parallax1.jpg'
 import serviceImg from '@/assets/image/service.jpg'
 
 const HERO_IMAGES = [mv1, mv2, mv3]
+const RECRUIT_IMAGES = [recruit01, recruit02]
+const POSTING_COUNT_TARGET = 95
+const POSTING_COUNT_DURATION_MS = 2000
 
 export function HomePage(): React.ReactElement {
+  const [postingCount, setPostingCount] = useState(1)
+  const [recruitModalIndex, setRecruitModalIndex] = useState<number | null>(null)
+  const postingSectionRef = useRef<HTMLElement>(null)
+  const hasAnimated = useRef(false)
+
+  useEffect(() => {
+    if (recruitModalIndex === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setRecruitModalIndex(null)
+      if (e.key === 'ArrowLeft') setRecruitModalIndex((prev) => (prev === 0 ? RECRUIT_IMAGES.length - 1 : prev! - 1))
+      if (e.key === 'ArrowRight') setRecruitModalIndex((prev) => (prev === RECRUIT_IMAGES.length - 1 ? 0 : prev! + 1))
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [recruitModalIndex])
+
+  useEffect(() => {
+    const el = postingSectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (hasAnimated.current) return
+        if (!entries[0]?.isIntersecting) return
+        hasAnimated.current = true
+        const start = 1
+        const end = POSTING_COUNT_TARGET
+        const startTime = performance.now()
+        const tick = (now: number) => {
+          const elapsed = now - startTime
+          const progress = Math.min(elapsed / POSTING_COUNT_DURATION_MS, 1)
+          const easeOutQuart = 1 - (1 - progress) ** 4
+          const value = Math.round(start + (end - start) * easeOutQuart)
+          setPostingCount(value)
+          if (progress < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      },
+      { threshold: 0.2 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className={styles.page}>
       {/* Hero Carousel */}
       <HeroCarousel
         images={HERO_IMAGES}
-        title={'誠実なサービスが地元神戸\nで好評です'}
+        title={'誠実なサービスが地元神戸で好評です'}
         subtitle="ご期待にお応えするようドライバー・配布スタッフが尽力"
       />
 
@@ -37,14 +84,17 @@ export function HomePage(): React.ReactElement {
       {/* CONCEPT Section */}
       {/* ============================================ */}
       <section className={styles.conceptSection}>
-        <div className={styles.container}>
-          <div className={styles.conceptBusinessTypes}>
-            貨物軽自動車運送事業　ポスティング事業　BPO事業（事業開発・営業支援）　ドローン空撮　グラフィックデザイン・WEBデザイン制作事業
-          </div>
-          <span className={styles.sectionLabel}>コンセプト</span>
+        <div className={`${styles.container} ${styles.conceptContainer}`}>
+          <span className={styles.sectionLabel}>CONCEPT</span>
+          <ul className={styles.conceptServicesList}>
+            <li>貨物軽自動車運送事業</li>
+            <li>ポスティング事業</li>
+            <li>BPO事業（事業開発・営業支援）</li>
+            <li>ドローン空撮</li>
+            <li>グラフィックデザイン・WEBデザイン制作事業</li>
+          </ul>
           <h2 className={styles.conceptTitle}>
-            弊社のサービスを通じて人々の<br />
-            幸福と生活の向上に関われる企業でありたい
+            弊社のサービスを通じて人々の幸福と生活の向上に関われる企業でありたい
           </h2>
           <div className={styles.conceptContent}>
             <p>
@@ -69,7 +119,7 @@ export function HomePage(): React.ReactElement {
       <section className={styles.serviceParallaxSection}>
         <div className={styles.serviceParallaxOverlay}>
           <div className={styles.container}>
-            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>サービス</span>
+            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>SERVICE</span>
             <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>信頼できる集荷と配送のプロとして神戸市で高評価を獲得</h2>
           </div>
         </div>
@@ -81,6 +131,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.serviceCardsSection}>
         <div className={styles.container}>
+          <h2 className={styles.serviceCardsSectionTitle}>誠実な配送・配布サービスが地元KOBEで好評です</h2>
           <div className={styles.serviceCards}>
             {/* Service Card 01 */}
             <div className={styles.serviceCard}>
@@ -88,8 +139,8 @@ export function HomePage(): React.ReactElement {
                 <img src={service01} alt="地道な努力で信頼を積み重ねております" />
               </div>
               <div className={styles.serviceCardBody}>
-                <span className={styles.serviceCardNumber}>サービス 01</span>
                 <h3 className={styles.serviceCardTitle}>地道な努力で信頼を積み重ねております</h3>
+                <span className={styles.serviceCardNumber}>SERVICE 01</span>
                 <p className={styles.serviceCardText}>
                   ドライバーをはじめ、スタッフ一人ひとりが自分に任された仕事に自覚と責任を持ち、創業以来長きに亘って、お客様からの信頼を積み重ねてまいりました。<br /><br />
                   現状に甘んじることなく、今後もクオリティーの高いサービスを継続し、お客様に笑顔をお届けできるよう、尽力いたします。
@@ -103,8 +154,8 @@ export function HomePage(): React.ReactElement {
                 <img src={service02} alt="お客様が求めるサービスを形にしております" />
               </div>
               <div className={styles.serviceCardBody}>
-                <span className={styles.serviceCardNumber}>サービス 02</span>
                 <h3 className={styles.serviceCardTitle}>お客様が求めるサービスを形にしております</h3>
+                <span className={styles.serviceCardNumber}>SERVICE 02</span>
                 <p className={styles.serviceCardText}>
                   お客様のお声を真摯にお伺いし、画一的なご提案をするのではなく、お客様が求めるものをサービスとして形にしております。<br /><br />
                   難しくニッチなご要望にもできる限り真摯にお答えするよう、心掛けております。<br />
@@ -119,8 +170,8 @@ export function HomePage(): React.ReactElement {
                 <img src={service03} alt="依頼して良かったと喜ばれるように尽力" />
               </div>
               <div className={styles.serviceCardBody}>
-                <span className={styles.serviceCardNumber}>サービス 03</span>
                 <h3 className={styles.serviceCardTitle}>依頼して良かったと喜ばれるように尽力</h3>
+                <span className={styles.serviceCardNumber}>SERVICE 03</span>
                 <p className={styles.serviceCardText}>
                   お客様から｢運びたい荷物・配ってほしいチラシがあった時に、地元で実績が豊富なプロが見つかって良かった｣というようなご納得のお言葉を多数いただいております。<br /><br />
                   今後も、物流の分野をはじめ様々な分野で実績を積み重ね、お客様からお喜びいただけるよう、スタッフ一同が尽力してまいります。
@@ -134,28 +185,28 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       {/* POSTING Section - Single Column Stacked */}
       {/* ============================================ */}
-      <section className={styles.postingSection}>
+      <section ref={postingSectionRef} className={styles.postingSection}>
         <div className={styles.container}>
-          {/* Text Content */}
+          {/* Text Content - style matching second image: blue left border, stat line, grey separator */}
           <div className={styles.postingText}>
             <h2 className={styles.postingTitle}>
               誠実なポスティングサービスが地元KOBEで好評です
             </h2>
-            <div className={styles.postingBadge}>
-              <span className={styles.badgeLabel}>顧客様リピート率</span>
-              <span className={styles.badgeValue}>95<small>％</small></span>
-            </div>
+            <p className={styles.postingStatLine}>
+              顧客様リピート率<span className={styles.postingStatNumber}>{postingCount}</span>％
+            </p>
+            <hr className={styles.postingSeparator} />
             <p className={styles.postingDescription}>
-              弊社の理念でもある誠実さをいかなる場合も貫き<br />
-              1枚1枚を誠実に・丁寧に・確実に配布いたします。
+              <span className={styles.postingLine}>弊社の理念でもある誠実さをいかなる場合も貫き</span>
+              <span className={styles.postingLine}>1枚1枚を誠実に・丁寧に・確実に配布いたします。</span>
             </p>
             <p className={styles.postingDescription}>
-              配布の際は取引先様の社員になった気持ちで<br />
-              反響のでるポスティングを徹底致します。
+              <span className={styles.postingLine}>配布の際は取引先様の社員になった気持ちで</span>
+              <span className={styles.postingLine}>反響のでるポスティングを徹底致します。</span>
             </p>
             <p className={styles.postingTagline}>
-              神戸市　ポスティング　業者　なら迷わず<br />
-              ジュガールジャパンまで
+              <span className={styles.postingLine}>神戸市　ポスティング　業者　なら迷わず</span>
+              <span className={styles.postingLine}>ジュガールジャパンまで</span>
             </p>
           </div>
 
@@ -168,95 +219,90 @@ export function HomePage(): React.ReactElement {
       </section>
 
       {/* ============================================ */}
-      {/* Parallax 1 */}
-      {/* ============================================ */}
-      <section className={styles.parallaxSection} style={{ backgroundImage: `url(${parallax1})` }}>
-        <div className={styles.parallaxOverlay} />
-      </section>
-
-      {/* ============================================ */}
       {/* RECRUIT Section */}
       {/* ============================================ */}
       <section className={styles.recruitSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>採用情報</span>
+          <span className={styles.sectionLabel}>RECRUIT</span>
           <h2 className={styles.sectionTitle}>
             誠実な方・やる気のある方を<br />
             業務委託パートナーとして歓迎しています
           </h2>
-          {/* Recruit Illustrated Cards - No overlay, images already have text */}
           <div className={styles.recruitCards}>
             <div className={styles.recruitCard}>
-              <img src={recruit01} alt="宅配ドライバー、ポスティングスタッフ" />
+              <button
+                type="button"
+                className={styles.recruitCardImageWrap}
+                onClick={() => setRecruitModalIndex(0)}
+                aria-label="画像を拡大"
+              >
+                <img src={recruit01} alt="宅配ドライバー、ポスティングスタッフ" />
+              </button>
               <div className={styles.recruitCardCaption}>
                 <h3>宅配ドライバー、ポスティングスタッフ</h3>
                 <p>神戸市北区・三田市在住の方！！</p>
               </div>
             </div>
             <div className={styles.recruitCard}>
-              <img src={recruit02} alt="夕方～の宅配ドライバー、チャーター便" />
+              <button
+                type="button"
+                className={styles.recruitCardImageWrap}
+                onClick={() => setRecruitModalIndex(1)}
+                aria-label="画像を拡大"
+              >
+                <img src={recruit02} alt="夕方～の宅配ドライバー、チャーター便" />
+              </button>
               <div className={styles.recruitCardCaption}>
                 <h3>夕方～の宅配ドライバー、チャーター便</h3>
                 <p>在宅率の高い時間帯で効率よく稼ぎませんか？？</p>
               </div>
             </div>
           </div>
+
+          {recruitModalIndex !== null && (
+            <div
+              className={styles.recruitModalBackdrop}
+              onClick={() => setRecruitModalIndex(null)}
+              role="dialog"
+              aria-modal="true"
+              aria-label="採用画像"
+            >
+              <div className={styles.recruitModalContent} onClick={(e) => e.stopPropagation()}>
+                <button
+                  type="button"
+                  className={styles.recruitModalClose}
+                  onClick={() => setRecruitModalIndex(null)}
+                  aria-label="閉じる"
+                >
+                  ×
+                </button>
+                <button
+                  type="button"
+                  className={styles.recruitModalArrowLeft}
+                  onClick={(e) => { e.stopPropagation(); setRecruitModalIndex((prev) => (prev === null || prev === 0 ? RECRUIT_IMAGES.length - 1 : prev - 1)); }}
+                  aria-label="前の画像"
+                >
+                  ‹
+                </button>
+                <img
+                  src={RECRUIT_IMAGES[recruitModalIndex]}
+                  alt={recruitModalIndex === 0 ? '宅配ドライバー、ポスティングスタッフ' : '夕方～の宅配ドライバー、チャーター便'}
+                  className={styles.recruitModalImage}
+                />
+                <button
+                  type="button"
+                  className={styles.recruitModalArrowRight}
+                  onClick={(e) => { e.stopPropagation(); setRecruitModalIndex((prev) => (prev === null || prev === RECRUIT_IMAGES.length - 1 ? 0 : prev + 1)); }}
+                  aria-label="次の画像"
+                >
+                  ›
+                </button>
+              </div>
+            </div>
+          )}
           <RouterLink to="/recruit" className={styles.recruitLink}>
             採用情報へ
           </RouterLink>
-        </div>
-      </section>
-
-      {/* ============================================ */}
-      {/* Info/Blog/QA Grid - 3 Column Section */}
-      {/* ============================================ */}
-      <section className={styles.infoGridSection}>
-        <div className={styles.container}>
-          <div className={styles.infoGrid}>
-            {/* Column 1: Q&A */}
-            <div className={styles.infoColumn}>
-              <h3 className={styles.infoColumnTitle}>よくある質問</h3>
-              <p className={styles.infoColumnLabel}>よくある質問</p>
-              <ul className={styles.infoList}>
-                <li><RouterLink to="/faq">給料日・報酬日はいつですか？</RouterLink></li>
-                <li><RouterLink to="/faq">マイカー・バイク通勤は可能ですか？</RouterLink></li>
-                <li><RouterLink to="/faq">未経験ですが大丈夫ですか？</RouterLink></li>
-                <li><RouterLink to="/faq">雇用形態は選べますか？</RouterLink></li>
-              </ul>
-              <RouterLink to="/faq" className={styles.infoViewMore}>
-                もっと見る
-              </RouterLink>
-            </div>
-
-            {/* Column 2: News & Blog */}
-            <div className={styles.infoColumn}>
-              <h3 className={styles.infoColumnTitle}>新着情報・ブログ</h3>
-              <p className={styles.infoColumnLabel}>新着情報・ブログ</p>
-              <ul className={styles.infoList}>
-                <li><RouterLink to="/blog">神戸電鉄五社駅から徒歩1分！</RouterLink></li>
-                <li><RouterLink to="/blog">キッチンカースペースをご用意</RouterLink></li>
-                <li><RouterLink to="/blog">軽貨物の仕事をお探しの方に朗報</RouterLink></li>
-              </ul>
-              <RouterLink to="/blog" className={styles.infoViewMore}>
-                もっと見る
-              </RouterLink>
-            </div>
-
-            {/* Column 3: Logistics Service */}
-            <div className={styles.infoColumn}>
-              <h3 className={styles.infoColumnTitle}>物流サービス</h3>
-              <p className={styles.infoColumnLabel}>物流サービス</p>
-              <ul className={styles.infoList}>
-                <li><RouterLink to="/service">軽貨物配送サービス</RouterLink></li>
-                <li><RouterLink to="/service">ポスティングサービス</RouterLink></li>
-                <li><RouterLink to="/service">チャーター便</RouterLink></li>
-                <li><RouterLink to="/service">BPO事業</RouterLink></li>
-              </ul>
-              <RouterLink to="/service" className={styles.infoViewMore}>
-                もっと見る
-              </RouterLink>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -266,7 +312,7 @@ export function HomePage(): React.ReactElement {
       <section className={styles.staffSection} style={{ backgroundImage: `url(${parallax1})` }}>
         <div className={styles.staffOverlay}>
           <div className={styles.container}>
-            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>スタッフ</span>
+            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>STAFF</span>
             <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>熱意あるスタッフが物流や営業の現場で活躍しております</h2>
             <p className={styles.staffDescription}>
               知識と経験の豊富なスタッフが地域密着型のスタッフがお客様のために尽力
@@ -283,7 +329,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.companySection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>会社概要</span>
+          <span className={styles.sectionLabel}>COMPANY</span>
           <h2 className={styles.sectionTitle}>地元に根差した丁寧な物流サービスに力を入れております</h2>
           <div className={styles.companyContent}>
             <div className={styles.companyText}>
@@ -310,7 +356,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.aboutSection} id="main">
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>私たちについて</span>
+          <span className={styles.sectionLabel}>ABOUT US</span>
           <h2 className={styles.sectionTitle}>幅広い配送サービスをメインに拠点を置く神戸市の方から好評です</h2>
 
           <div className={styles.aboutColumns}>
@@ -389,7 +435,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.columnTeasersSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>コラム</span>
+          <span className={styles.sectionLabel}>COLUMN</span>
           <h2 className={styles.sectionTitle}>配送のプロが語る生活に役立つ情報発信ページ</h2>
           <p className={styles.columnSubtitle}>
             日々の生活に役立つ配送のヒントや、物流業界の最新動向、地域密着型サービスの魅力をわかりやすくお伝えします。

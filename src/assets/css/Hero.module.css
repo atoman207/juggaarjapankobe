@@ -63,7 +63,7 @@
   font-weight: 700;
   line-height: 1.35;
   text-align: left;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-family-jp-serif);
   background: linear-gradient(
     to right,
     rgba(135, 206, 235, 0.95),
@@ -80,7 +80,7 @@
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
-  font-family: 'Google Sans', Arial, sans-serif;
+  font-family: var(--font-family-jp);
   background: linear-gradient(
     to right,
     rgba(135, 206, 235, 0.95),
