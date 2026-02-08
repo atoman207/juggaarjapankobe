@@ -290,6 +290,22 @@
   transform: scale(1.05);
 }
 
+.serviceCardBody {
+  padding: 26px 24px;
+}
+
+.serviceCardBody .serviceCardNumber {
+  color: #000;
+}
+
+.serviceCardBody .serviceCardTitle {
+  color: #000;
+}
+
+.serviceCardBody .serviceCardText {
+  color: #000;
+}
+
 .serviceCardContent {
   position: absolute;
   bottom: 0;
