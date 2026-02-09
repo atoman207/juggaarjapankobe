@@ -193,7 +193,7 @@
     padding: 24px;
     background: var(--bg-white);
     border: 1px solid #eee;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-normal);
 }

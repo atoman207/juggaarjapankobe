@@ -39,7 +39,7 @@ export function HeroCarousel({
   }, [images.length, intervalMs, goToNext])
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} data-hero>
       {/* Slides */}
       <div className={styles.slidesContainer}>
         {images.map((image, index) => (
@@ -58,9 +58,39 @@ export function HeroCarousel({
           {title && <h1 className={styles.overlayTitle}>{title}</h1>}
           {subtitle && <p className={styles.overlaySubtitle}>{subtitle}</p>}
         </div>
-        <a href={scrollTarget} className={styles.scrollDown} aria-label="Scroll down">
-          {/* Arrow rendered via CSS */}
+      </div>
+
+      {/* Hero bottom: down arrow (scroll to next section) + image indicator (3 lines) */}
+      <div className={styles.heroBottom}>
+        <a
+          href={scrollTarget}
+          className={styles.scrollDown}
+          aria-label="次のセクションへ"
+          onClick={(e) => {
+            const el = document.querySelector(scrollTarget)
+            if (el) {
+              e.preventDefault()
+              el.scrollIntoView({ behavior: 'smooth' })
+            }
+          }}
+        >
+          <ChevronDownIcon />
         </a>
+        {images.length > 1 && (
+          <div className={styles.lineIndicator} role="tablist" aria-label="表示中のスライド">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                role="tab"
+                aria-label={`スライド ${index + 1}`}
+                aria-selected={index === currentIndex}
+                className={`${styles.line} ${index === currentIndex ? styles.lineActive : ''}`}
+                onClick={() => goToSlide(index)}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Navigation Arrows */}
@@ -84,27 +114,11 @@ export function HeroCarousel({
           </button>
         </>
       )}
-
-      {/* Dots Indicator */}
-      {images.length > 1 && (
-        <div className={styles.dots}>
-          {images.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              className={`${styles.dot} ${index === currentIndex ? styles.active : ''}`}
-              onClick={() => goToSlide(index)}
-              aria-label={`スライド ${index + 1}`}
-              aria-current={index === currentIndex}
-            />
-          ))}
-        </div>
-      )}
     </section>
   )
 }
 
-// Chevron Icon Component
+// Chevron Icon Component (left/right)
 function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
   return (
     <svg
@@ -119,6 +133,24 @@ function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
       style={{ transform: direction === 'left' ? 'rotate(180deg)' : 'none' }}
     >
       <polyline points="9 18 15 12 9 6" />
+    </svg>
+  )
+}
+
+// Chevron Down Icon for scroll-to-next-section
+function ChevronDownIcon() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="6 9 12 15 18 9" />
     </svg>
   )
 }

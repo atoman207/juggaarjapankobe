@@ -55,7 +55,7 @@
 
 .serviceCard {
   background: var(--bg-white);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
@@ -428,7 +428,7 @@
   font-weight: 600;
   text-decoration: none;
   text-align: center;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   min-height: 80px;
   transition: all var(--transition-normal);
 }
@@ -465,7 +465,7 @@
 .relatedPostCard {
   background: var(--bg-light-gray);
   padding: 20px;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   text-decoration: none;
   transition: all var(--transition-normal);
 }

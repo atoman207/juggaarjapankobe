@@ -106,55 +106,71 @@
   }
 }
 
-/* Simple Scroll Down Arrow */
-.scrollDown {
+/* Hero bottom: down arrow + 3-line image indicator */
+.heroBottom {
   position: absolute;
-  bottom: 40px;
+  bottom: 36px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 400;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: opacity var(--transition-fast);
+  gap: 16px;
   z-index: 10;
+}
+
+.scrollDown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .scrollDown:hover {
   opacity: 1;
-  text-decoration: none;
+  color: #fff;
 }
 
-.scrollDown::after {
-  content: '↓';
-  display: block;
-  font-size: 2rem;
-  margin-top: 4px;
+.scrollDown svg {
   animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
 
-  0%,
-  100% {
-    transform: translateY(0);
-  }
+/* Line indicator: 3 horizontal lines, active = thicker */
+.lineIndicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  50% {
-    transform: translateY(8px);
-  }
+.line {
+  width: 24px;
+  height: 2px;
+  padding: 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  border-radius: 1px;
+  transition: background 0.2s ease, height 0.2s ease;
+}
+
+.line:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.lineActive {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 /* Hide navigation buttons - live site doesn't have them visible */
 .navButton {
-  display: none;
-}
-
-/* Hide dots indicator */
-.dots {
   display: none;
 }

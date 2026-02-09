@@ -1,0 +1,34 @@
+---
+description: Cards must have no border radius (sharp corners)
+globs: **/*.css
+alwaysApply: false
+---
+
+# Card styling: no border radius
+
+All card components in this project use **sharp corners** (no border radius).
+
+## Rule
+
+- When adding or editing **card**-like components (e.g. `.card`, `.reviewCard`, `.columnCard`, `.blogParallaxCard`, `.relatedPostCard`, `.articleCard`, `.serviceCard`, `.categoryCard`, `.reasonCard`, `.staffAreaCard`, `.relatedCard`, and any new card containers), set:
+  - `border-radius: 0;`
+- Do **not** use `border-radius: var(--radius-md)`, `var(--radius-sm)`, or any pixel value for card containers.
+
+## Example
+
+```css
+/* ✅ Correct */
+.myCard {
+  background: var(--bg-white);
+  border-radius: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ❌ Avoid for cards */
+.myCard {
+  border-radius: 8px;
+  border-radius: var(--radius-md);
+}
+```
+
+This applies to any new card components created from now on.

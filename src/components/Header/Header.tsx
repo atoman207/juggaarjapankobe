@@ -5,16 +5,17 @@ import styles from './Header.module.css'
 
 const SCROLL_THRESHOLD = 80
 
-// Navigation items matching live site
+// Navigation items: 9 menu items with vertical separators
 const NAV_ITEMS = [
-  { path: '/', label: 'トップ' },
+  { path: '/', label: 'ホーム' },
   { path: '/concept', label: 'コンセプト' },
-  { path: '/service', label: 'サービス' },
+  { path: '/service', label: 'サービス・料金表' },
   { path: '/recruit', label: '採用情報' },
-  { path: '/column', label: 'コラム' },
+  { path: '/staff', label: 'スタッフ' },
   { path: '/faq', label: 'よくある質問' },
   { path: '/company', label: '会社概要' },
-  { path: '/contact', label: 'アクセス' },
+  { path: '/blog', label: 'ブログ' },
+  { path: '/column', label: 'コラム' },
 ]
 
 // Phone numbers
@@ -132,7 +133,6 @@ export function Header(): React.ReactElement {
                 className={`${styles.topBarBtn} ${styles.topBarBtnOutline}`}
               >
                 オフィシャルサイトへ
-                <ExternalLinkIcon className={styles.topBarBtnIcon} />
               </a>
             </div>
           </div>
@@ -211,7 +211,6 @@ export function Header(): React.ReactElement {
             onClick={closeMenu}
           >
             オフィシャルサイトへ
-            <ExternalLinkIcon className={styles.topBarBtnIcon} />
           </a>
         </div>
 
@@ -249,21 +248,5 @@ function PhoneIcon({ className }: { className?: string }) {
     </svg>
   )
 }
-
-// External link icon (overlapping squares)
-function ExternalLinkIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-1 16H5V7h4V5H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2v-8h-2v7H13z" />
-    </svg>
-  )
-}
-
-
 
 export default Header

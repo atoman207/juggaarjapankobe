@@ -69,7 +69,7 @@
   text-align: center;
   padding: 30px 20px;
   background: var(--bg-white);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   box-shadow: var(--shadow-sm);
   text-decoration: none;
   color: inherit;

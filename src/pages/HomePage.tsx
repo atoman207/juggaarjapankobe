@@ -16,19 +16,33 @@ import posting02 from '@/assets/image/posting02.jpg'
 import recruit01 from '@/assets/image/recruit01.jpg'
 import recruit02 from '@/assets/image/recruit02.jpg'
 import companyImg from '@/assets/image/company.jpg'
-import parallax1 from '@/assets/image/parallax1.jpg'
-import serviceImg from '@/assets/image/service.jpg'
+import staff01 from '@/assets/image/staff01.jpg'
+import staff02 from '@/assets/image/staff02.jpg'
+import parallax2 from '@/assets/image/parallax2.jpg'
 
 const HERO_IMAGES = [mv1, mv2, mv3]
 const RECRUIT_IMAGES = [recruit01, recruit02]
 const POSTING_COUNT_TARGET = 95
 const POSTING_COUNT_DURATION_MS = 2000
 
+const HOME_QA_OPEN_DEFAULT = new Set([0])
+
 export function HomePage(): React.ReactElement {
   const [postingCount, setPostingCount] = useState(1)
   const [recruitModalIndex, setRecruitModalIndex] = useState<number | null>(null)
+  const [aboutImageModalSrc, setAboutImageModalSrc] = useState<string | null>(null)
+  const [homeQaOpen, setHomeQaOpen] = useState<Set<number>>(HOME_QA_OPEN_DEFAULT)
   const postingSectionRef = useRef<HTMLElement>(null)
   const hasAnimated = useRef(false)
+
+  const toggleHomeQa = (index: number) => {
+    setHomeQaOpen((prev) => {
+      const next = new Set(prev)
+      if (next.has(index)) next.delete(index)
+      else next.add(index)
+      return next
+    })
+  }
 
   useEffect(() => {
     if (recruitModalIndex === null) return
@@ -40,6 +54,15 @@ export function HomePage(): React.ReactElement {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [recruitModalIndex])
+
+  useEffect(() => {
+    if (aboutImageModalSrc === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setAboutImageModalSrc(null)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [aboutImageModalSrc])
 
   useEffect(() => {
     const el = postingSectionRef.current
@@ -75,6 +98,7 @@ export function HomePage(): React.ReactElement {
         images={HERO_IMAGES}
         title={'誠実なサービスが地元神戸で好評です'}
         subtitle="ご期待にお応えするようドライバー・配布スタッフが尽力"
+        scrollTarget="#content-start"
       />
 
       {/* LINE Registration Banner */}
@@ -83,7 +107,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       {/* CONCEPT Section */}
       {/* ============================================ */}
-      <section className={styles.conceptSection}>
+      <section className={styles.conceptSection} id="content-start">
         <div className={`${styles.container} ${styles.conceptContainer}`}>
           <span className={styles.sectionLabel}>CONCEPT</span>
           <ul className={styles.conceptServicesList}>
@@ -309,7 +333,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       {/* STAFF Section - with parallax background */}
       {/* ============================================ */}
-      <section className={styles.staffSection} style={{ backgroundImage: `url(${parallax1})` }}>
+      <section className={styles.staffSection}>
         <div className={styles.staffOverlay}>
           <div className={styles.container}>
             <span className={`${styles.sectionLabel} ${styles.labelLight}`}>STAFF</span>
@@ -325,28 +349,199 @@ export function HomePage(): React.ReactElement {
       </section>
 
       {/* ============================================ */}
+      {/* Q&A Section - First 3 FAQs + link to FAQ page */}
+      {/* ============================================ */}
+      <section className={styles.homeQaSection}>
+        <div className={styles.container}>
+          <span className={styles.sectionLabel}>Q&A</span>
+          <p className={styles.homeQaSubtitle}>
+            サービスや求人に関する様々なご質問に回答しております
+          </p>
+          <div className={styles.homeQaList}>
+            <div className={styles.homeQaItem}>
+              <button
+                type="button"
+                className={styles.homeQaQuestionBtn}
+                onClick={() => toggleHomeQa(0)}
+                aria-expanded={homeQaOpen.has(0)}
+                aria-controls="home-qa-answer-0"
+                id="home-qa-question-0"
+              >
+                <span className={styles.homeQaIcon}>Q</span>
+                <span className={styles.homeQaText}>給料日・報酬日はいつですか？</span>
+              </button>
+              {homeQaOpen.has(0) && (
+                <div id="home-qa-answer-0" role="region" aria-labelledby="home-qa-question-0" className={`${styles.homeQaRow} ${styles.homeQaAnswerRow}`}>
+                  <span className={styles.homeQaIcon}>A</span>
+                  <p className={styles.homeQaAnswerText}>
+                    月末〆翌月25日ご入金<br />⇒正社員<br /><br />月末〆翌々月5日ご入金<br />⇒業務委託
+                  </p>
+                </div>
+              )}
+            </div>
+            <div className={styles.homeQaItem}>
+              <button
+                type="button"
+                className={styles.homeQaQuestionBtn}
+                onClick={() => toggleHomeQa(1)}
+                aria-expanded={homeQaOpen.has(1)}
+                aria-controls="home-qa-answer-1"
+                id="home-qa-question-1"
+              >
+                <span className={styles.homeQaIcon}>Q</span>
+                <span className={styles.homeQaText}>マイカー・バイク通勤は可能ですか？</span>
+              </button>
+              {homeQaOpen.has(1) && (
+                <div id="home-qa-answer-1" role="region" aria-labelledby="home-qa-question-1" className={`${styles.homeQaRow} ${styles.homeQaAnswerRow}`}>
+                  <span className={styles.homeQaIcon}>A</span>
+                  <p className={styles.homeQaAnswerText}>
+                    はい、マイカー・バイクでの通勤も可能です。駐車場完備。
+                  </p>
+                </div>
+              )}
+            </div>
+            <div className={styles.homeQaItem}>
+              <button
+                type="button"
+                className={styles.homeQaQuestionBtn}
+                onClick={() => toggleHomeQa(2)}
+                aria-expanded={homeQaOpen.has(2)}
+                aria-controls="home-qa-answer-2"
+                id="home-qa-question-2"
+              >
+                <span className={styles.homeQaIcon}>Q</span>
+                <span className={styles.homeQaText}>未経験ですが大丈夫ですか？</span>
+              </button>
+              {homeQaOpen.has(2) && (
+                <div id="home-qa-answer-2" role="region" aria-labelledby="home-qa-question-2" className={`${styles.homeQaRow} ${styles.homeQaAnswerRow}`}>
+                  <span className={styles.homeQaIcon}>A</span>
+                  <p className={styles.homeQaAnswerText}>
+                    はい、大丈夫です。ベテラン社員より新人研修を行っておりますのでご安心ください！
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+          <RouterLink to="/faq" className={styles.homeQaLinkBtn}>
+            もっと見る
+          </RouterLink>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* COMPANY Section */}
       {/* ============================================ */}
       <section className={styles.companySection}>
         <div className={styles.container}>
           <span className={styles.sectionLabel}>COMPANY</span>
           <h2 className={styles.sectionTitle}>地元に根差した丁寧な物流サービスに力を入れております</h2>
-          <div className={styles.companyContent}>
-            <div className={styles.companyText}>
-              <p>
-                地域社会への貢献を目指す神戸市の運送会社、地域密着型のポスティングをメインで、兵庫県全域を対象とした軽貨物宅配サービスやポスティングを行っております。お客様からお預かりする大切なお荷物や商品を、安全・迅速に個人宅や企業へお届けいたします。現在、軽貨物ドライバーやポスティングスタッフとしてご活躍いただける新規スタッフを募集しております。未経験から始められる求人です。
-              </p>
-              <div className={styles.companyInfo}>
-                <h3 className={styles.companyName}>株式会社Juggaar Japan　ジュガールジャパン</h3>
-                <a href="tel:0789870902" className={styles.companyPhone}>078-987-0902</a>
-              </div>
-              <RouterLink to="/company" className={styles.linkButton}>
-                会社概要へ
-              </RouterLink>
-            </div>
-            <div className={styles.companyImage}>
-              <img src={companyImg} alt="株式会社Juggaar Japan" />
-            </div>
+          <div className={styles.companyImageRow}>
+            <img src={companyImg} alt="株式会社Juggaar Japan" className={styles.companyImageImg} />
+          </div>
+          <div className={styles.companyDetails}>
+            <p className={styles.companyNameSub}>株式会社Juggaar Japan　ジュガールジャパン</p>
+              <dl className={styles.companyIntroList}>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>電話番号</dt>
+                  <dd className={styles.companyIntroValue}><a href="tel:0789870902" className={styles.companyPhone}>078-987-0902</a></dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>所在地</dt>
+                  <dd className={styles.companyIntroValue}>〒651-1312<br />兵庫県神戸市北区有野町有野７９８−４</dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>営業所</dt>
+                  <dd className={styles.companyIntroValue}>神戸市北区八多町<br />加古川市平岡町</dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>営 業 時 間</dt>
+                  <dd className={styles.companyIntroValue}>10:00 〜 19:00</dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>定 休 日</dt>
+                  <dd className={styles.companyIntroValue}>日曜日・祝日</dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>ク レ ジ ッ ト カ ー ド</dt>
+                  <dd className={styles.companyIntroValue}>VISA、Mastercard、JCB、American Express、Diners Club</dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>代 表 取 締 役 / C E O</dt>
+                  <dd className={styles.companyIntroValue}>加納 侑青</dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>設 立</dt>
+                  <dd className={styles.companyIntroValue}>（令和元年） 2019年 11月 7日</dd>
+                </div>
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>資 本 金</dt>
+                  <dd className={styles.companyIntroValue}>1,170,000円</dd>
+                </div>
+                <hr className={styles.companyIntroSep} />
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>事 業 内 容</dt>
+                  <dd className={styles.companyIntroValue}>
+                    貨物軽自動車運送業<br />
+                    BPO事業（事業開発・営業支援）<br />
+                    営業、経営及び販売に関するコンサルティング業<br />
+                    不動産の保有、売買、賃貸借、仲介及び管理<br />
+                    ドローンを利用した撮影に関する企画<br />
+                    出版物、写真、画像等のデザイン、制作及び編集、広告業<br />
+                    制作及び販売<br />
+                    労働者派遣事業<br />
+                    インターネット、その他の通信を利用した通信販売業<br />
+                    各種イベント企画、運営及びサポート業務<br />
+                    前各号に付帯する一切の業務
+                  </dd>
+                </div>
+                <hr className={styles.companyIntroSep} />
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>取 引 先 金 融 機 関</dt>
+                  <dd className={styles.companyIntroValue}>三井住友銀行　藤原台支店<br />中兵庫信用金庫　神戸北支店<br />神戸信用金庫　中央支店</dd>
+                </div>
+                <hr className={styles.companyIntroSep} />
+                <div className={styles.companyIntroRow}>
+                  <dt className={styles.companyIntroLabel}>沿 革</dt>
+                  <dd className={styles.companyIntroValue}>
+                    2019 /11 加納代表 1名でstart<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2019 /12 staff合計 4名<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2020 /12 staff合計 11名<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2021 / 1 staff合計 17名<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2021 / 6 staff合計 22名<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2022 / 3 staff合計 35名　内)正社員3名<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2023 / 9 staff合計 48名<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2024 / 7 staff合計 56名<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2024 /11 合同会社から株式会社へ組織変更<br />
+                    <span className={styles.companyIntroDots}>････････････････････････････････････････</span><br />
+                    2024 /11 staff合計 72名
+                  </dd>
+                </div>
+              </dl>
+          </div>
+        </div>
+        <div className={styles.companyMapWrap}>
+          <iframe
+            title="株式会社Juggaar Japan 所在地"
+            src="https://www.google.com/maps?q=Arino-798-4+Arinocho,+Kita+Ward,+Kobe,+Hyogo+651-1312&output=embed&t=k"
+            className={styles.companyMapIframe}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <div className={styles.container}>
+          <div className={styles.companyButtonWrap}>
+            <RouterLink to="/company" className={styles.linkButton}>
+              会社概要へ
+            </RouterLink>
           </div>
         </div>
       </section>
@@ -355,77 +550,159 @@ export function HomePage(): React.ReactElement {
       {/* ABOUT US Section */}
       {/* ============================================ */}
       <section className={styles.aboutSection} id="main">
+        <div className={styles.aboutSectionHeader}>
+          <span className={styles.aboutSectionHeaderLabel}>ABOUT US</span>
+          <hr className={styles.aboutSectionHeaderLine} />
+          <h2 className={styles.aboutSectionHeaderTitle}>幅広い配送サービスをメインに拠点を置く神戸市の方から好評です</h2>
+        </div>
+        <div className={styles.aboutGrid}>
+          {/* Top row: image left, text right */}
+          <div className={styles.aboutCellImage} onClick={() => setAboutImageModalSrc(staff01)} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setAboutImageModalSrc(staff01)} aria-label="画像を拡大">
+            <img src={staff01} alt="荷物と共にお客様の思いも配送するサービスが神戸市で好評です" />
+          </div>
+          <div className={styles.aboutCellText}>
+            <h3 className={styles.aboutCellTitle}>荷物と共にお客様の思いも配送するサービスが神戸市で好評です</h3>
+            <p className={styles.aboutCellParagraph}>
+              お客様にお喜びいただける物流のサービスとはどのようなものか、スタッフ一同が真摯に考えております。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              お客様からお預かりしたお荷物を単に目的地まで運ぶのではなく、荷物と一緒にお客様の気持ちまで目的地まで届けられるよう、ドライバーをはじめスタッフ一同が日々の努力を重ねております。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              これまで、大手の企業様と提携して様々なお仕事をいただくなど、地域に根差したサービスを展開してまいりましたが、現状に満足することなく、今後もクオリティーの高いサービスを継続できるよう、尽力してまいります。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              何か運びたい物がある場合に、それがどのような物でも、責任を持って目的地までお届けできるようなサービスを目指しております。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              サービスのクオリティーでお客様からお喜びいただけるよう、スタッフの教育にも力を入れております。
+              サービスのクオリティーアップを目指して、新たなスタッフの募集にも力を入れておりますので、軽貨物輸送のお仕事にご興味がありましたら、担当者までお気軽にお問い合わせください。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              若手とベテランが協力し合い、一人ひとりが能力や個性を活かして、地元でドライバーとして輝いております。
+            </p>
+          </div>
+          {/* Bottom row: text left, image right */}
+          <div className={styles.aboutCellText}>
+            <h3 className={styles.aboutCellTitle}>堅実な配送サービスが地元の神戸市で高く評価されております</h3>
+            <p className={styles.aboutCellParagraph}>
+              軽貨物輸送のお仕事をお任せするなら、地元で実績が豊富なプロフェッショナルに依頼したい、というようなお客様のお声にしっかりお答えしております。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              スタッフ一人ひとりの努力が、お客様にご満足いただけるような、クオリティーの高いサービスに繋がっております。
+              大手の企業様からお仕事をいただくなど、拠点を置く地域で着実に実績を積み重ねておりますが、現状に甘んじることなく、今後もクオリティーの高いサービスを継続できるよう、スタッフ一同が更なる努力を重ねてまいります。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              何か運びたい軽貨物がありましたら、どのようなものでも一度ご相談ください。
+              難しくニッチなご要望にも、可能な限りフレキシブルに対応できるよう、これまで培ってきたノウハウを活かして尽力いたします。
+            </p>
+            <p className={styles.aboutCellParagraph}>
+              また、お客様のご要望にしっかりとお応えしていくためには、新たなスタッフの力が必要です。
+              物流に関わるお仕事をお任せするドライバーを正社員として積極的に募集しております。
+              お客様からお預かりした大切なお荷物を目的地まで運ぶ仕事で、地域社会に貢献したいとお考えの方は、ぜひお気軽に担当者までお問い合わせください。
+            </p>
+          </div>
+          <div className={styles.aboutCellImage} onClick={() => setAboutImageModalSrc(staff02)} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && setAboutImageModalSrc(staff02)} aria-label="画像を拡大">
+            <img src={staff02} alt="堅実な配送サービスが地元の神戸市で高く評価されております" />
+          </div>
+        </div>
+
+        {aboutImageModalSrc && (
+          <div
+            className={styles.aboutModalBackdrop}
+            onClick={() => setAboutImageModalSrc(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="画像"
+          >
+            <div className={styles.aboutModalContent} onClick={(e) => e.stopPropagation()}>
+              <button
+                type="button"
+                className={styles.aboutModalClose}
+                onClick={() => setAboutImageModalSrc(null)}
+                aria-label="閉じる"
+              >
+                ×
+              </button>
+              <img src={aboutImageModalSrc} alt="" className={styles.aboutModalImage} />
+            </div>
+          </div>
+        )}
+      </section>
+
+      {/* ============================================ */}
+      {/* BLOG Section - parallax background */}
+      {/* ============================================ */}
+      <section className={styles.blogParallaxSection} style={{ backgroundImage: `url(${parallax2})` }}>
+        <div className={styles.blogParallaxOverlay} />
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>ABOUT US</span>
-          <h2 className={styles.sectionTitle}>幅広い配送サービスをメインに拠点を置く神戸市の方から好評です</h2>
-
-          <div className={styles.aboutColumns}>
-            {/* Column 1 */}
-            <div className={styles.aboutColumn}>
-              <div className={styles.aboutImage}>
-                <img src={serviceImg} alt="荷物と共にお客様の思いも配送するサービスが神戸市で好評です" />
-              </div>
-              <h3 className={styles.aboutColumnTitle}>荷物と共にお客様の思いも配送するサービスが神戸市で好評です</h3>
-              <p className={styles.aboutColumnText}>
-                お客様にお喜びいただける物流のサービスとはどのようなものか、スタッフ一同が真摯に考えております。お客様からお預かりしたお荷物を単に目的地まで運ぶのではなく、荷物と一緒にお客様の気持ちまで目的地まで届けられるよう、ドライバーをはじめスタッフ一同が日々の努力を重ねております。
-              </p>
-              <p className={styles.aboutColumnText}>
-                これまで、大手の企業様と提携して様々なお仕事をいただくなど、地域に根差したサービスを展開してまいりましたが、現状に満足することなく、今後もクオリティーの高いサービスを継続できるよう、尽力してまいります。
-              </p>
-            </div>
-
-            {/* Column 2 */}
-            <div className={styles.aboutColumn}>
-              <div className={styles.aboutImage}>
-                <img src={companyImg} alt="堅実な配送サービスが地元の神戸市で高く評価されております" />
-              </div>
-              <h3 className={styles.aboutColumnTitle}>堅実な配送サービスが地元の神戸市で高く評価されております</h3>
-              <p className={styles.aboutColumnText}>
-                軽貨物輸送のお仕事をお任せするなら、地元で実績が豊富なプロフェッショナルに依頼したい、というようなお客様のお声にしっかりお答えしております。スタッフ一人ひとりの努力が、お客様にご満足いただけるような、クオリティーの高いサービスに繋がっております。
-              </p>
-              <p className={styles.aboutColumnText}>
-                大手の企業様からお仕事をいただくなど、拠点を置く地域で着実に実績を積み重ねておりますが、現状に甘んじることなく、今後もクオリティーの高いサービスを継続できるよう、スタッフ一同が更なる努力を重ねてまいります。
-              </p>
-            </div>
+          <div className={styles.blogParallaxHeader}>
+            <h2 className={styles.blogParallaxTitle}>BLOG</h2>
+            <hr className={styles.blogParallaxLine} />
+            <p className={styles.blogParallaxSubtitle}>スタッフの声と共にサービスの詳細や耳寄りな情報を更新</p>
+            <p className={`${styles.blogParallaxSubtitle} ${styles.blogParallaxSubtitleSecond}`}>企業としての様々な理念をお伝えしております</p>
+          </div>
+          <div className={styles.blogParallaxGrid}>
+            <RouterLink to="/blog" className={styles.blogParallaxCard}>
+              <span className={styles.blogParallaxMeta}>&gt; 2025/01/28</span>
+              <h3 className={styles.blogParallaxCardTitle}>神戸電鉄 五社駅から徒歩1分! 新しいスタイルのテレマーケティングスペース</h3>
+            </RouterLink>
+            <RouterLink to="/blog" className={styles.blogParallaxCard}>
+              <span className={styles.blogParallaxMeta}>&gt; 2025/01/27</span>
+              <h3 className={styles.blogParallaxCardTitle}>新たに話題のキッチンカースペースをご用意しました!</h3>
+            </RouterLink>
+            <RouterLink to="/blog" className={styles.blogParallaxCard}>
+              <span className={styles.blogParallaxMeta}>&gt; 2025/01/27</span>
+              <h3 className={styles.blogParallaxCardTitle}>軽貨物の仕事をお探しの方に朗報です!</h3>
+            </RouterLink>
+            <RouterLink to="/blog" className={styles.blogParallaxCard}>
+              <span className={styles.blogParallaxMeta}>&gt; 2025/01/24</span>
+              <h3 className={styles.blogParallaxCardTitle}>新しいスタートを切る絶好のチャンスです!</h3>
+            </RouterLink>
+          </div>
+          <div className={styles.blogParallaxActions}>
+            <RouterLink to="/blog" className={styles.blogParallaxButton}>&gt; ブログへ</RouterLink>
           </div>
         </div>
       </section>
 
       {/* ============================================ */}
-      {/* Reviews / Testimonials Section */}
+      {/* MEDIA Section */}
       {/* ============================================ */}
-      <section className={styles.reviewsSection}>
+      <section className={styles.mediaSection}>
         <div className={styles.container}>
-          <div className={styles.reviewsGrid}>
-            <RouterLink to="/concept/reviews" className={styles.reviewCard}>
-              <div className={styles.reviewImage}>
-                <img src={service01} alt="口コミ情報" />
-              </div>
-              <h3 className={styles.reviewTitle}>
-                神戸市の配送･株式会社JuggaarJapanの口コミ情報
-              </h3>
-              <span className={styles.reviewLink}>をもっと見る　＞</span>
+          <div className={styles.mediaSectionHeader}>
+            <h2 className={styles.mediaSectionTitle}>MEDIA</h2>
+            <hr className={styles.mediaSectionLine} />
+            <p className={styles.mediaSectionSubtitle}>配送のプロが語る生活に役立つ情報発信ページ</p>
+            <p className={styles.mediaSectionDescription}>
+              日々の生活に役立つ配送のヒントや、物流業界の最新動向、地域密着型サービスの魅力をわかりやすくお伝えします。
+            </p>
+          </div>
+          <div className={styles.mediaCardsRow}>
+            <RouterLink to="/media" className={styles.mediaCard}>
+              <span className={styles.mediaCardMeta}>&gt; 2025/12/30</span>
+              <h3 className={styles.mediaCardTitle}>神戸市兵庫区で軽貨物の求人を探す方必見!未経験から高収入も可能な仕事と応募ポイント徹底解説</h3>
             </RouterLink>
-
-            <RouterLink to="/concept/reputation" className={styles.reviewCard}>
-              <div className={styles.reviewImage}>
-                <img src={service02} alt="評判" />
-              </div>
-              <h3 className={styles.reviewTitle}>
-                神戸市の配送･株式会社JuggaarJapanの評判
-              </h3>
-              <span className={styles.reviewLink}>をもっと見る　＞</span>
+            <RouterLink to="/media" className={styles.mediaCard}>
+              <span className={styles.mediaCardMeta}>&gt; 2025/12/29</span>
+              <h3 className={styles.mediaCardTitle}>神戸市灘区で軽貨物求人!未経験から始めるドライバーの仕事探し</h3>
             </RouterLink>
-
-            <RouterLink to="/concept/voice" className={styles.reviewCard}>
-              <div className={styles.reviewImage}>
-                <img src={service03} alt="お客様の声" />
-              </div>
-              <h3 className={styles.reviewTitle}>
-                神戸市の配送･株式会社JuggaarJapanのお客様の声
-              </h3>
-              <span className={styles.reviewLink}>をもっと見る　＞</span>
+            <RouterLink to="/media" className={styles.mediaCard}>
+              <span className={styles.mediaCardMeta}>&gt; 2025/12/28</span>
+              <h3 className={styles.mediaCardTitle}>軽貨物求人おすすめの会社比較と選び方最新ガイド|仕事内容や収入相場・口コミも解説</h3>
             </RouterLink>
+            <RouterLink to="/media" className={styles.mediaCard}>
+              <span className={styles.mediaCardMeta}>&gt; 2025/12/27</span>
+              <h3 className={styles.mediaCardTitle}>軽貨物引越し求人の仕事内容と収入相場!未経験から始めるドライバー仕事の探し方と応募ポイント</h3>
+            </RouterLink>
+            <RouterLink to="/media" className={styles.mediaCard}>
+              <span className={styles.mediaCardMeta}>&gt; 2025/12/26</span>
+              <h3 className={styles.mediaCardTitle}>軽貨物の求人で日払いの仕事で稼ぐ!未経験OKのドライバー募集と収入・応募条件を解説</h3>
+            </RouterLink>
+          </div>
+          <div className={styles.mediaSectionActions}>
+            <RouterLink to="/media" className={styles.mediaSectionButton}>&gt; メディアへ</RouterLink>
           </div>
         </div>
       </section>
@@ -447,7 +724,7 @@ export function HomePage(): React.ReactElement {
                 <img src={service01} alt="コラム記事1" />
               </div>
               <div className={styles.columnCardBody}>
-                <span className={styles.columnDate}>2025.01.15</span>
+               
                 <h3 className={styles.columnCardTitle}>軽貨物配送で成功するための秘訣</h3>
                 <p className={styles.columnCardExcerpt}>
                   効率的な配送ルートの組み方や、お客様とのコミュニケーションのコツをご紹介...
@@ -461,7 +738,7 @@ export function HomePage(): React.ReactElement {
                 <img src={service02} alt="コラム記事2" />
               </div>
               <div className={styles.columnCardBody}>
-                <span className={styles.columnDate}>2025.01.10</span>
+                
                 <h3 className={styles.columnCardTitle}>ポスティングの効果を最大化する方法</h3>
                 <p className={styles.columnCardExcerpt}>
                   配布エリアの選定から、反響率を高めるタイミングまで詳しく解説...
@@ -475,7 +752,7 @@ export function HomePage(): React.ReactElement {
                 <img src={service03} alt="コラム記事3" />
               </div>
               <div className={styles.columnCardBody}>
-                <span className={styles.columnDate}>2025.01.05</span>
+             
                 <h3 className={styles.columnCardTitle}>地域密着型サービスの価値とは</h3>
                 <p className={styles.columnCardExcerpt}>
                   神戸市で長年培ってきた信頼関係と、地域に根差したサービスの強みについて...

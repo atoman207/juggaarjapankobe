@@ -3,15 +3,26 @@
    Matching Reference Site (light footer with cyan bar)
    ======================================== */
 
-/* Footer CTA Banner - Cyan Blue Bar at Top */
+/* Fixed CTA Bar - always at bottom of viewport (first image style) */
+.footerCtaFixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
 .footerCta {
-  background: linear-gradient(135deg, #00A3DB 0%, #23C8E4 50%, #00A3DB 100%);
-  padding: 26px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
+  background: #fff;
+  border-top: 2px dotted #d1d5db;
+  border-bottom: 2px dotted #d1d5db;
+  padding: 14px 24px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s ease;
+}
+
+.footerCtaScrollUp {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .footerCtaInner {
@@ -25,92 +36,114 @@
   gap: 16px;
 }
 
-.footerCtaPhone {
+.footerCtaLeft {
   display: flex;
   align-items: center;
-  gap: 16px;
-  color: #fff;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footerCtaRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .footerCtaPhoneLink {
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: #fff;
-  font-size: 1.5rem;
+  gap: 8px;
+  color: #374151;
+  font-size: 1.875rem;
   font-weight: 700;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 .footerCtaPhoneLink:hover {
-  opacity: 0.9;
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.footerCtaPhoneLink:focus {
+  text-decoration: none;
+}
+
+.footerCtaPhoneLink svg {
+  color: #4b5563;
 }
 
 .footerCtaHours {
-  color: rgba(255, 255, 255, 0.9);
+  color: #6b7280;
   font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .footerCtaButtons {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .footerCtaBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 24px;
+  gap: 6px;
+  padding: 10px 24px;
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 0;
-  transition: all var(--transition-normal);
+  transition: opacity var(--transition-normal);
   white-space: nowrap;
-}
-
-.footerCtaBtnGreen {
-  background: #4CAF50;
+  background: linear-gradient(90deg, #00A3DB 0%, #23C8E4 100%);
   color: #fff;
+  border: none;
 }
 
-.footerCtaBtnGreen:hover {
-  background: #45a049;
+.footerCtaBtn:hover {
+  opacity: 0.92;
   color: #fff;
-  transform: translateY(-1px);
+  text-decoration: none;
 }
 
-.footerCtaBtnOutline {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.footerCtaBtnOutline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-/* Collapse Arrow */
-.footerCollapseArrow {
+.footerCtaScrollTop {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 18px 0;
-  background: #F7F8FA;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #374151;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  flex-shrink: 0;
 }
 
-.footerCollapseArrow span {
-  display: block;
-  font-size: 1.625rem;
-  color: #6B7280;
+.footerCtaScrollTop:hover {
+  background: #fff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+/* Spacer so page content isn't hidden behind fixed bar */
+.footerCtaSpacer {
+  height: 58px;
+  flex-shrink: 0;
 }
 
 /* Main Footer - White Background */
 .footer {
   background: #fff;
   color: #333;
-  padding: 55px 0 35px;
+  padding: 55px 0 0;
 }
 
 .footerInner {
@@ -151,21 +184,26 @@
   text-decoration: none;
 }
 
-/* Footer Bottom - Logo Center */
+/* Footer Bottom - Logo and Social (match image: black serif logo + dark circle icons with white symbols) */
 .footerBottom {
   text-align: center;
 }
 
 .footerLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 28px;
+  text-decoration: none;
 }
 
 .footerLogoImage {
   height: 65px;
   width: auto;
+  display: block;
 }
 
-/* Social Links */
+/* Social Links - dark gray/black circles with white icons in a row */
 .footerSocial {
   display: flex;
   justify-content: center;
@@ -180,15 +218,14 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #333;
-  color: #333;
+  background: #333;
+  color: #fff;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .socialLink:hover {
-  background: var(--primary-blue);
-  border-color: var(--primary-blue);
+  background: #1a1a1a;
   color: #fff;
 }
 
@@ -197,13 +234,19 @@
   height: 18px;
 }
 
-/* Copyright */
-.footerCopyright {
-  color: #888;
-  font-size: 0.75rem;
+/* Copyright strip at very bottom - sky blue background, white text */
+.footerCopyrightBar {
+  background: #87CEEB;
+  padding: 14px 20px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.footerCopyrightBarText {
   margin: 0;
-  padding: 20px 0 0;
-  border-top: 1px solid #ddd;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 500;
 }
 
 /* Hidden elements from old design */
@@ -227,13 +270,13 @@
     flex-direction: column;
     text-align: center;
   }
-  
-  .footerCtaPhone {
+
+  .footerCtaLeft {
     flex-direction: column;
     gap: 8px;
   }
-  
-  .footerCtaButtons {
+
+  .footerCtaRight {
     justify-content: center;
   }
 }

@@ -68,7 +68,7 @@
   width: 195px;
   height: 130px;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 0;
 }
 
 .blogCardImage img {
@@ -360,7 +360,7 @@
 .relatedCard {
   background: #fff;
   padding: 22px;
-  border-radius: 6px;
+  border-radius: 0;
   text-decoration: none;
   transition: all var(--transition-normal);
   border: 1px solid #E5E7EB;
