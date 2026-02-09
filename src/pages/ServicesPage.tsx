@@ -14,9 +14,11 @@ export function ServicesPage() {
     <div className={styles.page}>
       <PageHero
         title="サービス・料金表"
-        titleEn="サービス"
         backgroundImage={heroImg}
-        breadcrumbs={[{ label: 'サービス' }]}
+        breadcrumbs={[
+          { label: '神戸市の配送は株式会社Juggaar Japan', path: '/' },
+          { label: 'サービス・料金表' },
+        ]}
       />
 
       {/* Main Title Section */}

@@ -33,7 +33,7 @@ export function ColumnPage(): React.ReactElement {
                 <div className={styles.pageHeaderOverlay}>
                     <div className={styles.container}>
                         <h1 className={styles.pageTitle}>コラム</h1>
-                        <p className={styles.pageSubtitle}>COLUMN</p>
+                       
                     </div>
                 </div>
             </div>

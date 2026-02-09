@@ -67,9 +67,11 @@ export function FaqPage() {
     <div className={styles.page}>
       <PageHero
         title="よくある質問"
-        titleEn="よくある質問"
         backgroundImage={heroImg}
-        breadcrumbs={[{ label: 'よくある質問' }]}
+        breadcrumbs={[
+          { label: '神戸市の配送は株式会社Juggaar Japan', path: '/' },
+          { label: 'よくある質問' },
+        ]}
       />
 
       {/* Q&A Intro Section */}

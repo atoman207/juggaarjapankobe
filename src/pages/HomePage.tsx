@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { HeroCarousel } from '@/components/HeroCarousel'
 import { LineBanner } from '@/components/LineBanner'
+import { PrimaryLinkButton } from '@/components/PrimaryLinkButton'
 import styles from './HomePage.module.css'
 
 // Import images
@@ -341,9 +342,7 @@ export function HomePage(): React.ReactElement {
             <p className={styles.staffDescription}>
               知識と経験の豊富なスタッフが地域密着型のスタッフがお客様のために尽力
             </p>
-            <RouterLink to="/staff" className={styles.linkButton}>
-              スタッフへ
-            </RouterLink>
+            <PrimaryLinkButton to="/staff">スタッフへ</PrimaryLinkButton>
           </div>
         </div>
       </section>
@@ -539,9 +538,7 @@ export function HomePage(): React.ReactElement {
         </div>
         <div className={styles.container}>
           <div className={styles.companyButtonWrap}>
-            <RouterLink to="/company" className={styles.linkButton}>
-              会社概要へ
-            </RouterLink>
+            <PrimaryLinkButton to="/company">会社概要へ</PrimaryLinkButton>
           </div>
         </div>
       </section>

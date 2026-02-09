@@ -11,9 +11,11 @@ export function CompanyPage() {
     <div className={styles.page}>
       <PageHero
         title="会社概要"
-        titleEn="会社概要"
         backgroundImage={heroImg}
-        breadcrumbs={[{ label: '会社概要' }]}
+        breadcrumbs={[
+          { label: '神戸市の配送は株式会社Juggaar Japan', path: '/' },
+          { label: '会社概要' },
+        ]}
       />
 
       {/* Philosophy Section */}

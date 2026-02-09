@@ -52,6 +52,9 @@ export function HeroCarousel({
         ))}
       </div>
 
+      {/* Overlay: 0.7 background opacity (same when scrolling down or up) */}
+      <div className={styles.heroOverlay} aria-hidden />
+
       {/* Overlay Content */}
       <div className={styles.overlay}>
         <div className={styles.overlayContent}>

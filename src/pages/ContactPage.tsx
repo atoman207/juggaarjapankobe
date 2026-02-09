@@ -34,7 +34,10 @@ export function ContactPage() {
       <PageHero
         title="お問い合わせ"
         backgroundImage={heroImg}
-        breadcrumbs={[{ label: 'お問い合わせ' }]}
+        breadcrumbs={[
+          { label: '神戸市の配送は株式会社Juggaar Japan', path: '/' },
+          { label: 'お問い合わせ' },
+        ]}
       />
 
       {/* Contact Section Title */}

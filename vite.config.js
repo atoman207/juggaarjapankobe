@@ -16,5 +16,9 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
     strictPort: true,
+    watch: {
+      // Reduce EBUSY / "resource busy or locked" on Windows when IDE has file open
+      usePolling: true,
+    },
   },
 })

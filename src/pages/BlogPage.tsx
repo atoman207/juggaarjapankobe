@@ -115,9 +115,11 @@ export function BlogPage(): React.ReactElement {
     <div className={styles.page}>
       <PageHero
         title="ブログ"
-        titleEn="ブログ"
         backgroundImage={heroImg}
-        breadcrumbs={[{ label: 'ブログ' }]}
+        breadcrumbs={[
+          { label: '神戸市の配送は株式会社Juggaar Japan', path: '/' },
+          { label: 'ブログ' },
+        ]}
       />
 
       {/* Blog Content - 2 column layout */}

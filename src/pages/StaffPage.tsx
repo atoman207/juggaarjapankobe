@@ -12,15 +12,17 @@ export function StaffPage() {
     <div className={styles.page}>
       <PageHero
         title="スタッフ"
-        titleEn="スタッフ"
         backgroundImage={heroImg}
-        breadcrumbs={[{ label: 'スタッフ' }]}
+        breadcrumbs={[
+          { label: '神戸市の配送は株式会社Juggaar Japan', path: '/' },
+          { label: 'スタッフ' },
+        ]}
       />
 
       {/* Main Intro Section */}
       <section className={styles.introSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>スタッフ</span>
+          <span className={styles.sectionLabel}>STAFF</span>
           <h2 className={styles.sectionTitle}>
             笑顔をお届け
           </h2>
