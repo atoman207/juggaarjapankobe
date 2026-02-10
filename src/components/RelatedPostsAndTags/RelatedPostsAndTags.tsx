@@ -1,32 +1,21 @@
 import { Link } from 'react-router-dom'
 import styles from './RelatedPostsAndTags.module.css'
 
-import post1Img from '@/assets/image/post1.jpg'
-import previewImg from '@/assets/image/preview.jpeg'
-import post3Img from '@/assets/image/post3.jpg'
-import post4Img from '@/assets/image/post4.jpg'
+import heroCompanyImg from '@/assets/image/hero_company.jpg'
+import heroContactImg from '@/assets/image/hero_contact.jpg'
+import saleImg from '@/assets/image/sale.jpg'
+import mv2Img from '@/assets/image/mv2.jpg'
 
 const RELATED_TAGS = [
   '神戸市',
   '配送',
-  'コンセプト',
-  '三田市 求人',
-  '藤原台 バイト',
-  '有野台 バイト',
-  '唐櫃台 バイト',
-  '岡場 バイト',
-  '田尾寺 バイト',
-  '三田市 アルバイト',
-  '三田市 バイト',
-  '神戸市 バイト',
-  '神戸市北区 軽貨物',
-  'ドライバー',
-  '軽貨物ドライバー',
-  '#働きやすい環境',
-  '#効率的な働き方',
-  '#自分時間',
-  '#柔軟性重視',
-  '#キャリアステップ',
+  'アクセス',
+  '株式会社Juggaar Japan',
+  '五社駅',
+  '神戸電鉄',
+  '神戸電鉄 五社駅',
+  '神戸電鉄 五社駅 徒歩1分',
+  'ジュガールジャパン',
 ]
 
 export function RelatedPostsAndTags() {
@@ -41,7 +30,7 @@ export function RelatedPostsAndTags() {
           <div className={styles.relatedPostsGrid}>
             <Link to="/company" className={styles.categoryCard}>
               <div className={styles.categoryCardImage}>
-                <img src={post1Img} alt="会社概要" />
+                <img src={heroCompanyImg} alt="会社概要" />
               </div>
               <div className={styles.categoryCardText}>
                 <span className={styles.categoryCardTitle}>会社概要</span>
@@ -50,7 +39,7 @@ export function RelatedPostsAndTags() {
             </Link>
             <Link to="/recruit" className={styles.categoryCard}>
               <div className={styles.categoryCardImage}>
-                <img src={previewImg} alt="採用情報" />
+                <img src={heroContactImg} alt="採用情報" />
               </div>
               <div className={styles.categoryCardText}>
                 <span className={styles.categoryCardTitle}>採用情報</span>
@@ -59,7 +48,7 @@ export function RelatedPostsAndTags() {
             </Link>
             <Link to="/recruit/driver" className={styles.categoryCard}>
               <div className={styles.categoryCardImage}>
-                <img src={post3Img} alt="神戸市北区 軽貨物 ドライバー" />
+                <img src={saleImg} alt="神戸市北区 軽貨物 ドライバー" />
               </div>
               <div className={styles.categoryCardText}>
                 <span className={styles.categoryCardTitle}>3ヶ月ごとにボーナスが!? 神戸市北区 軽貨物 ドライバー</span>
@@ -68,7 +57,7 @@ export function RelatedPostsAndTags() {
             </Link>
             <Link to="/service" className={styles.categoryCard}>
               <div className={styles.categoryCardImage}>
-                <img src={post4Img} alt="サービス・料金表" />
+                <img src={mv2Img} alt="サービス・料金表" />
               </div>
               <div className={styles.categoryCardText}>
                 <span className={styles.categoryCardTitle}>サービス・料金表</span>
@@ -81,9 +70,9 @@ export function RelatedPostsAndTags() {
 
       <section className={styles.tagsSection}>
         <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
+          <h3 className={styles.tagsSectionTitle}>
             <span className="englishSectionLabel">RELATED TAGS</span>
-            <span className="sectionTitleJapanese">関連タグ</span>
+            <span className={styles.tagsSubtitle}>関連タグ</span>
           </h3>
           <div className={styles.tagsList}>
             {RELATED_TAGS.map((tag) => (

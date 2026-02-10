@@ -85,6 +85,11 @@
   margin: 0 0 16px;
 }
 
+/* Company Intro Section (COMPANY label + intro text) */
+.companyIntroSection {
+  text-align: center;
+}
+
 /* Meaning Section */
 .meaningSection {
   padding: 60px 0;
@@ -94,13 +99,14 @@
 .meaningRow {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
 }
 
 @media (min-width: 769px) {
   .meaningRow {
     flex-direction: row;
     align-items: center;
+    gap: 48px;
   }
 }
 
@@ -116,8 +122,7 @@
 
 .meaningImage img {
   width: 100%;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  display: block;
 }
 
 .meaningText {
@@ -132,10 +137,10 @@
 }
 
 .meaningText p {
-  font-size: 0.9375rem;
-  line-height: 1.9;
+  font-size: 1rem;
+  line-height: 2;
   color: var(--text-body);
-  margin: 0 0 16px;
+  margin: 0;
 }
 
 /* Info Section */
@@ -213,6 +218,16 @@
 
 .infoTable li {
   margin-bottom: 4px;
+}
+
+.infoTable .historyList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.infoTable .historyList li {
+  margin-bottom: 8px;
+  padding-left: 0;
 }
 
 /* History Section */
@@ -312,7 +327,7 @@
   margin: 0;
 }
 
-/* Map Section */
+/* Map Section - full width, rectangular, navigable */
 .mapSection {
   padding: 60px 0;
   background: var(--bg-white);
@@ -327,10 +342,14 @@
 }
 
 .mapWrapper {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
+  width: 100%;
   margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.mapWrapper iframe {
+  display: block;
+  width: 100%;
 }
 
 .accessInfo {
@@ -341,6 +360,376 @@
   font-size: 0.9375rem;
   color: var(--text-body);
   margin: 0 0 8px;
+}
+
+.mapTextLink {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.mapTextLink:hover {
+  text-decoration: underline;
+}
+
+/* ACCESS Section - concept page style (two columns, blue heading + underline, title with blue bar) */
+.accessSection {
+  padding: 60px 0;
+  background: #F9FAFB;
+  text-align: center;
+}
+
+.accessHeading {
+  font-size: 2.1rem;
+  font-weight: 700;
+  font-family: var(--font-family-jp-serif);
+  color: var(--primary-blue);
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 8px;
+  padding-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.accessHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-blue);
+  transition: width var(--transition-normal), left var(--transition-normal);
+}
+
+.accessHeading:hover::after {
+  width: 30%;
+  left: 35%;
+}
+
+.accessSubheading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--primary-blue);
+  text-align: center;
+  margin: 0 0 40px;
+  line-height: 1.6;
+}
+
+.accessRow {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (min-width: 769px) {
+  .accessRow {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+}
+
+.accessImage {
+  flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .accessImage {
+    width: 45%;
+  }
+}
+
+.accessImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+.accessText {
+  flex: 1;
+}
+
+.accessText h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 24px;
+  line-height: 1.6;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary-blue);
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.accessText p {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: #4B5563;
+  margin: 0 0 16px;
+}
+
+.accessText p:last-child {
+  margin-bottom: 0;
+}
+
+/* PROFILE Section - same style as ACCESS (blue heading + underline, two-column blocks, CTA button) */
+.profileSection {
+  padding: 60px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.profileHeading {
+  font-size: 2.1rem;
+  font-weight: 700;
+  font-family: var(--font-family-jp-serif);
+  color: var(--primary-blue);
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 8px;
+  padding-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.profileHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-blue);
+  transition: width var(--transition-normal), left var(--transition-normal);
+}
+
+.profileHeading:hover::after {
+  width: 30%;
+  left: 35%;
+}
+
+.profileSubheading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #4B5563;
+  text-align: center;
+  margin: 0 0 48px;
+  line-height: 1.6;
+}
+
+.profileBlock {
+  margin-bottom: 48px;
+}
+
+.profileBlock:last-of-type {
+  margin-bottom: 40px;
+}
+
+.profileBlockRow {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (min-width: 769px) {
+  .profileBlockRow {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 48px;
+  }
+}
+
+.profileBlockImage {
+  flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .profileBlockImage {
+    width: 45%;
+  }
+}
+
+.profileBlockImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+.profileBlockText {
+  flex: 1;
+}
+
+.profileBlockText h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 24px;
+  line-height: 1.6;
+  padding-left: 14px;
+  border-left: 4px solid var(--primary-blue);
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.profileBlockText p {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: #4B5563;
+  margin: 0 0 16px;
+}
+
+.profileBlockText p:last-child {
+  margin-bottom: 0;
+}
+
+.profileCtaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.profileCtaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #00A3DB 0%, #23C8E4 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 12px rgba(0, 163, 219, 0.25);
+}
+
+.profileCtaButton:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 163, 219, 0.35);
+}
+
+.profileCtaArrow {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+/* Same Category Section - single card (image left, text right), same style as concept */
+.sameCategorySection {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.sameCategoryTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+
+.sameCategoryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sameCategoryCard {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0;
+  background: #fff;
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.sameCategoryCard:hover {
+  text-decoration: none;
+  background-color: var(--bg-light-cyan);
+  box-shadow: var(--shadow-md);
+  border-color: #d1d5db;
+}
+
+.sameCategoryCardImage {
+  flex: 0 0 160px;
+  width: 160px;
+  min-height: 120px;
+  background: #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sameCategoryCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sameCategoryCardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 20px;
+  min-width: 0;
+}
+
+.sameCategoryCardTitle {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #1F2937;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.sameCategoryCardDesc {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.7;
+}
+
+@media (max-width: 576px) {
+  .sameCategoryCard {
+    flex-direction: column;
+  }
+
+  .sameCategoryCardImage {
+    flex: none;
+    width: 100%;
+    min-height: 180px;
+  }
+}
+
+.sameCategoryCtaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 /* Category Title */

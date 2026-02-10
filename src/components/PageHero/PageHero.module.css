@@ -1,7 +1,9 @@
-/* PageHero Component Styles */
+/* PageHero Component Styles - full width, black overlay 0.4 */
 
 .hero {
   position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   height: 280px;
   background-size: cover;
   background-position: center;
@@ -23,11 +25,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.3)
-  );
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .heroWhite .overlay {

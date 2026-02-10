@@ -1,4 +1,4 @@
-/* Shared Related Posts + Related Tags - matches ConceptPage */
+/* Shared Related Posts + Related Tags - same style as ConceptPage category section */
 
 .container {
   max-width: 1440px;
@@ -11,15 +11,16 @@
   text-align: center;
   font-size: 1.25rem;
   font-weight: 700;
+  font-family: var(--font-family-jp-serif);
   color: #1F2937;
   margin: 0 0 32px;
   line-height: 1.5;
 }
 
-/* Related Posts Section */
+/* Related Posts Section - match ConceptPage categorySection (light gray bg, 2x2 grid, card style) */
 .relatedPostsSection {
   padding: 60px 0;
-  background: #fff;
+  background: #F9FAFB;
 }
 
 .relatedPostsGrid {
@@ -109,10 +110,28 @@
   }
 }
 
-/* Tags Section */
+/* Tags Section - blue title with underline, light blue subtitle, tag row */
 .tagsSection {
   padding: 60px 0;
   background: #F9FAFB;
+}
+
+.tagsSectionTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-family-jp-serif);
+  color: #1F2937;
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+
+.tagsSubtitle {
+  display: block;
+  margin-top: 0.25em;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #66B2CC;
 }
 
 .tagsList {
