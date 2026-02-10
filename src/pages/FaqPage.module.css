@@ -47,11 +47,16 @@
   }
 }
 
-/* Q&A Intro Section */
+/* Q&A Intro Section - no left/right margins */
 .qaSection {
   padding: 70px 0;
   background: #fff;
   text-align: center;
+}
+
+.qaSection .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .sectionTitle {

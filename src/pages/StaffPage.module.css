@@ -47,11 +47,16 @@
   }
 }
 
-/* Intro Section */
+/* Intro Section - no left/right margins */
 .introSection {
   padding: 80px 0;
   background: var(--bg-white);
   text-align: center;
+}
+
+.introSection .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .sectionTitle {
@@ -65,7 +70,24 @@
 .introText {
   font-size: 1rem;
   color: var(--text-body);
-  margin: 0;
+  margin: 0 0 24px;
+}
+
+.introParagraphs {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.introBodyText {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: var(--text-body);
+  margin: 0 0 1em;
+}
+
+.introBodyText:last-child {
+  margin-bottom: 0;
 }
 
 /* Staff Member Section */
@@ -182,6 +204,23 @@
 .moreStaffSection {
   padding: 60px 0;
   background: var(--bg-white);
+}
+
+.bottomIntro {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+.bottomIntro p {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: var(--text-body);
+  margin: 0 0 1em;
+}
+
+.bottomIntro p:last-child {
+  margin-bottom: 0;
 }
 
 .moreStaffTitle {

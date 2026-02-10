@@ -15,9 +15,15 @@
 /* Blog Section - Main Layout */
 /* ============================================ */
 
+/* Blog section - no left/right margins for consistency with other pages */
 .blogSection {
   padding: 50px 0 70px;
   background: #fff;
+}
+
+.blogSection .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .blogLayout {

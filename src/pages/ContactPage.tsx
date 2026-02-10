@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './ContactPage.module.css'
 
 // Import images - using correct hero image from reference site
@@ -45,8 +46,9 @@ export function ContactPage() {
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitleEn}>CONTACT</h2>
-            <p className={styles.sectionTitleJa}>お問い合わせ</p>
+            <p className={`${styles.sectionTitleJa} pageSubtitleJapanese`}>お問い合わせ</p>
           </div>
+          <div className="sectionTitleUnderline" aria-hidden="true" />
 
           {isSubmitted ? (
             <div className={styles.successMessage}>
@@ -164,80 +166,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      {/* Related Posts Section */}
-      <section className={styles.relatedSection}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitleEn}>RELATED POSTS</h2>
-            <p className={styles.sectionTitleJa}>関連ページ</p>
-          </div>
-          <div className={styles.relatedGrid}>
-            <a href="/concept/reputation" className={styles.relatedCard}>
-              <div className={styles.relatedCardImage}>
-                <img src="/images/reputation.jpg" alt="評判" />
-              </div>
-              <div className={styles.relatedCardContent}>
-                <h3>神戸市の配送･株式会社Juggaar Japanの評判</h3>
-                <p>兵庫県神戸市に拠点を置く配送会社として、県内全域を対象とした軽貨物宅配サービス…</p>
-              </div>
-            </a>
-            <a href="/concept/voice" className={styles.relatedCard}>
-              <div className={styles.relatedCardImage}>
-                <img src="/images/voice.jpg" alt="お客様の声" />
-              </div>
-              <div className={styles.relatedCardContent}>
-                <h3>神戸市の配送･株式会社Juggaar Japanのお客様の声</h3>
-                <p>高いプロ意識を持つ軽貨物ドライバーが、神戸市エリアを中心に配送業務を承ります。…</p>
-              </div>
-            </a>
-            <a href="/concept" className={styles.relatedCard}>
-              <div className={styles.relatedCardImage}>
-                <img src="/images/concept.jpg" alt="コンセプト" />
-              </div>
-              <div className={styles.relatedCardContent}>
-                <h3>コンセプト</h3>
-                <p>拠点を置く神戸市で、長きに亘って配送サービスに従事する中で培ってきたノウハウが…</p>
-              </div>
-            </a>
-            <a href="/concept/reviews" className={styles.relatedCard}>
-              <div className={styles.relatedCardImage}>
-                <img src="/images/reviews.jpg" alt="口コミ情報" />
-              </div>
-              <div className={styles.relatedCardContent}>
-                <h3>神戸市の配送･株式会社Juggaar Japanの口コミ情報</h3>
-                <p>｢安心・丁寧な宅配サービス｣や｢明るい接客｣が高い評価を得ている神戸市の配送会社と…</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Tags Section */}
-      <section className={styles.tagsSection}>
-        <div className={styles.container}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitleEn}>RELATED TAGS</h2>
-            <p className={styles.sectionTitleJa}>関連タグ</p>
-          </div>
-          <div className={styles.tagsList}>
-            <a href="/tag/kobe" className={styles.tag}>神戸市</a>
-            <a href="/tag/delivery" className={styles.tag}>配送</a>
-            <a href="/contact" className={styles.tag}>お問い合わせ</a>
-            <a href="/tag/driver" className={styles.tag}>軽貨物ドライバー</a>
-            <a href="/tag/kobe-kita-driver" className={styles.tag}>神戸市北区　軽貨物　ドライバー</a>
-            <a href="/tag/sanda-job" className={styles.tag}>三田市　求人</a>
-            <a href="/tag/fujiwaradai-baito" className={styles.tag}>藤原台　バイト</a>
-            <a href="/tag/arinodai-baito" className={styles.tag}>有野台　バイト</a>
-            <a href="/tag/kabutodai-baito" className={styles.tag}>唐櫃台　バイト</a>
-            <a href="/tag/okaba-baito" className={styles.tag}>岡場　バイト</a>
-            <a href="/tag/taoji-baito" className={styles.tag}>田尾寺　バイト</a>
-            <a href="/tag/sanda-arubaito" className={styles.tag}>三田市　アルバイト</a>
-            <a href="/tag/sanda-baito" className={styles.tag}>三田市　バイト</a>
-            <a href="/tag/kobe-baito" className={styles.tag}>神戸市　バイト</a>
-            <a href="/tag/environment" className={styles.tag}>＃働きやすい環境</a>
-          </div>
-        </div>
-      </section>
+      <RelatedPostsAndTags />
     </div>
   )
 }

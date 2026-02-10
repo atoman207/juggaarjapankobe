@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './CompanyPage.module.css'
 
 // Import images - using correct images from reference site
@@ -22,9 +22,10 @@ export function CompanyPage() {
       <section className={styles.philosophySection}>
         <div className={styles.container}>
           <span className="englishSectionLabel">CORPORATE PHILOSOPHY</span>
-          <h2 className={styles.sectionTitle}>
+          <h2 className={`${styles.sectionTitle} pageSubtitleJapanese`}>
             人々の幸福と生活の向上に関われる<br />信頼される企業でありたい
           </h2>
+          <div className="sectionTitleUnderline" aria-hidden="true" />
           <div className={styles.philosophyContent}>
             <p>
               人の幸せに貢献できる、身近な存在でありたい。<br />
@@ -135,33 +136,7 @@ export function CompanyPage() {
         </div>
       </section>
 
-      {/* Related Posts Section */}
-      <section className={styles.relatedPostsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED POSTS</span>
-            <span className="sectionTitleJapanese">関連ページ</span>
-          </h3>
-          <div className={styles.relatedPostsGrid}>
-            <Link to="/concept" className={styles.relatedPostCard}>
-              <h4>コンセプト</h4>
-              <p>拠点を置く神戸市で培ってきたノウハウをご紹介。</p>
-            </Link>
-            <Link to="/service" className={styles.relatedPostCard}>
-              <h4>サービス・料金表</h4>
-              <p>各種サービスの詳細と料金表をご確認いただけます。</p>
-            </Link>
-            <Link to="/recruit" className={styles.relatedPostCard}>
-              <h4>採用情報</h4>
-              <p>新しいスタッフを募集しております。</p>
-            </Link>
-            <Link to="/staff" className={styles.relatedPostCard}>
-              <h4>スタッフ</h4>
-              <p>当社で活躍するスタッフをご紹介。</p>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedPostsAndTags />
     </div>
   )
 }

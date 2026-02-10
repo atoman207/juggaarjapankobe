@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './RecruitmentPage.module.css'
 
 // Import images - using correct images from reference site
@@ -35,9 +36,10 @@ export function RecruitmentPage() {
       <section className={styles.introSection}>
         <div className={styles.container}>
           <span className="englishSectionLabel">RECRUIT</span>
-          <h2 className={styles.sectionTitle}>
+          <h2 className={`${styles.sectionTitle} pageSubtitleJapanese`}>
             地元の物流を支えるやりがいのあるお仕事をお任せします
           </h2>
+          <div className="sectionTitleUnderline" aria-hidden="true" />
         </div>
       </section>
 
@@ -172,55 +174,7 @@ export function RecruitmentPage() {
         </div>
       </section>
 
-      {/* Related Posts Section */}
-      <section className={styles.relatedPostsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED POSTS</span>
-            <span className="sectionTitleJapanese">関連ページ</span>
-          </h3>
-          <div className={styles.relatedPostsGrid}>
-            <Link to="/reputation" className={styles.relatedPostCard}>
-              <h4>神戸市の配送･株式会社Juggaar Japanの評判</h4>
-              <p>兵庫県神戸市に拠点を置く配送会社としての実績と評判をご紹介。</p>
-            </Link>
-            <Link to="/testimonials" className={styles.relatedPostCard}>
-              <h4>神戸市の配送･株式会社Juggaar Japanのお客様の声</h4>
-              <p>お客様からいただいたご感想やご意見をご紹介しております。</p>
-            </Link>
-            <Link to="/reviews" className={styles.relatedPostCard}>
-              <h4>神戸市の配送･株式会社Juggaar Japanの口コミ情報</h4>
-              <p>実際にサービスをご利用いただいたお客様からの口コミ情報。</p>
-            </Link>
-            <Link to="/concept" className={styles.relatedPostCard}>
-              <h4>コンセプト</h4>
-              <p>拠点を置く神戸市で、長きに亘って配送サービスに従事する中で培ってきたノウハウ。</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Tags Section */}
-      <section className={styles.tagsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED TAGS</span>
-            <span className="sectionTitleJapanese">関連タグ</span>
-          </h3>
-          <div className={styles.tagsList}>
-            <span className={styles.tag}>神戸市 ドライバー</span>
-            <span className={styles.tag}>三田市 ドライバー</span>
-            <span className={styles.tag}>神戸市北区 宅配ドライバー</span>
-            <span className={styles.tag}>三田市 宅配ドライバー</span>
-            <span className={styles.tag}>宅配ドライバー 日当保証</span>
-            <span className={styles.tag}>神戸市 ポスティング</span>
-            <span className={styles.tag}>神戸市北区 ポスティング</span>
-            <span className={styles.tag}>三田市 ポスティング</span>
-            <span className={styles.tag}>軽貨物 求人</span>
-            <span className={styles.tag}>三田市 求人</span>
-          </div>
-        </div>
-      </section>
+      <RelatedPostsAndTags />
     </div>
   )
 }

@@ -1,0 +1,143 @@
+/* Shared Related Posts + Related Tags - matches ConceptPage */
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+  width: 100%;
+}
+
+.categoryTitle {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+
+/* Related Posts Section */
+.relatedPostsSection {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.relatedPostsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0;
+  background: #fff;
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 1px solid #E5E7EB;
+  border-radius: 0;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.categoryCard:hover {
+  text-decoration: none;
+  background-color: var(--bg-light-cyan);
+  box-shadow: var(--shadow-md);
+  border-color: #d1d5db;
+}
+
+.categoryCardImage {
+  flex: 0 0 160px;
+  width: 160px;
+  min-height: 120px;
+  background: #F3F4F6;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.categoryCardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 20px;
+  min-width: 0;
+}
+
+.categoryCardTitle {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #1F2937;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.categoryCardDesc {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.7;
+}
+
+@media (max-width: 576px) {
+  .categoryCard {
+    flex-direction: column;
+  }
+
+  .categoryCardImage {
+    flex: none;
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .relatedPostsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tags Section */
+.tagsSection {
+  padding: 60px 0;
+  background: #F9FAFB;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #fff;
+  color: #1F2937;
+  font-size: 0.8125rem;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tag:hover {
+  text-decoration: none;
+  background-color: var(--bg-light-cyan);
+  border-color: #d1d5db;
+  color: #1F2937;
+}

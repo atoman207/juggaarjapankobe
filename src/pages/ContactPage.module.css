@@ -12,10 +12,15 @@
   width: 100%;
 }
 
-/* Contact Section */
+/* Contact Section - no left/right margins */
 .contactSection {
   padding: 60px 0 80px;
   background: #fff;
+}
+
+.contactSection .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Section Header - CONTACT title with underline */

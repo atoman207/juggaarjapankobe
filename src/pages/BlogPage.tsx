@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './BlogPage.module.css'
 
 // Import images
@@ -187,33 +188,7 @@ export function BlogPage(): React.ReactElement {
         </div>
       </section>
 
-      {/* Related Posts Section */}
-      <section className={styles.relatedSection}>
-        <div className={styles.container}>
-          <h3 className={styles.relatedTitle}>
-            <span className={styles.relatedLabel}>RELATED POSTS</span>
-            関連ページ
-          </h3>
-          <div className={styles.relatedGrid}>
-            <Link to="/service" className={styles.relatedCard}>
-              <h4>サービス・料金表</h4>
-              <p>各種サービスの詳細と料金表をご確認いただけます。</p>
-            </Link>
-            <Link to="/recruit" className={styles.relatedCard}>
-              <h4>採用情報</h4>
-              <p>新しいスタッフを募集しております。</p>
-            </Link>
-            <Link to="/company" className={styles.relatedCard}>
-              <h4>会社概要</h4>
-              <p>株式会社Juggaar Japanについてご紹介。</p>
-            </Link>
-            <Link to="/contact" className={styles.relatedCard}>
-              <h4>お問い合わせ</h4>
-              <p>ご質問・ご相談はこちらから。</p>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedPostsAndTags />
     </div>
   )
 }

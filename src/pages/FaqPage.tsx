@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './FaqPage.module.css'
 
 // Import images - using correct images from reference site
@@ -51,7 +51,9 @@ const FAQ_ITEMS = [
 ]
 
 export function FaqPage() {
-  const [openItems, setOpenItems] = useState<Set<number>>(new Set())
+  const [openItems, setOpenItems] = useState<Set<number>>(
+    () => new Set(FAQ_ITEMS.map((_, i) => i))
+  )
 
   const toggleItem = (index: number) => {
     const newOpenItems = new Set(openItems)
@@ -75,31 +77,32 @@ export function FaqPage() {
       />
 
       {/* Q&A Intro Section */}
-      <section className={styles.qaSection}>
-        <div className={styles.container}>
-          <span className="englishSectionLabel">Q&A</span>
-          <h2 className={styles.sectionTitle}>
-            仕事に関する疑問・質問になんでもお答えしています
-          </h2>
-          <h3 className={styles.qaSubtitle}>
-            働きやすい職場で休みもしっかりあります
-          </h3>
-          <div className={styles.qaDescription}>
-            <p>
-              地域密着型の配送サービスで、拠点を置く神戸市にお住まいの方から、高い評価をいただいております。軽貨物輸送のプロフェッショナルとして、一緒に働く仲間を募集しております。
-            </p>
-            <p>
-              採用について何か疑問やご不明点がございましたら、まずはこちらをご覧いただき、少しでも不安を解消できればと考えています。その他にもドライバーに対する働き方や職場環境、プロドライバーとしての運転マナーや運転技術等、興味がございましたらお問い合わせください。
-            </p>
+        <section className={styles.qaSection}>
+          <div className={styles.container}>
+            <span className="englishSectionLabel">Q&A</span>
+            <h2 className={`${styles.sectionTitle} pageSubtitleJapanese`}>
+              仕事に関する疑問・質問になんでもお答えしています
+            </h2>
+            <h3 className={styles.qaSubtitle}>
+              働きやすい職場で休みもしっかりあります
+            </h3>
+            <div className="sectionTitleUnderline" aria-hidden="true" />
+            <div className={styles.qaDescription}>
+              <p>
+                地域密着型の配送サービスで、拠点を置く神戸市にお住まいの方から、高い評価をいただいております。軽貨物輸送のプロフェッショナルとして、一緒に働く仲間を募集しております。
+              </p>
+              <p>
+                採用について何か疑問やご不明点がございましたら、まずはこちらをご覧いただき、少しでも不安を解消できればと考えています。その他にもドライバーに対する働き方や職場環境、プロドライバーとしての運転マナーや運転技術等、興味がございましたらお問い合わせください。
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* FAQ Section */}
       <section className={styles.faqSection}>
         <div className={styles.container}>
           <span className="englishSectionLabel">FAQ</span>
-          <h2 className={styles.faqSectionTitle}>よくある質問</h2>
+          <h2 className={`${styles.faqSectionTitle} pageSubtitleJapanese`}>よくある質問</h2>
           
           <div className={styles.faqList}>
             {FAQ_ITEMS.map((item, index) => {
@@ -139,48 +142,7 @@ export function FaqPage() {
         </div>
       </section>
 
-      {/* Related Posts Section */}
-      <section className={styles.relatedPostsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED POSTS</span>
-            <span className="sectionTitleJapanese">関連ページ</span>
-          </h3>
-          <div className={styles.relatedPostsGrid}>
-            <Link to="/reviews" className={styles.relatedPostCard}>
-              <h4>神戸市の配送･株式会社Juggaar Japanの評判</h4>
-              <p>兵庫県神戸市に拠点を置く配送会社として、県内全域を対象とした軽貨物宅配サービス…</p>
-            </Link>
-            <Link to="/voice" className={styles.relatedPostCard}>
-              <h4>神戸市の配送･株式会社Juggaar Japanのお客様の声</h4>
-              <p>高いプロ意識を持つ軽貨物ドライバーが、神戸市エリアを中心に配送業務を承ります。…</p>
-            </Link>
-            <Link to="/recruit" className={styles.relatedPostCard}>
-              <h4>採用情報</h4>
-              <p>まずは副業として、集荷や配送のお仕事を始めてみたいという方も歓迎しております。…</p>
-            </Link>
-            <Link to="/reputation" className={styles.relatedPostCard}>
-              <h4>神戸市の配送･株式会社Juggaar Japanの口コミ情報</h4>
-              <p>｢安心・丁寧な宅配サービス｣や｢明るい接客｣が高い評価を得ている神戸市の配送会社と…</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Tags Section */}
-      <section className={styles.tagsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED TAGS</span>
-            <span className="sectionTitleJapanese">関連タグ</span>
-          </h3>
-          <div className={styles.tagsList}>
-            <span className={styles.tag}>神戸市</span>
-            <span className={styles.tag}>配送</span>
-            <span className={styles.tag}>よくある質問</span>
-          </div>
-        </div>
-      </section>
+      <RelatedPostsAndTags />
     </div>
   )
 }

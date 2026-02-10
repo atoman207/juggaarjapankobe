@@ -1,0 +1,1 @@
+export { RelatedPostsAndTags } from './RelatedPostsAndTags'

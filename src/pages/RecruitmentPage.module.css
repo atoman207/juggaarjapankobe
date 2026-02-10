@@ -47,11 +47,16 @@
   }
 }
 
-/* Intro Section */
+/* Intro Section - no left/right margins */
 .introSection {
   padding: 80px 0;
   background: var(--bg-white);
   text-align: center;
+}
+
+.introSection .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .sectionTitle {

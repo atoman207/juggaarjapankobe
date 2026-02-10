@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './StaffPage.module.css'
+import staffData from '@/data/staffData.json'
 
-// Import images - using correct images from reference site
 import heroImg from '@/assets/image/hero_staff_ref.jpg'
-import staff01Img from '@/assets/image/staff01.jpg'
-import staff02Img from '@/assets/image/staff02.jpg'
+
+const staffIntro = staffData.intro
 
 export function StaffPage() {
   return (
@@ -19,86 +19,45 @@ export function StaffPage() {
         ]}
       />
 
-      {/* Main Intro Section */}
+      {/* Main Intro Section - matches online page */}
       <section className={styles.introSection}>
         <div className={styles.container}>
-          <span className="englishSectionLabel">STAFF</span>
-          <h2 className={styles.sectionTitle}>
-            笑顔をお届け
+          <span className="englishSectionLabel">{staffIntro.titleEn}</span>
+          <h2 className={`${styles.sectionTitle} pageSubtitleJapanese`}>
+            {staffIntro.titleJa}
           </h2>
-          <p className={styles.introText}>
-            サービスの詳細やスタッフの声などを随時更新しております
-          </p>
-        </div>
-      </section>
-
-      {/* Staff Member 1 - CEO */}
-      <section className={styles.staffMemberSection}>
-        <div className={styles.container}>
-          <div className={styles.staffMemberCard}>
-            <div className={styles.staffMemberImage}>
-              <img src={staff01Img} alt="kano yusei - 代表取締役" />
-            </div>
-            <div className={styles.staffMemberInfo}>
-              <div className={styles.staffMemberHeader}>
-                <span className={styles.staffRole}>代表取締役</span>
-                <h3 className={styles.staffName}>kano yusei</h3>
-                <p className={styles.staffNameJa}>加納 侑青</p>
-              </div>
-              <div className={styles.staffDetails}>
-                <div className={styles.staffDetailItem}>
-                  <h4>好きな言葉</h4>
-                  <p>「知覚動考」Think-Action<br />
-                  Don't think, feel!!<br />
-                  思考は現実化する。</p>
-                </div>
-                <div className={styles.staffDetailItem}>
-                  <h4>幸せな瞬間</h4>
-                  <p>仕事を終え玄関に3人の娘たちの靴が並んでいるのを見た瞬間</p>
-                </div>
-              </div>
-            </div>
+          <p className={styles.introText}>{staffIntro.subtitle}</p>
+          <div className="sectionTitleUnderline" aria-hidden="true" />
+          <div className={styles.introParagraphs}>
+            <p className={styles.introBodyText}>
+              お客様のご期待にお答えできるようなクオリティーの高い配送・配布サービスは、スタッフ一人ひとりの尽力の元で成り立っております。
+              拠点を置く神戸市に根差し、今後もクオリティーの高いサービスを継続できるように、スタッフ一人ひとりがプロフェッショナルとしての自覚を持ち、日々、様々な角度から努力を重ねております。
+              <br />
+              物流のプロフェッショナルとして、ポスティングのプロフェッショナルとして具体的にどのようなサービスを展開しているのか、初めてお問い合わせの方にも分かりやすいよう、新たな耳寄り情報を随時、更新しております。
+            </p>
           </div>
         </div>
       </section>
-
-      {/* Staff Member 2 - Designer */}
-      <section className={styles.staffMemberSection}>
-        <div className={styles.container}>
-          <div className={`${styles.staffMemberCard} ${styles.staffMemberCardReverse}`}>
-            <div className={styles.staffMemberImage}>
-              <img src={staff02Img} alt="kajiyama - デザイナー" />
-            </div>
-            <div className={styles.staffMemberInfo}>
-              <div className={styles.staffMemberHeader}>
-                <span className={styles.staffRole}>デザイナー</span>
-                <h3 className={styles.staffName}>kajiyama</h3>
-                <p className={styles.staffNameJa}>30代女性スタッフ</p>
-              </div>
-              <div className={styles.staffDetails}>
-                <div className={styles.staffDetailItem}>
-                  <h4>経験年数</h4>
-                  <p>15年</p>
-                </div>
-                <div className={styles.staffDetailItem}>
-                  <h4>得意分野</h4>
-                  <p>紙媒体デザイン・SNSデザイン<br />
-                  ドラム演奏</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* More Staff Section */}
+      {/* Bottom intro text (from online page) */}
       <section className={styles.moreStaffSection}>
         <div className={styles.container}>
+          <div className={styles.bottomIntro}>
+            <p>
+              経験と実績が豊富な物流のプロフェッショナルが集結し、拠点を置く地域の活性化に微力ながら貢献できるよう、日々の努力を重ねております。
+            </p>
+            <p>
+              安全にも十分に配慮した、クオリティーの高い軽貨物輸送のサービスに関して、物を運ぶことに関してだけでなく、｢丁寧な接客対応についても好感が持てる｣というようなご納得のお言葉を多数いただいております。
+            </p>
+            <p>
+              お客様にご納得いただけるクオリティーの高いサービスを支えているのは、スタッフ一人ひとりの尽力です。創業以来長きに亘って培ってきたノウハウをスタッフに伝え、今後もクオリティーの高いサービスを継続できるように尽力いたします。
+            </p>
+            <p>
+              このようなことを依頼しても大丈夫だろうかと不安になるような事柄でも、安心してお問い合わせください。専門性の高いご依頼だけでなく、些細なご要望も真摯な姿勢でお伺いしております。
+            </p>
+          </div>
           <h3 className={styles.moreStaffTitle}>その他のスタッフ</h3>
           <p className={styles.moreStaffText}>
-            株式会社Juggaar Japanでは、様々なバックグラウンドを持つスタッフが活躍しています。
-            未経験から始めて成長したベテランドライバーや、地域密着で活躍するポスティングスタッフなど、
-            一人ひとりが「誠実さ」をモットーにお客様に笑顔をお届けしています。
+            株式会社Juggaar Japanでは、様々なバックグラウンドを持つスタッフが活躍しています。未経験から始めて成長したベテランドライバーや、地域密着で活躍するポスティングスタッフなど、一人ひとりが「誠実さ」をモットーにお客様に笑顔をお届けしています。
           </p>
           <div className={styles.staffAreas}>
             <div className={styles.staffAreaCard}>
@@ -117,33 +76,7 @@ export function StaffPage() {
         </div>
       </section>
 
-      {/* Related Posts Section */}
-      <section className={styles.relatedPostsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED POSTS</span>
-            <span className="sectionTitleJapanese">関連ページ</span>
-          </h3>
-          <div className={styles.relatedPostsGrid}>
-            <Link to="/concept" className={styles.relatedPostCard}>
-              <h4>コンセプト</h4>
-              <p>拠点を置く神戸市で培ってきた配送サービスのノウハウをご紹介。</p>
-            </Link>
-            <Link to="/recruit" className={styles.relatedPostCard}>
-              <h4>採用情報</h4>
-              <p>新しいスタッフを募集しております。未経験者も歓迎です。</p>
-            </Link>
-            <Link to="/company" className={styles.relatedPostCard}>
-              <h4>会社概要</h4>
-              <p>株式会社Juggaar Japanについてご紹介。</p>
-            </Link>
-            <Link to="/blog" className={styles.relatedPostCard}>
-              <h4>ブログ</h4>
-              <p>最新情報やお役立ち情報を発信しております。</p>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedPostsAndTags />
     </div>
   )
 }

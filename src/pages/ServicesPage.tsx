@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './ServicesPage.module.css'
 
 // Import images - using correct images from reference site
@@ -27,6 +28,7 @@ export function ServicesPage() {
           <h2 className={styles.mainTitle}>
             誠実できる集荷と配送のプロとして神戸市で高評価を獲得
           </h2>
+          <div className="sectionTitleUnderline" aria-hidden="true" />
         </div>
       </section>
 
@@ -156,64 +158,7 @@ export function ServicesPage() {
         </div>
       </section>
 
-      {/* Related Posts Section */}
-      <section className={styles.relatedPostsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED POSTS</span>
-            <span className="sectionTitleJapanese">関連ページ</span>
-          </h3>
-          <div className={styles.relatedPostsGrid}>
-            <Link to="/concept" className={styles.relatedPostCard}>
-              <h4>コンセプト</h4>
-              <p>拠点を置く神戸市で、長きに亘って配送サービスに従事する中で培ってきたノウハウが…</p>
-            </Link>
-            <Link to="/staff" className={styles.relatedPostCard}>
-              <h4>スタッフ</h4>
-              <p>お客様のご期待にお答えできるようなクオリティーの高い配送サービスは、スタッフ一…</p>
-            </Link>
-            <Link to="/reputation" className={styles.relatedPostCard}>
-              <h4>神戸市の配送･株式会社Juggaar Japanの評判</h4>
-              <p>兵庫県神戸市に拠点を置く配送会社として、県内全域を対象とした軽貨物宅配サービス…</p>
-            </Link>
-            <Link to="/company" className={styles.relatedPostCard}>
-              <h4>株式会社ジュガール ジャパン</h4>
-              <p>軽貨物自動車による物流・運送業務を主に神戸市エリアで担う配送会社として、地域の…</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Tags Section */}
-      <section className={styles.tagsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.categoryTitle}>
-            <span className="englishSectionLabel">RELATED TAGS</span>
-            <span className="sectionTitleJapanese">関連タグ</span>
-          </h3>
-          <div className={styles.tagsList}>
-            <span className={styles.tag}>神戸市</span>
-            <span className={styles.tag}>配送</span>
-            <span className={styles.tag}>サービス</span>
-            <span className={styles.tag}>三田市 貸し看板</span>
-            <span className={styles.tag}>神戸市 貸し看板</span>
-            <span className={styles.tag}>加古川市 貸し看板</span>
-            <span className={styles.tag}>三木市 貸し看板</span>
-            <span className={styles.tag}>西脇市 貸し看板</span>
-            <span className={styles.tag}>神戸市 ポスティング</span>
-            <span className={styles.tag}>神戸市北区 ポスティング</span>
-            <span className={styles.tag}>三田市 ポスティング</span>
-            <span className={styles.tag}>神戸市 ドライバー</span>
-            <span className={styles.tag}>三田市 ドライバー</span>
-            <span className={styles.tag}>神戸市北区 宅配ドライバー</span>
-            <span className={styles.tag}>三田市 宅配ドライバー</span>
-            <span className={styles.tag}>宅配ドライバー 日当保証</span>
-            <span className={styles.tag}>神戸市 宅配ドライバー</span>
-            <span className={styles.tag}>神戸市 ポスティングならジュガールジャパン</span>
-            <span className={styles.tag}>三田市 求人</span>
-          </div>
-        </div>
-      </section>
+      <RelatedPostsAndTags />
     </div>
   )
 }

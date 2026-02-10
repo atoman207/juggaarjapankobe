@@ -11,11 +11,16 @@
   width: 100%;
 }
 
-/* Main Title Section */
+/* Main Title Section - no left/right margins */
 .mainTitleSection {
   padding: 60px 0 40px;
   background: var(--bg-light-cyan);
   text-align: center;
+}
+
+.mainTitleSection .container {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .mainTitle {
