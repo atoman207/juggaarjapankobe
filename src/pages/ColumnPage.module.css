@@ -45,6 +45,31 @@
     text-align: center;
 }
 
+/* Intro Section - same as other pages */
+.introSection {
+    padding: var(--section-padding-y) 0;
+    background: var(--bg-white);
+    text-align: center;
+}
+
+.sectionTitle {
+    margin: 8px 0 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.introContent {
+    margin-top: 24px;
+}
+
+.introContent p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
 /* Section */
 .section {
     padding: var(--section-padding-y) 0;

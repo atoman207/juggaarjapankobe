@@ -104,16 +104,6 @@
   font-size: 0.875rem;
 }
 
-.breadcrumbsBar .breadcrumbs a {
-  color: #000;
-  text-decoration: none;
-}
-
-.breadcrumbsBar .breadcrumbs a:hover {
-  text-decoration: underline;
-  color: var(--primary-blue);
-}
-
 .breadcrumbsBar .separator {
   margin: 0 6px;
   opacity: 0.85;

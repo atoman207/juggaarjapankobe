@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import styles from './PageHero.module.css'
 
 interface PageHeroProps {
@@ -32,11 +31,7 @@ export function PageHero({ title, titleEn, backgroundImage, breadcrumbs, whiteBa
               {breadcrumbs.map((crumb, index) => (
                 <span key={index}>
                   {index > 0 && <span className={styles.separator}> &gt; </span>}
-                  {crumb.path ? (
-                    <Link to={crumb.path}>{crumb.label}</Link>
-                  ) : (
-                    <span>{crumb.label}</span>
-                  )}
+                  <span>{crumb.label}</span>
                 </span>
               ))}
             </nav>

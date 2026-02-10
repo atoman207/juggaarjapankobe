@@ -1,5 +1,8 @@
+import { PageHero } from '@/components/PageHero'
+import { RelatedPostsAndTags } from '@/components/RelatedPostsAndTags'
 import styles from './ColumnPage.module.css'
 import serviceImg from '@/assets/image/service.jpg'
+import columImg from '@/assets/image/colum.jpg'
 
 export function ColumnPage(): React.ReactElement {
     const articles = [
@@ -28,15 +31,26 @@ export function ColumnPage(): React.ReactElement {
 
     return (
         <div className={styles.page}>
-            {/* Page Header */}
-            <div className={styles.pageHeader} style={{ backgroundImage: `url(${serviceImg})` }}>
-                <div className={styles.pageHeaderOverlay}>
-                    <div className={styles.container}>
-                        <h1 className={styles.pageTitle}>コラム</h1>
-                       
-                    </div>
+            <PageHero
+                title="コラム"
+                backgroundImage={columImg}
+                breadcrumbs={[
+                    { label: '神戸市の配送は株式会社Juggaar Japan', path: '/' },
+                    { label: 'コラム' },
+                ]}
+            />
+
+            {/* Intro Section - same as other pages */}
+            <section className={styles.introSection}>
+                <div className={styles.container}>
+                    <span className="englishSectionLabel">COLUMN</span>
+                    <h2 className={`${styles.sectionTitle} pageSubtitleJapanese`}>
+                    コラム | 株式会社Juggaar Japan
+                    </h2>
+                    <div className="sectionTitleUnderline" aria-hidden="true" />
+
                 </div>
-            </div>
+            </section>
 
             {/* Main Content */}
             <section className={styles.section}>
@@ -57,6 +71,8 @@ export function ColumnPage(): React.ReactElement {
                     </div>
                 </div>
             </section>
+
+            <RelatedPostsAndTags />
         </div>
     )
 }

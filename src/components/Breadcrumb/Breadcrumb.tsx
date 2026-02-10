@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router'
 import styles from './Breadcrumb.module.css'
 
 interface BreadcrumbItem {
@@ -18,13 +17,7 @@ export function Breadcrumb({ items }: BreadcrumbProps): React.ReactElement {
         {items.map((item, index) => (
           <React.Fragment key={index}>
             {index > 0 && <span className={styles.separator}>&gt;</span>}
-            {item.path ? (
-              <Link to={item.path} className={styles.link}>
-                {item.label}
-              </Link>
-            ) : (
-              <span className={styles.current}>{item.label}</span>
-            )}
+            <span className={styles.crumb}>{item.label}</span>
           </React.Fragment>
         ))}
       </div>

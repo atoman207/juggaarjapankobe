@@ -6,22 +6,9 @@ import heroContactImg from '@/assets/image/hero_contact.jpg'
 import saleImg from '@/assets/image/sale.jpg'
 import mv2Img from '@/assets/image/mv2.jpg'
 
-const RELATED_TAGS = [
-  '神戸市',
-  '配送',
-  'アクセス',
-  '株式会社Juggaar Japan',
-  '五社駅',
-  '神戸電鉄',
-  '神戸電鉄 五社駅',
-  '神戸電鉄 五社駅 徒歩1分',
-  'ジュガールジャパン',
-]
-
 export function RelatedPostsAndTags() {
   return (
-    <>
-      <section className={styles.relatedPostsSection}>
+    <section className={styles.relatedPostsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
             <span className="englishSectionLabel">RELATED POSTS</span>
@@ -67,20 +54,5 @@ export function RelatedPostsAndTags() {
           </div>
         </div>
       </section>
-
-      <section className={styles.tagsSection}>
-        <div className={styles.container}>
-          <h3 className={styles.tagsSectionTitle}>
-            <span className="englishSectionLabel">RELATED TAGS</span>
-            <span className={styles.tagsSubtitle}>関連タグ</span>
-          </h3>
-          <div className={styles.tagsList}>
-            {RELATED_TAGS.map((tag) => (
-              <span key={tag} className={styles.tag}>{tag}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
   )
 }
