@@ -34,7 +34,7 @@ export function RecruitmentPage() {
       {/* Main Intro Section */}
       <section className={styles.introSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>RECRUIT</span>
+          <span className="englishSectionLabel">RECRUIT</span>
           <h2 className={styles.sectionTitle}>
             地元の物流を支えるやりがいのあるお仕事をお任せします
           </h2>
@@ -159,8 +159,8 @@ export function RecruitmentPage() {
       <section className={styles.categorySection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>SAME CATEGORY</span>
-            同じカテゴリーのページ
+            <span className="englishSectionLabel">SAME CATEGORY</span>
+            <span className="sectionTitleJapanese">同じカテゴリーのページ</span>
           </h3>
           <div className={styles.categoryGrid}>
             {JOB_CATEGORIES.map((job, index) => (
@@ -176,8 +176,8 @@ export function RecruitmentPage() {
       <section className={styles.relatedPostsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED POSTS</span>
-            関連ページ
+            <span className="englishSectionLabel">RELATED POSTS</span>
+            <span className="sectionTitleJapanese">関連ページ</span>
           </h3>
           <div className={styles.relatedPostsGrid}>
             <Link to="/reputation" className={styles.relatedPostCard}>
@@ -204,8 +204,8 @@ export function RecruitmentPage() {
       <section className={styles.tagsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED TAGS</span>
-            関連タグ
+            <span className="englishSectionLabel">RELATED TAGS</span>
+            <span className="sectionTitleJapanese">関連タグ</span>
           </h3>
           <div className={styles.tagsList}>
             <span className={styles.tag}>神戸市 ドライバー</span>

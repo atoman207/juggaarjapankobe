@@ -136,8 +136,8 @@ export function ServicesPage() {
       <section className={styles.categorySection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>SAME CATEGORY</span>
-            同じカテゴリーのページ
+            <span className="englishSectionLabel">SAME CATEGORY</span>
+            <span className="sectionTitleJapanese">同じカテゴリーのページ</span>
           </h3>
           <div className={styles.categoryGrid}>
             <Link to="/service/posting-price" className={styles.categoryCard}>
@@ -160,8 +160,8 @@ export function ServicesPage() {
       <section className={styles.relatedPostsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED POSTS</span>
-            関連ページ
+            <span className="englishSectionLabel">RELATED POSTS</span>
+            <span className="sectionTitleJapanese">関連ページ</span>
           </h3>
           <div className={styles.relatedPostsGrid}>
             <Link to="/concept" className={styles.relatedPostCard}>
@@ -188,8 +188,8 @@ export function ServicesPage() {
       <section className={styles.tagsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED TAGS</span>
-            関連タグ
+            <span className="englishSectionLabel">RELATED TAGS</span>
+            <span className="sectionTitleJapanese">関連タグ</span>
           </h3>
           <div className={styles.tagsList}>
             <span className={styles.tag}>神戸市</span>

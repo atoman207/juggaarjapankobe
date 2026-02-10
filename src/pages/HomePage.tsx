@@ -110,7 +110,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.conceptSection} id="content-start">
         <div className={`${styles.container} ${styles.conceptContainer}`}>
-          <span className={styles.sectionLabel}>CONCEPT</span>
+          <span className="englishSectionLabel">CONCEPT</span>
           <ul className={styles.conceptServicesList}>
             <li>貨物軽自動車運送事業</li>
             <li>ポスティング事業</li>
@@ -144,7 +144,7 @@ export function HomePage(): React.ReactElement {
       <section className={styles.serviceParallaxSection}>
         <div className={styles.serviceParallaxOverlay}>
           <div className={styles.container}>
-            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>SERVICE</span>
+            <span className="englishSectionLabel englishSectionLabelLight">SERVICE</span>
             <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>信頼できる集荷と配送のプロとして神戸市で高評価を獲得</h2>
           </div>
         </div>
@@ -248,7 +248,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.recruitSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>RECRUIT</span>
+          <span className="englishSectionLabel">RECRUIT</span>
           <h2 className={styles.sectionTitle}>
             誠実な方・やる気のある方を<br />
             業務委託パートナーとして歓迎しています
@@ -337,7 +337,7 @@ export function HomePage(): React.ReactElement {
       <section className={styles.staffSection}>
         <div className={styles.staffOverlay}>
           <div className={styles.container}>
-            <span className={`${styles.sectionLabel} ${styles.labelLight}`}>STAFF</span>
+            <span className="englishSectionLabel englishSectionLabelLight">STAFF</span>
             <h2 className={`${styles.sectionTitle} ${styles.titleLight}`}>熱意あるスタッフが物流や営業の現場で活躍しております</h2>
             <p className={styles.staffDescription}>
               知識と経験の豊富なスタッフが地域密着型のスタッフがお客様のために尽力
@@ -352,7 +352,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.homeQaSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>Q&A</span>
+          <span className="englishSectionLabel">Q&A</span>
           <p className={styles.homeQaSubtitle}>
             サービスや求人に関する様々なご質問に回答しております
           </p>
@@ -432,7 +432,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.companySection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>COMPANY</span>
+          <span className="englishSectionLabel">COMPANY</span>
           <h2 className={styles.sectionTitle}>地元に根差した丁寧な物流サービスに力を入れております</h2>
           <div className={styles.companyImageRow}>
             <img src={companyImg} alt="株式会社Juggaar Japan" className={styles.companyImageImg} />
@@ -709,7 +709,7 @@ export function HomePage(): React.ReactElement {
       {/* ============================================ */}
       <section className={styles.columnTeasersSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>COLUMN</span>
+          <span className="englishSectionLabel">COLUMN</span>
           <h2 className={styles.sectionTitle}>配送のプロが語る生活に役立つ情報発信ページ</h2>
           <p className={styles.columnSubtitle}>
             日々の生活に役立つ配送のヒントや、物流業界の最新動向、地域密着型サービスの魅力をわかりやすくお伝えします。

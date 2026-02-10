@@ -287,6 +287,59 @@ button {
 }
 
 /* ========================================
+   English Section Labels (single style site-wide)
+   Same size, color, and underline as first page
+   ======================================== */
+
+.englishSectionLabel {
+  display: inline-block;
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 700;
+  font-family: var(--font-family-jp-serif);
+  color: var(--primary-blue);
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+/* Japanese line below English in section titles */
+.sectionTitleJapanese {
+  display: block;
+  margin-top: 0.25em;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.englishSectionLabel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--transition-normal), left var(--transition-normal);
+}
+
+.englishSectionLabel:hover::after {
+  width: 30%;
+  left: 35%;
+}
+
+/* Light variant (e.g. on dark/image background) */
+.englishSectionLabelLight.englishSectionLabel {
+  color: #fff;
+}
+
+.englishSectionLabelLight.englishSectionLabel::after {
+  background: #fff;
+}
+
+/* ========================================
    Utility Classes
    ======================================== */
 
@@ -323,6 +376,10 @@ button {
   :root {
     --section-padding-y: 40px;
     --section-padding-x: 16px;
+  }
+
+  .englishSectionLabel {
+    font-size: 2.25rem;
   }
   
   h1 { font-size: 1.75rem; }

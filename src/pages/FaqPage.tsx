@@ -77,7 +77,7 @@ export function FaqPage() {
       {/* Q&A Intro Section */}
       <section className={styles.qaSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>Q&A</span>
+          <span className="englishSectionLabel">Q&A</span>
           <h2 className={styles.sectionTitle}>
             仕事に関する疑問・質問になんでもお答えしています
           </h2>
@@ -98,7 +98,7 @@ export function FaqPage() {
       {/* FAQ Section */}
       <section className={styles.faqSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>FAQ</span>
+          <span className="englishSectionLabel">FAQ</span>
           <h2 className={styles.faqSectionTitle}>よくある質問</h2>
           
           <div className={styles.faqList}>
@@ -143,8 +143,8 @@ export function FaqPage() {
       <section className={styles.relatedPostsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED POSTS</span>
-            関連ページ
+            <span className="englishSectionLabel">RELATED POSTS</span>
+            <span className="sectionTitleJapanese">関連ページ</span>
           </h3>
           <div className={styles.relatedPostsGrid}>
             <Link to="/reviews" className={styles.relatedPostCard}>
@@ -171,8 +171,8 @@ export function FaqPage() {
       <section className={styles.tagsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED TAGS</span>
-            関連タグ
+            <span className="englishSectionLabel">RELATED TAGS</span>
+            <span className="sectionTitleJapanese">関連タグ</span>
           </h3>
           <div className={styles.tagsList}>
             <span className={styles.tag}>神戸市</span>

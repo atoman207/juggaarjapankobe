@@ -22,7 +22,7 @@ export function StaffPage() {
       {/* Main Intro Section */}
       <section className={styles.introSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>STAFF</span>
+          <span className="englishSectionLabel">STAFF</span>
           <h2 className={styles.sectionTitle}>
             笑顔をお届け
           </h2>
@@ -121,8 +121,8 @@ export function StaffPage() {
       <section className={styles.relatedPostsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED POSTS</span>
-            関連ページ
+            <span className="englishSectionLabel">RELATED POSTS</span>
+            <span className="sectionTitleJapanese">関連ページ</span>
           </h3>
           <div className={styles.relatedPostsGrid}>
             <Link to="/concept" className={styles.relatedPostCard}>

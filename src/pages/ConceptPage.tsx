@@ -9,6 +9,13 @@ import conceptSection1Img from '@/assets/image/concept_section1.jpg'
 import conceptSection2Img from '@/assets/image/concept_section2.jpg'
 import conceptSection3Img from '@/assets/image/concept_section3.jpg'
 import conceptSection4Img from '@/assets/image/concept_section4.jpg'
+import same1Img from '@/assets/image/same1.jpg'
+import same2Img from '@/assets/image/same2.jpg'
+import same3Img from '@/assets/image/same3.jpg'
+import post1Img from '@/assets/image/post1.jpg'
+import previewImg from '@/assets/image/preview.jpeg'
+import post3Img from '@/assets/image/post3.jpg'
+import post4Img from '@/assets/image/post4.jpg'
 
 export function ConceptPage() {
   return (
@@ -25,7 +32,7 @@ export function ConceptPage() {
       {/* Main Intro Section */}
       <section className={styles.introSection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>CONCEPT</span>
+          <span className="englishSectionLabel">CONCEPT</span>
           <h2 className={styles.sectionTitle}>
             創業以来培ってきた信念からのスタイルを大切にします
           </h2>
@@ -182,7 +189,7 @@ export function ConceptPage() {
       {/* Feature Section 4 - Text left, image right */}
       <section className={styles.featureSection}>
         <div className={styles.container}>
-          <div className={`${styles.featureRow} ${styles.featureRowReverse}`}>
+          <div className={styles.featureRow}>
             <div className={styles.featureText}>
               <h3>拠点を置く神戸市に根差す配送・配布のプロとして様々な情報を発信</h3>
               <p>
@@ -214,69 +221,121 @@ export function ConceptPage() {
         </div>
       </section>
 
-      {/* Same Category Section */}
+      {/* Same Category Section - cards with image left, title + description right */}
       <section className={styles.categorySection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>SAME CATEGORY</span>
-            同じカテゴリーのページ
+            <span className="englishSectionLabel">SAME CATEGORY</span>
+            <span className="sectionTitleJapanese">同じカテゴリーのページ</span>
           </h3>
           <div className={styles.categoryGrid}>
-            <Link to="/reputation" className={styles.categoryCard}>
-              <span>神戸市の配送･株式会社Juggaar Japanの口コミ情報</span>
+            <Link to="/concept/reviews" className={styles.categoryCard}>
+              <div className={styles.categoryCardImage}>
+                <img src={same1Img} alt="口コミ情報" />
+              </div>
+              <div className={styles.categoryCardText}>
+                <span className={styles.categoryCardTitle}>神戸市の配送・株式会社Juggaar Japanの...</span>
+                <span className={styles.categoryCardDesc}>「安心・丁寧な宅配サービス」や「明るい接客」が高い評価を得ている神戸市の配送会社として、お客様の声をご紹介しています。</span>
+              </div>
             </Link>
-            <Link to="/reviews" className={styles.categoryCard}>
-              <span>神戸市の配送･株式会社Juggaar Japanの評判</span>
+            <Link to="/concept/reputation" className={styles.categoryCard}>
+              <div className={styles.categoryCardImage}>
+                <img src={same2Img} alt="評判" />
+              </div>
+              <div className={styles.categoryCardText}>
+                <span className={styles.categoryCardTitle}>神戸市の配送・株式会社Juggaar Japanの...</span>
+                <span className={styles.categoryCardDesc}>兵庫県神戸市に拠点を置く配送会社として、県内全域を対象とした軽貨物宅配サービスをご案内しています。</span>
+              </div>
             </Link>
-            <Link to="/testimonials" className={styles.categoryCard}>
-              <span>神戸市の配送･株式会社Juggaar Japanのお客様の声</span>
+            <Link to="/concept/voice" className={styles.categoryCard}>
+              <div className={styles.categoryCardImage}>
+                <img src={same3Img} alt="お客様の声" />
+              </div>
+              <div className={styles.categoryCardText}>
+                <span className={styles.categoryCardTitle}>神戸市の配送・株式会社Juggaar Japanの...</span>
+                <span className={styles.categoryCardDesc}>高いプロ意識を持つ軽貨物ドライバーが、神戸市エリアを中心に配送業務を承ります。</span>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Related Posts Section */}
+      {/* Related Posts Section - same card style as Same Category (image left, title + description right, 2x2 grid) */}
       <section className={styles.relatedPostsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED POSTS</span>
-            関連ページ
+            <span className="englishSectionLabel">RELATED POSTS</span>
+            <span className="sectionTitleJapanese">関連ページ</span>
           </h3>
           <div className={styles.relatedPostsGrid}>
-            <Link to="/company" className={styles.relatedPostCard}>
-              <h4>会社概要</h4>
-              <p>株式会社Juggaar Japanについてご紹介。</p>
+            <Link to="/company" className={styles.categoryCard}>
+              <div className={styles.categoryCardImage}>
+                <img src={post1Img} alt="会社概要" />
+              </div>
+              <div className={styles.categoryCardText}>
+                <span className={styles.categoryCardTitle}>会社概要</span>
+                <span className={styles.categoryCardDesc}>地域社会への貢献を目指す神戸市の配送会社として、兵庫県全域を対象とした軽貨物宅配サービスをご案内しています。</span>
+              </div>
             </Link>
-            <Link to="/recruit" className={styles.relatedPostCard}>
-              <h4>採用情報</h4>
-              <p>新しいスタッフを募集しております。</p>
+            <Link to="/recruit" className={styles.categoryCard}>
+              <div className={styles.categoryCardImage}>
+                <img src={previewImg} alt="採用情報" />
+              </div>
+              <div className={styles.categoryCardText}>
+                <span className={styles.categoryCardTitle}>採用情報</span>
+                <span className={styles.categoryCardDesc}>まずは副業として、集荷や配送のお仕事を始めてみたいという方も歓迎しております。</span>
+              </div>
             </Link>
-            <Link to="/recruit/driver" className={styles.relatedPostCard}>
-              <h4>3ヶ月ごとにボーナスが!? 神戸市北区 軽貨物 ドライバー</h4>
-              <p>ドライバー募集の詳細情報。</p>
+            <Link to="/recruit/driver" className={styles.categoryCard}>
+              <div className={styles.categoryCardImage}>
+                <img src={post3Img} alt="神戸市北区 軽貨物 ドライバー" />
+              </div>
+              <div className={styles.categoryCardText}>
+                <span className={styles.categoryCardTitle}>3ヶ月ごとにボーナスが!? 神戸市北区 軽貨物 ドライバー</span>
+                <span className={styles.categoryCardDesc}>ドライバー募集の詳細情報。</span>
+              </div>
             </Link>
-            <Link to="/service" className={styles.relatedPostCard}>
-              <h4>サービス・料金表</h4>
-              <p>各種サービスの詳細と料金表。</p>
+            <Link to="/service" className={styles.categoryCard}>
+              <div className={styles.categoryCardImage}>
+                <img src={post4Img} alt="サービス・料金表" />
+              </div>
+              <div className={styles.categoryCardText}>
+                <span className={styles.categoryCardTitle}>サービス・料金表</span>
+                <span className={styles.categoryCardDesc}>軽貨物自動車による物流・運送業務を主に神戸市エリアで担う配送会社として、地域の皆様にご利用いただいております。</span>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Related Tags Section */}
+      {/* Related Tags Section - same style as above (white, border, hover light blue, no underline) */}
       <section className={styles.tagsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED TAGS</span>
-            関連タグ
+            <span className="englishSectionLabel">RELATED TAGS</span>
+            <span className="sectionTitleJapanese">関連タグ</span>
           </h3>
           <div className={styles.tagsList}>
-            <span className={styles.tag}>神戸市 軽貨物</span>
-            <span className={styles.tag}>神戸市北区 配送</span>
-            <span className={styles.tag}>三田市 配送</span>
-            <span className={styles.tag}>ポスティング 神戸市</span>
-            <span className={styles.tag}>軽貨物 求人</span>
-            <span className={styles.tag}>宅配ドライバー</span>
+            <span className={styles.tag}>神戸市</span>
+            <span className={styles.tag}>配送</span>
+            <span className={styles.tag}>コンセプト</span>
+            <span className={styles.tag}>三田市 求人</span>
+            <span className={styles.tag}>藤原台 バイト</span>
+            <span className={styles.tag}>有野台 バイト</span>
+            <span className={styles.tag}>唐櫃台 バイト</span>
+            <span className={styles.tag}>岡場 バイト</span>
+            <span className={styles.tag}>田尾寺 バイト</span>
+            <span className={styles.tag}>三田市 アルバイト</span>
+            <span className={styles.tag}>三田市 バイト</span>
+            <span className={styles.tag}>神戸市 バイト</span>
+            <span className={styles.tag}>神戸市北区 軽貨物</span>
+            <span className={styles.tag}>ドライバー</span>
+            <span className={styles.tag}>軽貨物ドライバー</span>
+            <span className={styles.tag}>#働きやすい環境</span>
+            <span className={styles.tag}>#効率的な働き方</span>
+            <span className={styles.tag}>#自分時間</span>
+            <span className={styles.tag}>#柔軟性重視</span>
+            <span className={styles.tag}>#キャリアステップ</span>
           </div>
         </div>
       </section>

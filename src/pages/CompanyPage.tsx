@@ -21,7 +21,7 @@ export function CompanyPage() {
       {/* Philosophy Section */}
       <section className={styles.philosophySection}>
         <div className={styles.container}>
-          <span className={styles.sectionLabel}>CORPORATE PHILOSOPHY</span>
+          <span className="englishSectionLabel">CORPORATE PHILOSOPHY</span>
           <h2 className={styles.sectionTitle}>
             人々の幸福と生活の向上に関われる<br />信頼される企業でありたい
           </h2>
@@ -139,8 +139,8 @@ export function CompanyPage() {
       <section className={styles.relatedPostsSection}>
         <div className={styles.container}>
           <h3 className={styles.categoryTitle}>
-            <span className={styles.categoryLabel}>RELATED POSTS</span>
-            関連ページ
+            <span className="englishSectionLabel">RELATED POSTS</span>
+            <span className="sectionTitleJapanese">関連ページ</span>
           </h3>
           <div className={styles.relatedPostsGrid}>
             <Link to="/concept" className={styles.relatedPostCard}>
